@@ -1,0 +1,11 @@
+/* IE only */
+table.ganttchart tr.timeline div.timeline {
+  margin-left: 0em;
+  margin-right: 1em;
+}
+table.ganttchart tr.timeline span.label {
+  width: auto;
+  writing-mode: tb-rl;
+  /*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1)
+          progid:DXImageTransform.Microsoft.BasicImage(mirror=1);*/ /* IE */
+}

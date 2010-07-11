@@ -1,0 +1,23 @@
+﻿body {
+  font-size: 70%;
+}
+* {
+  page-break-before:avoid;
+  page-break-after:avoid;
+}
+.keeptogether, tr.spacer, tr.spacer * {
+  page-break-before:auto;
+  page-break-after:auto;
+  page-break-inside:avoid;
+}
+.breakbefore {
+  page-break-before:always;
+}
+.breakafter {
+  page-break-after:always;
+}
+h2.qualifications,
+h2.experiences:nth-of-type(1) {
+  page-break-before:always;
+}
+

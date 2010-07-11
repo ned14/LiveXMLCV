@@ -1,0 +1,137 @@
+﻿body {
+  font-family: Constantia, 'Times New Roman', serif;
+  text-align: justify;
+  font-size: 10pt;
+  /*line-height: 125%;*/
+  padding: 1em;
+}
+h1 {
+  font-family: Constantia, 'Times New Roman', serif;
+  text-align: center;
+}
+h2 {
+  margin-top: 1em;
+  margin-bottom: 0;
+  text-align: center;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  font-family: Corbel, Helvetica, sans-serif;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table.privatedetails {
+  font-size: larger;
+  font-weight: bold;
+}
+td.version, td.profile {
+  font-size: small;
+  font-weight: normal;
+  text-align: right;
+}
+td {
+  border-style: solid;
+  border-width: thin;
+  border-color: #eeeeee;
+  vertical-align: bottom;
+  padding: 0.2em;
+}
+tr > td + td {
+  text-align: center;
+}
+tr > td + td + td {
+  text-align: right;
+}
+th {
+  font-weight: normal;
+  font-style: italic;
+}
+th.award, th.experience {
+  text-align: right;
+}
+td.title, td.name, td.address, td.email, td.telephone, td.dateofbirth,
+td.grade, td.period, td.institution, td.employer, td.period, td.when, td.location {
+  font-family: Corbel, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: bold;
+}
+table.ganttchart {
+  position: relative;
+  width: 90%;
+  font-size: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border: black solid thick;
+}
+table.ganttchart tr.timeline {
+  height: 5em;
+}
+table.ganttchart tr.timeline div.timeline {
+  position: relative;
+  height: 4em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+table.ganttchart tr.timeline span.label {
+  position: absolute;
+  text-align: center;
+  width: 4em;
+  /* Some CSS3 to rotate text 90deg. Not widely supported yet */
+  transform-origin: 0% 50%;
+  -moz-transform-origin: 0% 50%;
+  -webkit-transform-origin: 0% 50%;
+  -o-transform-origin: 0% 50%;
+  transform: rotate(90deg) translateX(-1em);
+  -moz-transform: rotate(90deg) translateX(-1em);
+  -webkit-transform: rotate(90deg) translateX(-1em);
+  -o-transform: rotate(90deg) translateX(-1em);
+}
+table.ganttchart td.label {
+  text-align: right;
+  width: 250px;
+}
+table.ganttchart td.period {
+  width: auto;
+}
+table.ganttchart td.period div {
+  height: 12px;
+  vertical-align: middle;
+}
+table.ganttchart td.period div div {
+  height: 10px;
+  margin-top: 1px;
+  border-top: 10px solid black; /* Forces printing */
+  /*background-color: black;*/
+}
+table.skillsgroup td {
+	text-align: center;
+}
+table.recognitions td.when {
+  min-width: 5em;
+}
+table.experiences td.period {
+  min-width: 10em;
+}
+td._specificskill {
+  font-family: Corbel, Helvetica, sans-serif;
+  font-size: smaller;
+  text-align: center;
+  vertical-align: middle;
+}
+tr.spacer {
+  height: 2em;
+  border: none;
+}
+tr.spacer * {
+  border: none;
+}
+table.publications tr td {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+ul li, ol li {
+  margin-bottom: 0.5em;
+}

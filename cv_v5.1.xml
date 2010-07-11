@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="CVtoXHTML.xsl"?>
+<curriculumvitae forwhom="Niall Douglas" lang="en"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cv_v5.xsd">
+    <name>Niall Douglas</name>
+    <revision>5.1 (1st July 2010)</revision>
+    <privatedetails>
+        <dateofbirth>1970-01-01</dateofbirth>
+        <address><div xmlns="http://www.w3.org/1999/xhtml">1 Nice Street<br/>
+            Niceville<br/>
+            Nicestate<br/>
+            Nicecountry</div></address>
+        <telephone>+353 21 1234567</telephone>
+        <email>arse@hotmail.com</email>
+    </privatedetails>
+    <introduction>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>I am a specialist in <b>INTER-DOMAIN GENERAL SYSTEMS OPTIMISATION</b> with a
+                particular aptitude for eliciting solutions where there are no obvious avenues
+                forward. My career traverses multiple domains and I have experience as an Engineer,
+                an Economist, a Manager, an Entrepreneur, a Businessman, a Teacher, a Researcher and
+                Writer. I have worked in the fields of computer hardware and software, academia,
+                problem solution, consultancy, design, accountancy and military procurement. I have
+                worked in the countries of Britain, Spain, Ireland and Canada, and in the languages
+                of English and Spanish in which I am fluent. I have worked as a permanent employee,
+                under contract and as a freelancer and have helped others to steer projects large
+                and small to a successful and timely completion.</p>
+            <p>I have contributed over two and a half man-years of computer programming to open
+                source and my code is present in much of the world's telecommunications
+                infrastructure including the root DNS servers which are central to the internet, the
+                world's leading ERP solution used by hundreds of thousands of companies worldwide,
+                the branch ATM network of one of the world's largest banks, the EuroFighter defence
+                aircraft, the Micrium car operating system used by many European and Japanese car
+                manufacturers and one of the data analysis and planning tools used by the US Department
+                of Defence. I operate my own geographically distributed information repository cloud
+                based on the Plone content and knowledge management system which allows interested
+                people to collaboratively work on a series of next generation repositories of
+                information useful to society.</p>
+            <p>I am a year 2000 graduate of <b>Software Engineering</b> at the University of Hull,
+                England, with extensive experience of working prior to and during my degree, and
+                where my final project was an Object Orientated Hardware Abstraction Layer with a
+                port of the uC/OS II real time operating system. I am also a year 2008 Joint Honours
+                Masters graduate in <b>Economics &amp; Management</b> at the University of St.
+                Andrews, Scotland, where my Masters dissertation topic was on <i>Modelling the Costs of
+                Climate Change and its Costs of Mitigation</i>. In 2009 I graduated with a further
+                Masters in <b>Business Information Systems</b> from NUI University College Cork,
+                Ireland, with my team winning the prestigious 2009 Student Enterprise Awards held
+                annually by Enterprise Ireland, the Irish Government organisation for
+                entrepreneurship, for our Web 2.0 FIXatdl Financial Algorithmic Trading Definition
+                Language Editor.</p>
+        </div>
+    </introduction>
+    <skills>
+        <skillsgroup type="Technical">
+            <skill name="Assemblers">
+                <specificskill>6502</specificskill>
+                <specificskill>68000</specificskill>
+                <specificskill>ARM</specificskill>
+                <specificskill>x64</specificskill>
+                <specificskill>x86</specificskill>
+            </skill>
+            <skill name="Programming Languages">
+                <specificskill>C</specificskill>
+                <specificskill>C++</specificskill>
+                <specificskill>C#</specificskill>
+                <specificskill>GLSL</specificskill>
+                <specificskill>HLSL</specificskill>
+                <specificskill>Java</specificskill>
+                <specificskill>Javascript</specificskill>
+                <specificskill>Logo</specificskill>
+                <specificskill>LISP</specificskill>
+                <specificskill>OpenCL</specificskill>
+                <specificskill>PHP</specificskill>
+                <specificskill>Python</specificskill>
+                <specificskill>SQL</specificskill>
+                <specificskill>VBA</specificskill>
+                <specificskill>XSL</specificskill>
+            </skill>
+            <skill name="Programming Libraries">
+                <specificskill>Boost</specificskill>
+                <specificskill>DirectX</specificskill>
+                <specificskill>FOX</specificskill>
+                <specificskill>jQuery</specificskill>
+                <specificskill>.NET</specificskill>
+                <specificskill>OpenGL</specificskill>
+                <specificskill>OpenSSL</specificskill>
+                <specificskill>Qt</specificskill>
+                <specificskill>X11</specificskill>
+                <specificskill>Zope</specificskill>
+            </skill>
+            <skill name="Platforms">
+                <specificskill>Apple Mac OS X</specificskill>
+                <specificskill>DEC VMS</specificskill>
+                <specificskill>Plone</specificskill>
+                <specificskill>POSIX Unix (Linux, FreeBSD)</specificskill>
+                <specificskill>RISC-OS</specificskill>
+                <specificskill>Symbian</specificskill>
+                <specificskill>µCOS</specificskill>
+                <specificskill>Windows</specificskill>
+                <specificskill>Zope</specificskill>
+            </skill>
+            <skill name="General">
+                <specificskill>embedded systems (kernel and driver development)</specificskill>
+                <specificskill>multiprocessor &amp; multithreaded systems</specificskill>
+                <specificskill>object orientation</specificskill>
+                <specificskill>stream and GPU high performance computing</specificskill>
+                <specificskill>performance tuning</specificskill>
+                <specificskill>generic programming</specificskill>
+                <specificskill>functional programming</specificskill>
+                <specificskill>distributed programming</specificskill>
+                <specificskill>project management</specificskill>
+            </skill>
+        </skillsgroup>
+        <skillsgroup type="Language">
+            <skill name="Spanish">
+                <specificskill>Good Conversational Spanish</specificskill>
+                <specificskill>Good Reading/Writing Spanish</specificskill>
+            </skill>
+        </skillsgroup>
+    </skills>
+    <qualifications>
+        <award type="Master of Business Systems">
+            <name>MBS</name>
+            <title>Business Information Systems</title>
+            <institution>NUI University College Cork</institution>
+            <grade>2H2</grade>
+            <iscedcategory>
+                <iscedlevel>6</iscedlevel>
+                <iscedfield1>3</iscedfield1>
+                <iscedfield2>34</iscedfield2>
+            </iscedcategory>
+            <start>2008-10-01</start>
+            <end>2009-06-30</end>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <dissertation>WebATDL – a Web 2.0 FIXatdl Financial Algorithmic
+                Trading Definition Language Editor</dissertation>
+        </award>
+        <award type="Master of Arts">
+            <name>MA</name>
+            <title>Joint Honours in Economics &amp; Management</title>
+            <institution>University of St. Andrews</institution>
+            <grade>2H1</grade>
+            <iscedcategory>
+                <iscedlevel>6</iscedlevel>
+                <iscedfield1>3</iscedfield1>
+                <iscedfield2>31</iscedfield2>
+            </iscedcategory>
+            <start>2004-10-01</start>
+            <end>2008-06-30</end>
+            <location>
+                <city>St. Andrews</city>
+                <county>Fife</county>
+                <country>GB</country>
+            </location>
+            <dissertation href="http://econpapers.repec.org/RePEc:pra:mprapa:13650">Modelling the
+                Costs of Climate Change and its Costs of Mitigation – A Scientific
+                Approach</dissertation>
+        </award>
+        <award type="Bachelor of Science">
+            <name>BSc</name>
+            <title>Software Engineering</title>
+            <institution>University of Hull</institution>
+            <grade/>
+            <iscedcategory>
+                <iscedlevel>5</iscedlevel>
+                <iscedfield1>4</iscedfield1>
+                <iscedfield2>48</iscedfield2>
+            </iscedcategory>
+            <start>1997-10-01</start>
+            <end>2000-06-30</end>
+            <location>
+                <city>Hull</city>
+                <county>Yorkshire</county>
+                <country>GB</country>
+            </location>
+            <dissertation href="http://www.nedprod.com/NedHAL/">NedHAL – a modular,
+                architecture-independent, multiprocessing-capable Hardware Abstraction
+                Layer</dissertation>
+        </award>
+        <award type="Irish Leaving Certificate">
+            <name>Seven Honours</name>
+            <title/>
+            <institution>Presentation Brothers College</institution>
+            <grade>1 A, 5 B's, 1 C</grade>
+            <iscedcategory>
+                <iscedlevel>3</iscedlevel>
+                <iscedfield1>0</iscedfield1>
+                <iscedfield2>01</iscedfield2>
+            </iscedcategory>
+            <start>1993-09-01</start>
+            <end>1996-06-30</end>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <dissertation/>
+        </award>
+        <award type="Irish Junior Certificate">
+            <name>Ten Honours</name>
+            <title/>
+            <institution>Presentation Brothers College</institution>
+            <grade/>
+            <iscedcategory>
+                <iscedlevel>2</iscedlevel>
+                <iscedfield1>0</iscedfield1>
+                <iscedfield2>01</iscedfield2>
+            </iscedcategory>
+            <start>1990-09-01</start>
+            <end>1993-06-30</end>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <dissertation/>
+        </award>
+    </qualifications>
+    <memberships>
+        <society>
+            <name>Post-Autistic Economics Network</name>
+            <grade>Member</grade>
+            <start>2005-12-01</start>
+            <end>unbounded</end>
+        </society>
+        <society>
+            <name>British Computing Society</name>
+            <grade>Ordinary Member</grade>
+            <start>1997-10-01</start>
+            <end>2001-06-30</end>
+        </society>
+        <society>
+            <name>Mensa Ireland</name>
+            <grade>Member</grade>
+            <start>1994-01-01</start>
+            <end>1995-01-01</end>
+        </society>
+    </memberships>
+    <recognitions>
+        <organisation>
+            <name>All Ireland Student Enterprise Awards Competition</name>
+            <grade>Winner of 'Export Capability' Award</grade>
+            <when>2009-06-10</when>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">G-One Trading for WebATDL (group project
+                    of MBS BIS above): <a
+                        href="http://www.enterprise-ireland.com/News/Press+Releases/2009/PressJun102009.htm"
+                        >http://www.enterprise-ireland.com/News/Press+Releases/2009/PressJun102009.htm</a>
+                </div>
+            </description>
+        </organisation>
+        <organisation>
+            <name>Google Summer of Code</name>
+            <grade>Nominated as Mentor for the Boost C++ libraries</grade>
+            <when>2009-06-01</when>
+        </organisation>
+        <organisation>
+            <name>Aer Lingus Young Scientist's Competition</name>
+            <grade>Came second in group</grade>
+            <when>1994-12-01</when>
+            <when>1995-12-01</when>
+        </organisation>
+        <organisation>
+            <name>Motorola Software in Schools Competition</name>
+            <grade>Came second</grade>
+            <when>1993-12-01</when>
+        </organisation>
+        <organisation>
+            <name>International Logo Programming Competition</name>
+            <grade>Came second in Ireland and fourth in the world</grade>
+            <when>1989-06-01</when>
+        </organisation>
+    </recognitions>
+    <experiences>
+        <experience>
+            <title href="http://github.com/ned14/nedtries">Portable Bitwise Fredkin Trie Library</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2010-06-01</start>
+            <end>2010-06-26</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Repackaged work done as part of
+                    implementing the user mode page allocator for nedmalloc (see last experience)
+                    into a standalone C and C++ architecture independent library called
+                        <em>nedtries</em>. This library implements an in-place bitwise Fredkin trie
+                    algorithm which allows for near constant time insertions, deletions, finds,
+                    closest fit finds and iteration as well as being of equal speed in each of these
+                    operations (a very unusual characteristic in search algorithms). Benchmarking
+                    shows it to be approximately 50-100% faster than red-black trees and up to 20%
+                    faster than O(1) hash tables. Also added a C++ STL std::map&lt;&gt; and
+                    std::unordered_map&lt;&gt; compatible container called
+                    nedtries::trie_map&lt;&gt; which allows very easy usage from C++. Full
+                    API and source documentation is provided as a Microsoft Compiled Help format
+                    file.</div>
+            </description>
+        </experience>
+        <experience>
+            <title href="http://www.ara.com/">Further optimisation of US DoD Planning Project</title>
+            <employer>Applied Research Associates</employer>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <iscocategory>
+                <nacecode>J62.0.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2010-03-30</start>
+            <end>2010-05-31</end>
+            <earnings periodicity="daily" currency="EUR">550</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Further contracted by ARA to help them
+                    significantly improve the performance of one of their major projects for the US
+                    Department of Defence, a planning solver application which constructs large
+                    trees of interrelated objects occupying multiple gigabytes of RAM. Through the
+                    benchmarking and analysis performed during the previous contract with ARA, we
+                    realised that there ought to be a &gt; 10% performance improvement realisable
+                    through implementing a user mode memory page allocator.
+                    <br/><br/><i>Provided through ned Productions Ltd.</i></div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml">
+                    <ul>
+                        <li>As part of the contract tendering process, a quick technology
+                            demonstration was written to determine the potential performance
+                            improvements. It was discovered that remapping memory pages via the
+                            manipulation of the processor's memory management unit is around
+                            twenty times faster than copying 4Kb of memory (on Intel Core 2) and
+                            around sixty five times faster than copying 16Kb of memory. This meant
+                            that large arrays of items could be extended several orders of
+                            magnitude faster than is traditionally the case. These results were
+                            sufficient to convince the customer to initiate the contract.</li>
+                        <li>After implementation we found a further inadvertent cause of even
+                            higher performance gains: the avoidance of having to clear newly
+                            allocated memory. This allowed nedmalloc to run 20-25x faster when
+                            manipulating allocations averaging 1Mb with exponentially larger gains
+                            for larger allocations.</li>
+                        <li>We later discovered an academic paper partially proposing a similar idea
+                            entitled
+                                <a href="http://portal.acm.org/citation.cfm?id=1376892"><i>EVector:
+                                    An efficient vector implementation - Using virtual memory for
+                                    improving memory</i> by Kimpe, Vandewalle &amp; Poedts
+                                (2006)</a>. Our implementation is very different to theirs
+                            however, and so superior are the performance benefits that an
+                            academic paper detailing the new approach is in the process of
+                            becoming published.</li>
+                    </ul>
+            </div>
+            </detail>
+        </experience>
+        <experience>
+            <title href="http://plone.org/products/easyshop/">Contributed EU VAT support to Plone's Easyshop Product</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2010-01-31</start>
+            <end>2010-03-31</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">When searching for an e-Commerce solution
+                    for the <i>ned Productions Ltd.</i> website capable of handling intra-EU B2B and
+                    B2C VAT, it was realised that very few open source e-Commerce solutions are
+                    capable of this without purchasing additional components (and usually at a high
+                    monthly cost). As the company's primary web application platform is Plone, a
+                    complete configurable intra-EU VAT solution was developed and contributed to
+                    Easyshop.</div>
+            </description>
+        </experience>
+        <experience>
+            <title href="http://www.ara.com/">Optimisation of US DoD Planning Project</title>
+            <employer>Applied Research Associates</employer>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <iscocategory>
+                <nacecode>J62.0.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2009-09-01</start>
+            <end>2010-01-28</end>
+            <earnings periodicity="hourly" currency="EUR">75</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Contracted by ARA to help them solve
+                    performance problems being experienced by one of their major projects for the US
+                    Department of Defence, a planning solver application which constructs large
+                    trees of interrelated objects occupying multiple gigabytes of RAM. Work focused
+                    around the incorporation of my memory allocator, nedmalloc, into their project.
+                    <br/><br/><i>Provided through ned Productions Ltd.</i></div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml">
+                <ul>
+                    <li>Determined that the source of their problems was that nedmalloc was not
+                        being reliably called by their Qt-based application (a violation of the
+                        ODR) which was causing segmentation faults. Many solutions were
+                        analysed, and eventually a brute force approach of adding a binary
+                        patcher was adopted which had the major long term cost advantage of not
+                        requiring a custom build of Qt. This binary patcher replaced all usage
+                        of the system allocator with usage of nedmalloc by rewriting the
+                        appropriate parts of the PE format binaries on Windows.</li>
+                    <li>One particular problem was handling system allocated blocks efficiently
+                        as the logic for checking for such blocks is highly branch predictor
+                        unfriendly. An initial 13% loss in performance on x86 was reduced to nil
+                        through considerable hand tuning and analysis of assembler.</li>
+                    <li>Even with the slight performance loss on x64, nedmalloc still remains the fastest free
+                        portable memory allocator in the world, a title it has held since 2006.
+                        It is now however much more flexible and useful than before especially
+                        with respect to debugging facilities.</li>
+                </ul>
+            </div>
+            </detail>
+        </experience>
+        <experience>
+            <title href="http://www.kestrelcomms.com/">Radio Over IP Project</title>
+            <employer>Kestrel Communications Ltd.</employer>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <iscocategory>
+                <nacecode>J62.0.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2009-07-01</start>
+            <end>2009-09-30</end>
+            <earnings periodicity="hourly" currency="EUR">50</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Developed a low cost software based
+                    application to link disparate radio installation sites via VoIP transmitted over
+                    the internet. This project is intended to be initially deployed at Blackpool
+                    Shopping Centre where it will allow a person located anywhere in the world to
+                    log into the Centre's internal radio system and participate in its
+                    dialogue.
+                    <br/><br/><i>Provided through ned Productions Ltd.</i></div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml">
+                    <ul>
+                        <li>The RoIP server was a custom Linux installation running the Asterisk
+                            VoIP server software. The radio interface app_rpt was used to
+                            communicate with the radio via a USB FOB (basically a USB connected
+                            sound card).</li>
+                        <li>Remote PCs then used the IAXRPT Windows client to perform an IAX
+                            protocol connection with the RoIP server. To the end user, after
+                            connection one hears the radio chatter and presses the left Ctrl button
+                            to press PTT and transmit.</li>
+                    </ul>
+            </div>
+            </detail>
+        </experience>
+        <experience>
+            <title>Founded ned Productions Limited</title>
+            <iscocategory>
+                <nacecode>J62.0.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2009-07-01</start>
+            <end>2009-07-30</end>
+            <earnings>Unpaid</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Set up a limited company to provide
+                    consultancy services in the field of computer information technology to
+                    fee-paying clients.</div>
+            </description>
+        </experience>
+        <experience>
+            <title>Founded The Freeing Growth Foundation</title>
+            <iscocategory>
+                <nacecode>P85.4.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>23</iscofield2>
+                <iscofield3>231</iscofield3>
+                <iscofield4>2310</iscofield4>
+            </iscocategory>
+            <start>2009-07-01</start>
+            <end>2009-07-30</end>
+            <earnings>Unpaid</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Set up a non-profit limited company to act
+                    as a legal vehicle for charitable activities ongoing from the Future Society. It
+                    is intended that it will seek grant awards for furtherance of research and
+                    activities as described by the "Freeing Growth" book.</div>
+            </description>
+        </experience>
+        <experience>
+            <title>Tutor in Economics, Business, Stats, Management and Web Programming</title>
+            <employer>NUI University College Cork</employer>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <iscocategory>
+                <nacecode>P85.4.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>23</iscofield2>
+                <iscofield3>231</iscofield3>
+                <iscofield4>2310</iscofield4>
+            </iscocategory>
+            <start>2008-10-01</start>
+            <end>2009-05-31</end>
+            <earnings periodicity="hourly" currency="EUR">18</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Tutored the “Masters in E-Business” class
+                    of 2009 in XHTML, Javascript and PHP web services programming. Also tutored
+                    students suffering from disabilities in Economics, Business Studies, Statistics,
+                    IT and Management.</div>
+            </description>
+        </experience>
+        <experience>
+            <title href="http://www.nedprod.com/studystuff/">Economics Lecturer</title>
+            <employer>NUI University College Cork</employer>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <iscocategory>
+                <nacecode>P85.4.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>23</iscofield2>
+                <iscofield3>231</iscofield3>
+                <iscofield4>2310</iscofield4>
+            </iscocategory>
+            <start>2008-10-01</start>
+            <end>2009-01-31</end>
+            <earnings periodicity="hourly" currency="EUR">65</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Gave twenty-one hours of Economics
+                    lectures for the Adult Education Department in their interdisciplinary Social
+                    Studies degree programme, during which I achieved an excellent 87.2% class
+                    attendance, an 82.8% Interestingness and an 81.2% Clearness rating in the weekly
+                    feedback form evaluations.</div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml"><ul>
+                <li>Designed the syllabus of the course to dovetail in with the other
+                    modules taught in the Degree. Coursework consisted of five readings from
+                    five topical books with a series of questions which were marked each
+                    week.</li>
+                <li>Topics covered include non-linear chaotic dynamic systems, information
+                    asymmetries, energy return on investment (EROI), volatility and
+                    periodicity in economic growth, the disequilibrium structures within
+                    demand and supply, the sources of the Celtic Tiger, the Gaussian
+                    distribution and the central limit theorem, correlation and
+                    convertibility of energy, food and water.</li>
+            </ul>
+            </div>
+            </detail>
+        </experience>
+        <experience>
+            <title href="http://www.freeinggrowth.org/">Author of Book &quot;Freeing
+                Growth&quot;</title>
+            <iscocategory>
+                <nacecode>R90.0.3</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>24</iscofield2>
+                <iscofield3>245</iscofield3>
+                <iscofield4>2451</iscofield4>
+            </iscocategory>
+            <start>2008-06-01</start>
+            <end>2008-11-30</end>
+            <earnings>Unpaid</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Wrote a five hundred page book consisting
+                    of my thoughts on a range of topics including Accounting, Agricultural,
+                    Corporate, Educational, Financial, Health, Legal, Moral, Political, Spiritual
+                    &amp; Religious matters with a strong grounding in mathematical logic, based
+                    on an application of the principles of the Tn project (below) to wider society.
+                    After receiving feedback from others, I intend to expand this book into a series
+                    of many books from 2009 onwards.</div>
+            </description>
+        </experience>
+        <experience>
+            <title href="http://sourceforge.net/projects/brook/">Brook GPU</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2131</iscofield4>
+            </iscocategory>
+            <start>2007-06-01</start>
+            <end>2007-12-31</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Significantly upgraded the open source
+                    software Brook GPU which is a streaming computation language for graphics
+                    processors. A 2007 era GPU can achieve 250 GFLOPs with good data partitioning,
+                    and performance roughly doubles annually.</div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml"><ul>
+                        <li>Upgraded the OpenGL runtime to use FBOs instead of PBuffers and updated
+                            the texture transfer to use PBO-based asynchronous DMA transfers, thus
+                            significantly increasing speed and adding full compatibility with Linux
+                            and Mac OS X.</li>
+                        <li>Added a GLSL output runtime target, thus matching the OpenGL
+                            capabilities with the DirectX runtime.</li>
+                        <li>Added per-thread operation to all runtimes, thus allowing multiple GPU’s
+                            to be operated in parallel simultaneously.</li>
+                        <li>Upgraded the CPU debug runtime to use SSE intrinsics on x86 and x64
+                            processors and OpenMP to use multiple processors. Performance was
+                            increased some forty times.</li>
+                    </ul>
+                </div>
+            </detail>
+        </experience>
+        <experience>
+            <title href="http://www.futuresociety.org.uk/">The Future Society</title>
+            <iscocategory>
+                <nacecode>P85.4.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>23</iscofield2>
+                <iscofield3>231</iscofield3>
+                <iscofield4>2310</iscofield4>
+            </iscocategory>
+            <start>2007-02-01</start>
+            <end>2008-06-30</end>
+            <earnings>Unpaid</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Formed a student society called “The
+                    Future Society” which held a lecture series called “Creating The Future” given
+                    by invited guest lecturers speaking upon the future.</div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml"> These lectures were given
+                by world leaders in their fields such as:<ul>
+                        <li>The heterodox Economist Paul Ormerod (author of Butterfly
+                            Economics).</li>
+                        <li>Founder of the Schumacher College and Editor of Resurgence Magazine
+                            Satish Kumar.</li>
+                        <li>The world’s leading authority on Accounting theory Professor Rob
+                            Gray.</li>
+                        <li>One of the world’s most famous Historiographers Professor Michael
+                            Bentley.</li>
+                        <li>One of the world’s leading environmentalists, Sir Crispin Tickell GCMG
+                            KCVO. This event was chaired by the then St. Andrews Rector, Mr. Simon
+                            Pepper OBE (of the World Wildlife Fund).</li>
+                    </ul>The Future Society Executive Committee hosted an after-lecture dinner with
+                    each of the guest lecturers which has proved invaluable for networking and
+                    contacts.</div>
+            </detail>
+        </experience>
+        <experience>
+            <title href="http://sourceforge.net/projects/nedmalloc/">Thread caching memory
+                allocator</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2005-12-01</start>
+            <end>unbounded</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Finding that ptmalloc2 did not scale as
+                    well with extra processor cores as it could, reimplemented ptmalloc2 by basing a
+                    new allocator, nedmalloc, on dlmalloc but with an added thread cache for smaller
+                    allocations. Still remains to this day the fastest fully-portable memory
+                    allocator in the world, including commercial offerings and is in use by root DNS
+                    servers and some of the world’s largest corporations such as the Royal Bank of
+                    Scotland, SAP AG, Applied Research Associates Inc. and CSC.</div>
+            </description>
+        </experience>
+        <experience>
+            <title href="http://mail.python.org/pipermail/cplusplus-sig/2005-November/009486.html">
+                Added void * support to the C++ Boost.Python library</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2005-11-01</start>
+            <end>2005-11-30</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Due to further requirements of the TnFOX
+                    Python bindings, as Boost.Python did not previously support void *, most C
+                    &amp; C++ code had to resort to some nasty hacks to work around it. As of
+                    v1.33.1 this is no longer necessary.</div>
+            </description>
+        </experience>
+        <experience>
+            <title>Andrew Melville Hall Residents Committee</title>
+            <iscocategory>
+                <nacecode>P85.4.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>23</iscofield2>
+                <iscofield3>231</iscofield3>
+                <iscofield4>2310</iscofield4>
+            </iscocategory>
+            <start>2005-05-15</start>
+            <end>2006-05-15</end>
+            <earnings>Unpaid</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Was elected as Secretary of the Senior
+                    Residents Committee. Minuted meetings, helped organise resident events, liaised
+                    between wardenial staff and residents, modernised the Committee’s Constitution,
+                    helped bring in direct subscriptions collection scheme, helped organise annual
+                    resident’s ball.</div>
+            </description>
+        </experience>
+        <experience>
+            <title href="http://gcc.gnu.org/ml/gcc-patches/2004-07/msg02620.html">Added symbol
+                visibility support to GCC</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2004-07-01</start>
+            <end>2004-07-31</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Patched in the GCC 4.0 feature to set
+                    per-symbol ELF visibility (using __attribute__ and –fvisibility) in a MSVC
+                    compatible syntax. This was required by the TnFOX Python bindings exceeding
+                    exported symbol limits and a need to contain the number to only those necessary.
+                    This patch proved to be one of the most popular new features in GCC 4.x and use
+                    of it has been widely adopted by many projects including OpenOffice, KDE, Boost
+                    and Qt.</div>
+            </description>
+        </experience>
+        <experience>
+            <title href="http://sourceforge.net/projects/tnfox/">TnFOX library</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2131</iscofield4>
+            </iscocategory>
+            <start>2003-05-01</start>
+            <end>unbounded</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Forked the LGPL C++ GUI toolkit FOX for
+                    building a portable library providing the necessary core functionality for Tn
+                    which is a commercial implementation of my previous research. It continues to
+                    grow in popularity and features, recently exceeding 40,000 lines of code.</div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml">It provides:<ul>
+                        <li>Identical functionality on Microsoft Windows, Unix &amp; Apple MacOS
+                            X.</li>
+                        <li>An extremely flexible thread-safe &amp; exception-safe 64 bit
+                            addressing i/o structure. <ul>
+                                <li>Classes which provide file i/o, named pipe i/o, socket i/o (IPv4
+                                    &amp; IPv6), inter-thread i/o, shared memory &amp;
+                                    memory mapped file i/o, strong file encryption and SSL/TLS
+                                    secure connectivity via the OpenSSL library.</li>
+                            </ul></li>
+                        <li>Superior generic and robustness compile-time programming tools e.g.
+                            typelists, traits, policies, rollbacks etc.</li>
+                        <li>A full set of multithreading primitives, some written in x86 assembler
+                            for speed plus dynamic thread pools.</li>
+                        <li>Automatic human-language translation and locale specialisation
+                            facilities via Google Translate.</li>
+                        <li>A full set of bindings for python using the Boost.Python library.</li>
+                        <li>Automatic munging in by a python script of extra run-time support code
+                            providing nested C++ exceptions plus automatic extraction of error codes
+                            and user-visible text for translation.</li>
+                        <li>Full integration with host OS security facilities, including Win32 ACL
+                            based security and POSIX user &amp; group ID.</li>
+                        <li>Arbitrary freestores based on nedmalloc (previously ptmalloc2) giving
+                            >6000% speed improvement in dynamic memory allocation over Win32.</li>
+                        <li>Easily extensible &amp; extremely efficient generic Inter Process
+                            Communication framework with asynchronous i/o and optional zlib
+                            compression. Can transport arbitrary C++ objects across any i/o device
+                            listed above.</li>
+                        <li>Full SQL database support with native SQLite3 and via-IPC drivers.</li>
+                        <li>Substantial OpenGL-based 3D and 2D graphing facilities.</li>
+                        <li>Patched and reworked FOX to provide per-thread event loops allowing
+                            multiple window trees to be run concurrently.</li>
+                    </ul>
+                </div>
+            </detail>
+        </experience>
+        <experience>
+            <title href="http://www.tnrev.org/">The Tn Revolution Project</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2131</iscofield4>
+            </iscocategory>
+            <start>2002-05-01</start>
+            <end>2003-01-31</end>
+            <start>2004-03-01</start>
+            <end>2006-06-30</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">My third and fourth attempts at
+                    reimplementing computer software structure from the ground-up, with the primary
+                    goal of creating a 10x or greater productivity improvement for skilled workers
+                    (Brookes’ Silver Bullet). Implemented in C++ &amp; Python using TnFOX
+                    (previously Qt) and multithreading throughout, it is designed for 64 bit NUMA
+                    architectures and can run on Win32/64, POSIX Unix (e.g. Linux, FreeBSD) and Mac
+                    OS X but with low resource requirements for eventual transition to mobile
+                    phones.</div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml">The major sub-goals of this project include:<ul>
+                        <li>To make software self-organising and self-optimising based upon system
+                            (ecosystem) and complexity theory (c.f. Bateson, Heisenburg, Prigogine)
+                            whereby tools magnify the effectiveness of effort.</li>
+                        <li>To conceptualise all programming and user operation in simple cognitive
+                            elements, thus greatly improving intuitiveness of operation and much
+                            increased productivity.</li>
+                        <li>To integrate all software components across multiple systems such that
+                            they appear and act as one.</li>
+                        <li>To be fully secure at all levels whilst remaining compatible with the
+                            host OS – this is a full capability based system.</li>
+                    </ul>
+                </div>
+            </detail>
+        </experience>
+        <experience>
+            <title>Test Bench Control Software Architect</title>
+            <employer>Setroson S.A.</employer>
+            <location>
+                <city>Madrid</city>
+                <country>ES</country>
+            </location>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2131</iscofield4>
+            </iscocategory>
+            <start>2001-01-01</start>
+            <end>2002-05-31</end>
+            <earnings periodicity="salary" currency="EUR">50000</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Designed a multithreaded distributed
+                    application for Windows 2000 using the Microsoft technologies Visual C++,
+                    VisualBasic, VBA, MFC and C#; MySQL &amp; ODBC for the database and the
+                    National Instruments’ technologies PXI, LabWindows/CVI, TestStand and LabView.
+                    Also designed and implemented a system restore CD-ROM which was a bootable
+                    version of Linux with custom-written software.</div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml"><ul>
+                        <li>The project’s goal was to be a bench-portable test bench control and
+                            component management software plus bench-customisations for the (i)
+                            M-3011 Hydraulic Test Bench Bench (contracted by EADS Deutschland) and
+                            (ii) B-1057 Fuel Component Test Bench (contracted by British Aerospace
+                            Systems) for the EuroFighter project.</li>
+                        <li>Innovative features included:<ul>
+                                <li>A self-adapting help system which taught the user as they used
+                                    the bench. This was written in HTML with custom embedded ActiveX
+                                    controls (MS HTMLHelp).</li>
+                                <li>A graphical virtual instrument showing fuel flows, valve
+                                    positions etc. which were manipulable using the mouse. This was
+                                    implemented using a custom designed scripting language to
+                                    specify possible fuel flows and possible valve states.</li>
+                                <li>A searchable library of all engineering specifications in
+                                    multiple formats including SGML, PDF and MS Word.</li>
+                                <li>A completely customisable UUT test report generator (using
+                                    Crystal Reports) which each air force could tailor
+                                    individually.</li>
+                                <li>The application could run on two computers connected by TCP/IP
+                                    at the same time controlling the same bench.</li>
+                            </ul></li>
+                        <li>Due to the high performance &amp; safety requirements of testing
+                            EuroFighter aircraft components, the code was written from the ground-up
+                            to be efficient and with my own design of structured exception handling.
+                            The Continuous Built-In Test (CBIT) was so accurate it detected hardware
+                            problems no human could and required specialised equipment to
+                            solve.</li>
+                        <li>Performance analysis at the end of project using tools designed by
+                            myself showed 5000 i/o's per second sustained (well above
+                            specification).</li>
+                        <li>The core was written in ANSI C but had ActiveX extensions support e.g. a
+                            stopwatch &amp; timer (VisualBasic), report generator (Crystal
+                            Reports, MFC &amp; Visual C++) and a voltmeter (LabView).</li>
+                        <li>The database for the component (UUT) management was based in MySQL
+                            manually linked against a disc based store of i/o transcripts and test
+                            reports. Specialised support was present to suspend MySQL &amp;
+                            compress its data store into a single file which then was burned
+                            regularly to a backup CD.</li>
+                        <li>Other responsibilities I assumed there included liasing extensively with
+                            EADS, BAE and directly with the militaries of the four EuroFighter
+                            participating nations.</li>
+                        <li>While I implemented much of the core code myself (there was only myself
+                            for the first six months), I also mentored &amp; led two other
+                            programmers during my time there.</li>
+                    </ul>
+                </div>
+            </detail>
+        </experience>
+        <experience>
+            <title href="http://www.nedprod.com/NedHAL/">Dissertation Project for Degree</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>1999-10-01</start>
+            <end>2000-05-31</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Designed and implemented a technically
+                    superior Hardware Abstraction Layer (HAL) called NedHAL for generic ARM
+                    architectures in ARM assembler and ANSI C. It was an object orientated modular
+                    framework with multiprocessor capability. Also ported the uC/OS II RTOS onto my
+                    project (now freeware). Some of this code has been since incorporated into the
+                    primary car operating system firmware Micrium which is used by many major car
+                    manufacturers.</div>
+            </description>
+        </experience>
+        <experience>
+            <title>ARM Consultant</title>
+            <employer>Intelligent Systems Design (ISD) Ltd.</employer>
+            <location>
+                <city>London</city>
+                <county>Ontario</county>
+                <country>CA</country>
+            </location>
+            <iscocategory>
+                <nacecode>J62.0.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>1999-06-01</start>
+            <end>1999-08-31</end>
+            <earnings periodicity="salary" currency="USD">150000</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">This three month contract was to implement
+                    a specified list of items, most important of which was to improve performance.
+                    This was especially successful with a threefold performance increase and a
+                    six figure cost saving thanks to not having to prematurely upgrade hardware.</div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml"><ul>
+                        <li>Replaced the real-time operating system (RTOS) in their GPS (Global
+                            Positioning System) library for their embedded ARM device with a
+                            licensed third-party RTOS called SuperTask! (made by US Software).</li>
+                        <li>Implemented and integrated many new features including Flash ROM
+                            reprogramming, serial port driver, LCD panel display driver, power
+                            saving and Infra-Red communications.</li>
+                        <li>Merged ARM's Demon debugger into the new operating system, allowing
+                            debugging without a JTAG and ICE (In-Circuit Emulator) based
+                            debugger.</li>
+                    </ul>
+                </div>
+            </detail>
+        </experience>
+        <experience>
+            <title href="http://www.nedprod.com/programs/RISC-OS/Wimp2/">Preemptive
+                Multitasker</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>1998-12-01</start>
+            <end>1998-12-31</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Wrote a fully featured preemptive
+                    multitasker called Wimp2 for the Acorn RISC-OS operating system in fully
+                    hand-coded ARM assembler.</div>
+            </description>
+        </experience>
+        <experience>
+            <title href="http://www.arm.com/">Applications and Systems Engineer</title>
+            <employer>Advanced RISC Machines (ARM) Ltd., Consulting Division</employer>
+            <location>
+                <city>Cambridge</city>
+                <country>GB</country>
+            </location>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>1998-06-01</start>
+            <end>1998-09-30</end>
+            <earnings periodicity="salary" currency="GBP">14000</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Performed a number of &quot;odd jobs&quot;
+                    involving the writing of several small computer programs in C and ARM Assembler.
+                </div>
+            </description>
+            <detail>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <ul>
+                        <li>Wrote a driver for ARM’s Angel debugger to drive a tertiary serial port
+                            on the Cirrus Logic CLPS-7111 board. Due to hardware difficulties,
+                            successfully used a logic analyser to implement the code.</li>
+                        <li>Wrote a modular EEPROM programmer in C++ for Win32 allowing test ROM
+                            images to be easily flashed into test boards.</li>
+                        <li>Overhauled and redesigned DEC's StrongARM uHAL for generic Arm's and
+                            ported the new uHAL to the Arm test motherboard, the PID7T. Also ported
+                            the redesigned uHAL to the Cirrus Logic CL-7111 board.</li>
+                    </ul>
+                </div>
+            </detail>
+        </experience>
+        <experience>
+            <title>Year, Student and Science Faculty Representative</title>
+            <iscocategory>
+                <nacecode>P85.4.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>23</iscofield2>
+                <iscofield3>231</iscofield3>
+                <iscofield4>2310</iscofield4>
+            </iscocategory>
+            <start>1998-05-01</start>
+            <end>2000-05-31</end>
+            <earnings>Unpaid</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Whilst at Hull University, elected as
+                    member of the last Lawns Residents Association – our main function was to wind
+                    up the LRA successfully. Elected as Staff/Student Representative for the
+                    Computer Science Department – liaised between staff and students informally and
+                    via formal committee. Also elected to Student’s Union Parliament as Ordinary
+                    Representative where many matters were debated of both large import and small.
+                    Also elected as the Undergraduate Science Faculty Representative on University
+                    Senate where I was one of four voting members representing the entire Student
+                    Body.</div>
+            </description>
+        </experience>
+        <experience>
+            <title>Language Compiler</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>1997-01-01</start>
+            <end>1998-06-01</end>
+            <earnings>Unpaid</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Wrote a portable BBC Basic to ANSI C
+                    compiler (Acorn RISC-OS, Unix, Win32 &amp; MacOS) in C. This near-completed
+                    yearlong project was abandoned after the Acorn group was liquidated.</div>
+            </description>
+        </experience>
+        <experience>
+            <title>Software Engineer</title>
+            <employer>Protechnic Computers Ltd.</employer>
+            <location>
+                <city>Cambridge</city>
+                <country>GB</country>
+            </location>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>1997-04-01</start>
+            <end>1997-09-30</end>
+            <earnings periodicity="salary" currency="GBP">12000</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Designed and wrote a multithreaded
+                    distributable application for Windows NT 4.0 using the Microsoft technologies
+                    Visual C++ and a custom library for Unix applications.</div>
+            </description>
+            <detail><div xmlns="http://www.w3.org/1999/xhtml"><ul>
+                        <li>The project’s goal was to permit Unix applications to query Windows-only
+                            databases on one or more Windows machines over a TCP/IP based
+                            network.</li>
+                        <li>Implemented a number of engines for this system using third party search
+                            engines (native to Windows) such as the Royal Mail PAF (Post office
+                            Address File) engine and a Read code v3 (used in the English National
+                            Health Service) engine.</li>
+                    </ul>
+                </div>
+            </detail>
+        </experience>
+        <experience>
+            <title>Customer Support &amp; Upgrading</title>
+            <employer>Colton Software Ltd.</employer>
+            <location>
+                <city>Cambridge</city>
+                <country>GB</country>
+            </location>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>1996-06-01</start>
+            <end>1996-09-30</end>
+            <earnings periodicity="salary" currency="GBP">10000</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Performed a number of &quot;odd jobs&quot;
+                    involving provision of customer support, code writing for a product upgrade and
+                    the design of an advertisement.
+                </div>
+            </description>
+            <detail>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <ul>
+                        <li>Helped upgrade the integrated package PipeDream from v4.13 to v4.5 which
+                            incorporated StrongARM compatibility and a number of enhancements.</li>
+                        <li>Manned the technical support desk dealing with both telephone and
+                            written queries.</li>
+                        <li>Designed an advertisement for publication in Acorn User.</li>
+                    </ul>
+                </div>
+            </detail>
+        </experience>
+    </experiences>
+    <publications>
+        <!-- If you have a lot of publications, it is easiest to automate the conversion from
+        BibTex, RIS or whatever to MODS. See http://www.scripps.edu/~cdputnam/software/bibutils/ -->
+        <modsCollection xmlns="http://www.loc.gov/mods/v3">
+            <mods>
+                <titleInfo>
+                    <title>Freeing Growth</title>
+                    <subTitle>How The World Can Grow Four Times Faster Sustained</subTitle>
+                </titleInfo>
+                <name type="personal">
+                    <namePart type="given">Niall</namePart>
+                    <namePart type="given">Edward</namePart>
+                    <namePart type="family">Douglas</namePart>
+                    <role>
+                        <roleTerm authority="marcrelator" type="text">author</roleTerm>
+                    </role>
+                </name>
+                <originInfo>
+                    <dateIssued>2008-Dec</dateIssued>
+                    <publisher>Unpublished</publisher>
+                </originInfo>
+                <typeOfResource>text</typeOfResource>
+                <genre>book</genre>
+            </mods>
+            <mods>
+                <titleInfo>
+                    <title>Modelling the Costs of Climate Change and its Costs of Mitigation</title>
+                    <subTitle>A Scientific Approach</subTitle>
+                </titleInfo>
+                <name type="personal">
+                    <namePart type="given">Niall</namePart>
+                    <namePart type="given">Edward</namePart>
+                    <namePart type="family">Douglas</namePart>
+                    <role>
+                        <roleTerm authority="marcrelator" type="text">author</roleTerm>
+                    </role>
+                </name>
+                <originInfo>
+                    <dateIssued>2008-May</dateIssued>
+                    <publisher>University Library of Munich, Germany</publisher>
+                </originInfo>
+                <typeOfResource>text</typeOfResource>
+                <relatedItem type="host">
+                    <titleInfo>
+                        <title>MPRA Working Papers</title>
+                    </titleInfo>
+                    <genre>catalog</genre>
+                </relatedItem>
+                <identifier type="citekey">RePEc:pra:mprapa:13650</identifier>
+                <location>
+                    <url>http://ideas.repec.org/p/pra/mprapa/13650.html</url>
+                </location>
+                <part>
+                    <detail type="number">
+                        <number>13650</number>
+                    </detail>
+                </part>
+            </mods>
+            <mods>
+                <titleInfo>
+                    <title>Explain "conjectural variation" in Cournot duopoly, evaluate its
+                        impacts and discuss the policy implication</title>
+                </titleInfo>
+                <name type="personal">
+                    <namePart type="given">Niall</namePart>
+                    <namePart type="given">Edward</namePart>
+                    <namePart type="family">Douglas</namePart>
+                    <role>
+                        <roleTerm authority="marcrelator" type="text">author</roleTerm>
+                    </role>
+                </name>
+                <originInfo>
+                    <dateIssued>2006-Dec</dateIssued>
+                    <publisher>University Library of Munich, Germany</publisher>
+                </originInfo>
+                <typeOfResource>text</typeOfResource>
+                <relatedItem type="host">
+                    <titleInfo>
+                        <title>MPRA Working Papers</title>
+                    </titleInfo>
+                    <genre>catalog</genre>
+                </relatedItem>
+                <identifier type="citekey">RePEc:pra:mprapa:13652</identifier>
+                <location>
+                    <url>http://ideas.repec.org/p/pra/mprapa/13652.html</url>
+                </location>
+                <part>
+                    <detail type="number">
+                        <number>13652</number>
+                    </detail>
+                </part>
+            </mods>
+            <mods>
+                <titleInfo>
+                    <title>What is the evidence on the role of foreign direct investment in
+                        economics growth, and on the determinants of foreign direct investment
+                        flows?</title>
+                </titleInfo>
+                <name type="personal">
+                    <namePart type="given">Niall</namePart>
+                    <namePart type="given">Edward</namePart>
+                    <namePart type="family">Douglas</namePart>
+                    <role>
+                        <roleTerm authority="marcrelator" type="text">author</roleTerm>
+                    </role>
+                </name>
+                <originInfo>
+                    <dateIssued>2006-Apr</dateIssued>
+                    <publisher>University Library of Munich, Germany</publisher>
+                </originInfo>
+                <typeOfResource>text</typeOfResource>
+                <relatedItem type="host">
+                    <titleInfo>
+                        <title>MPRA Working Papers</title>
+                    </titleInfo>
+                    <genre>catalog</genre>
+                </relatedItem>
+                <identifier type="citekey">RePEc:pra:mprapa:13651</identifier>
+                <location>
+                    <url>http://ideas.repec.org/p/pra/mprapa/13651.html</url>
+                </location>
+                <part>
+                    <detail type="number">
+                        <number>13651</number>
+                    </detail>
+                </part>
+            </mods>
+        </modsCollection>
+    </publications>
+    <academicreferees>UCC and St. Andrews</academicreferees>
+    <workreferees>UCC and St. Andrews</workreferees>
+</curriculumvitae>

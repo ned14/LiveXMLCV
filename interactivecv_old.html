@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Interactive Live XML CV creation</title>
+<script src="cvscripts.js" type="text/javascript"></script>
+<style type="text/css">
+input[@type='text'] {
+	vertical-align: middle;
+}
+</style>
+</head>
+
+	<body>
+        <p>Welcome to the interactive XML CV for Niall Douglas. If your web browser is capable of
+            AJAX driven XSLT transforms (currently only Firefox and Opera, IE8 has a long standing
+            and well known bug in its AJAX XSLT interface and Google Chrome just doesn't work
+            currently), you should see a copy of this person's CV which can be changed and filtered
+            according to your criteria e.g. you can prioritise one kind of NACE sector over another
+            and see more detail for those. Or you can simply choose a profile from the profile drop
+            down list. If your browser isn't working in the box below, firstly try simply <a
+                href="cv_v5.1.xml">viewing the XML directly via a non-AJAX XSLT transform</a> which
+            works fine on all current browsers (Firefox, Opera, IE8 and Google Chrome are all fine)
+            though remember it may take some time to load as the non-AJAX method causes your browser
+            to load in several megabytes of XML schema data. If all else fails, <a
+                href="cv_v5.1.html">you can see a preprocessed output here</a> though note that it
+            will probably be out of date. Note that the labels on the graph rely on CSS3 rotated
+            text and may not display correctly on all browsers (Firefox, Chrome and IE8 are okay).
+            Printing support varies: IE makes an attempt to observe page break hints, Opera gets it
+            right thanks to proper CSS support whereas all other browsers currently fail.</p>
+        <p>All output is marked up with <a href="http://microformats.org/wiki/hresume"
+                target="_blank">hResume microformatting</a> so other stuff can read it. If you'd
+            like a CV like this one, feel free to make use of any of <a href="/xmlcv/">the resources
+                here</a> - the XML schema supplied is very self-describing and needs no further
+            documentation. At some future point we'll add transformations into <a
+                href="http://europass.cedefop.europa.eu/europass/home/hornav/Introduction.csp?loc=en_GB"
+                target="_blank"> Europass XML format</a> (the EU standard) and the upcoming <a
+                href="http://www.hr-xml.org/" target="_blank">HR-XML v3.0 XML format</a> (the HR
+            industry standard). Why didn't we simply use one of these formats to begin with rather
+            than developing our own? Simple: firstly the existing Europass and HR-XML schemas don't
+            provide the metadata we needed to enable filtering and sorting like below and hence we
+            couldn't have one set of XML data describe everything and let the XSLT customise it;
+            secondly both of these standard formats are in heavy flux right now and aren't stable,
+            so we designed our own schema which would readily convert into any other instead.</p>
+		<p>Profile: <select id="profile">
+				<option value="allpossibledata">All Possible Data</option>
+				<option value="it">IT</option>
+				<option value="education">Education</option>
+				<option value="authoring">Authoring</option>
+			</select>
+		</p>
+		<div> Profile name: <input id="profilename" name="profilename" type="text"
+				value="allpossibledata"/> Inhibit detail for NACE codes: <input
+				id="inhibitdetailfor" name="inhibitdetailfor" type="text"/><br/>
+			<input id="showprivatedetails" name="showprivatedetails" type="checkbox"
+				checked="checked"/>Show private details <input id="showgraph" name="showgraph"
+				type="checkbox" checked="checked"/>Show timeline graph <input id="showskills"
+				name="showskills" type="checkbox" checked="checked"/>Show skills <input
+				id="showpaid" name="showpaid" type="checkbox" checked="checked"/>Show paid
+			experiences <input id="showunpaid" name="showunpaid" type="checkbox" checked="checked"
+			/>Show unpaid experiences <input id="showopensource" name="showopensource"
+				type="checkbox" checked="checked"/>Show open source experiences <br/>
+			<input id="go" name="go" type="button" value="Go!"/>
+			<input id="newpage" name="newpage" type="button" value="Open in a new page"/>
+			<script type="text/javascript"><!--
+                    var outputwindow = null;
+                    $(document).ready(function () {
+                        $("#showprivatedetails").attr("checked", false);
+                        $("#go").click(function () {
+                            var cvoutput = $(window.frames[ "cvoutput"].document).find("html");
+                            cvoutput.find("body").html("Working ...");
+                            var xsltoutput = $.xsl.transform('CVtoXHTML.xsl', 'cv_v5.1.xml', { params: {
+                                    profilename: $("#profilename").attr("value"),
+                                    showprivatedetails: $("#showprivatedetails").is(":checked"),
+                                    inhibitdetailfor: $("#inhibitdetailfor").attr("value"),
+                                    showgraph: $("#showgraph").is(":checked"),
+                                    showskills: $("#showskills").is(":checked"),
+                                    showpaid: $("#showpaid").is(":checked"),
+                                    showunpaid: $("#showunpaid").is(":checked"),
+                                    showopensource: $("#showopensource").is(":checked")
+                                }
+                            });
+                            var xsltoutput2 = jQuery(xsltoutput.doc);
+                            cvoutput.find("head").replaceWith(xsltoutput2.find("head").clone());
+                            cvoutput.find("body").replaceWith(xsltoutput2.find("body").clone());
+                            if (outputwindow && !outputwindow.closed) {
+                                var cvoutput2 = $(outputwindow.document).find("html");
+                                cvoutput2.find("head").replaceWith(xsltoutput2.find("head").clone());
+                                cvoutput2.find("body").replaceWith(xsltoutput2.find("body").clone());
+                            }
+                        });
+                        $("#profile").change(function () {
+                            var profile = $(this).children(":selected").attr("value");
+                            $("#profilename").attr("value", profile);
+                            if (profile == "allpossibledata") {
+                                $("#inhibitdetailfor").attr("value", "");
+                                $("#showpaid").attr("checked", true);
+                                $("#showunpaid").attr("checked", true);
+                                $("#showopensource").attr("checked", true);
+                            } else if (profile == "it") {
+                                $("#inhibitdetailfor").attr("value", "P85,R90");
+                                $("#showpaid").attr("checked", true);
+                                $("#showunpaid").attr("checked", true);
+                                $("#showopensource").attr("checked", true);
+                            } else if (profile == "education") {
+                                $("#inhibitdetailfor").attr("value", "J62,R90");
+                                $("#showpaid").attr("checked", true);
+                                $("#showunpaid").attr("checked", true);
+                                $("#showopensource").attr("checked", true);
+                            } else if (profile == "authoring") {
+                                $("#inhibitdetailfor").attr("value", "J62,P85");
+                                $("#showpaid").attr("checked", true);
+                                $("#showunpaid").attr("checked", true);
+                                $("#showopensource").attr("checked", true);
+                            }
+                            $("#go").click();
+                        });
+                        $("#newpage").click(function () {
+                            outputwindow = window.open("", "");
+                            if (outputwindow) {
+                                outputwindow.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head/><body>hello</body></html>');
+                                outputwindow.document.close();
+                            }
+                            $("#go").click();
+                        });
+                        //$("input").click(function() { $("#go").click(); });
+                        // Force the iframe to use XHTML strict
+                        window.frames[ "cvoutput"].document.close();
+                        window.frames[ "cvoutput"].document.open();
+                        window.frames[ "cvoutput"].document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head/><body>hello</body></html>');
+                        window.frames[ "cvoutput"].document.close();
+                        $("#go").click();
+                    });
+			--></script>
+		</div>
+		<iframe id="cvoutput" name="cvoutput" style="width:99%;height:400px;"/>
+
+	</body>
+
+</html>

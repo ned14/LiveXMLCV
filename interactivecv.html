@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>An Interactive Live XML Curriculum Vitae for Niall Douglas</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<style type="text/css">
+input[@type='text'] {
+	vertical-align: middle;
+}
+</style>
+</head>
+
+	<body>
+        <p>This is a link to the <a href="cv_v5.1.xml">raw XML CV v5.1</a>. Note that due to buggy
+        or incomplete CSS3 support output may be slightly messed up on some older browsers (especially
+        Internet Explorer) and printing may produce messy output on all browsers except Opera and Chrome
+        which are the only two which currently support CSS printing attributes.</p>
+        <p>Choose a profile for a preset CV customisation: <select id="profile">
+				<option value="allpossibledata">All Possible Data</option>
+				<option value="it">IT</option>
+				<option value="education">Education</option>
+				<option value="authoring">Authoring</option>
+			</select>
+		</p>
+		<div> Profile name: <input id="profilename" name="profilename" type="text"
+				value="allpossibledata"/> Inhibit detail for NACE codes: <input
+				id="inhibitdetailfor" name="inhibitdetailfor" type="text"/><br/>
+			<input id="showprivatedetails" name="showprivatedetails" type="checkbox"
+				checked="checked"/>Show private details <input id="showgraph" name="showgraph"
+				type="checkbox" checked="checked"/>Show timeline graph <input id="showskills"
+				name="showskills" type="checkbox" checked="checked"/>Show skills <input
+				id="showpaid" name="showpaid" type="checkbox" checked="checked"/>Show paid
+			experiences <input id="showunpaid" name="showunpaid" type="checkbox" checked="checked"
+			/>Show unpaid experiences <input id="showopensource" name="showopensource"
+				type="checkbox" checked="checked"/>Show open source experiences <br/>
+			<input id="go" name="go" type="button" value="Go!"/>
+			<input id="newpage" name="newpage" type="button" value="Open in a new page for printing or saving"/>
+			<script type="text/javascript"><!--
+                    var outputwindow = null;
+                    $(document).ready(function () {
+                        $("#showprivatedetails").attr("checked", false);
+                        $("#go").click(function () {
+                            var parameters = new Array();
+                            parameters["showprivatedetails"] = Number($("#showprivatedetails").is(":checked"));
+                            parameters["showgraph"] = Number($("#showgraph").is(":checked"));
+                            parameters["showskills"] = Number($("#showskills").is(":checked"));
+                            parameters["showpaid"] = Number($("#showpaid").is(":checked"));
+                            parameters["showunpaid"] = Number($("#showunpaid").is(":checked"));
+                            parameters["showopensource"] = Number($("#showopensource").is(":checked"));
+                            parameters["profilename"] = encodeURI($("#profilename").attr("value"));
+                            parameters["inhibitdetailfor"] = encodeURI($("#inhibitdetailfor").attr("value"));
+                            var getstr="";
+                            for (var par in parameters)
+                                getstr+='&'+par+'='+parameters[par];                            
+                            $("#cvoutput").attr("src", "transformCV.php?"+getstr.slice(1, getstr.length));
+                            if (outputwindow && !outputwindow.closed) {
+                                outputwindow.location="transformCV.php?"+getstr.slice(1, getstr.length);
+                            }
+
+                            /*$.ajax({
+                                url: 'transformCV.php',
+                                type: 'POST',
+                                data: parameters,
+                                success: function(data) {
+                                    window.frames[ "cvoutput"].document.open();
+                                    window.frames[ "cvoutput"].document.write(data);
+                                    window.frames[ "cvoutput"].document.close();
+                                    //var xsltoutput2 = jQuery(data);
+                                    //cvoutput.find("head").replaceWith(xsltoutput2.find("head").clone());
+                                    //cvoutput.find("body").replaceWith(xsltoutput2.find("body").clone());
+                                    if (outputwindow && !outputwindow.closed) {
+                                        var cvoutput2 = $(outputwindow.document).find("html");
+                                        cvoutput2.find("head").replaceWith(xsltoutput2.find("head").clone());
+                                        cvoutput2.find("body").replaceWith(xsltoutput2.find("body").clone());
+                                    }
+                                },
+                                error: function(req, status) {
+                                    cvoutput.text("Error during data fetch: "+status);
+                                }
+                            });*/
+                        });
+                        $("#profile").change(function () {
+                            var profile = $(this).children(":selected").attr("value");
+                            $("#profilename").attr("value", profile);
+                            if (profile == "allpossibledata") {
+                                $("#inhibitdetailfor").attr("value", "");
+                                $("#showskills").attr("checked", true);
+                                $("#showpaid").attr("checked", true);
+                                $("#showunpaid").attr("checked", true);
+                                $("#showopensource").attr("checked", true);
+                            } else if (profile == "it") {
+                                $("#inhibitdetailfor").attr("value", "P85,R90");
+                                $("#showskills").attr("checked", true);
+                                $("#showpaid").attr("checked", true);
+                                $("#showunpaid").attr("checked", true);
+                                $("#showopensource").attr("checked", true);
+                            } else if (profile == "education") {
+                                $("#inhibitdetailfor").attr("value", "J62,R90");
+                                $("#showskills").attr("checked", false);
+                                $("#showpaid").attr("checked", true);
+                                $("#showunpaid").attr("checked", true);
+                                $("#showopensource").attr("checked", true);
+                            } else if (profile == "authoring") {
+                                $("#inhibitdetailfor").attr("value", "J62,P85");
+                                $("#showskills").attr("checked", false);
+                                $("#showpaid").attr("checked", true);
+                                $("#showunpaid").attr("checked", true);
+                                $("#showopensource").attr("checked", true);
+                            }
+                            $("#go").click();
+                        });
+                        $("#newpage").click(function () {
+                            outputwindow = window.open("", "");
+                            if (outputwindow) {
+                                outputwindow.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head/><body><i>Working ...</i></body></html>');
+                                outputwindow.document.close();
+                            }
+                            $("#go").click();
+                        });
+                        //$("input").click(function() { $("#go").click(); });
+                        // Force the iframe to use XHTML strict
+                        window.frames[ "cvoutput"].document.close();
+                        window.frames[ "cvoutput"].document.open();
+                        window.frames[ "cvoutput"].document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head/><body><i>Working ...</i></body></html>');
+                        window.frames[ "cvoutput"].document.close();
+                        $("#go").click();
+                    });
+			--></script>
+		</div>
+		<iframe id="cvoutput" name="cvoutput" style="width:99%;height:400px;"/>
+
+	</body>
+
+</html>

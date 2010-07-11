@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is (C) 2009 Niall Douglas (http://www.nedprod.com/). You may use this
+  for any purpose you want freely and without restriction.
+  
+  I have borrowed some external schemas from Europass, plus MODS for the citations. -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:isced97="ISCED/97"
+  xmlns:nace="NACE"
+  xmlns:isco88="ISCO/88"
+  xmlns:mods="http://www.loc.gov/mods/v3"
+  >
+  <xsd:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"/>
+  <xsd:import namespace="ISCED/97" schemaLocation="schemas/ISCED97.xsd"/>
+  <xsd:import namespace="NACE" schemaLocation="schemas/NACE_COM.xsd"/>
+  <xsd:import namespace="ISCO/88" schemaLocation="schemas/ISCO_88_COM.xsd"/>
+  <xsd:import namespace="http://www.loc.gov/mods/v3" schemaLocation="schemas/mods-3-3.xsd"/>
+  <xsd:include schemaLocation="schemas/ISOCountryCodeType-V2006.xsd"/>
+  <xsd:element name="curriculumvitae">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="name"/>
+        <xsd:element ref="revision"/>
+        <xsd:element ref="privatedetails"/>
+        <xsd:element ref="introduction"/>
+        <xsd:element ref="skills"/>
+        <xsd:element ref="qualifications"/>
+        <xsd:element ref="memberships"/>
+        <xsd:element ref="recognitions"/>
+        <xsd:element ref="experiences"/>
+        <xsd:element ref="publications"/>
+        <xsd:element ref="academicreferees"/>
+        <xsd:element ref="workreferees"/>
+      </xsd:sequence>
+      <xsd:attribute name="forwhom" use="required"/>
+      <xsd:attribute name="lang" use="required" type="xsd:NCName"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="revision" type="xsd:string"/>
+  <xsd:element name="privatedetails">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="dateofbirth"/>
+        <xsd:element ref="address"/>
+        <xsd:element ref="telephone"/>
+        <xsd:element ref="email"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="dateofbirth" type="xsd:date"/>
+  <xsd:element name="address" type="xhtmltype"/>
+  <xsd:element name="telephone" type="xsd:string"/>
+  <xsd:simpleType name="emailtype">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value=".*@.*\..*"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="email" type="emailtype"/>
+  <xsd:complexType name="xhtmltype">
+    <xsd:sequence>
+      <xsd:any namespace="http://www.w3.org/1999/xhtml" minOccurs="1" maxOccurs="unbounded"
+        processContents="lax"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="introduction" type="xhtmltype"/>
+  <xsd:element name="skills">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="skillsgroup"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="skillsgroup">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="skill"/>
+      </xsd:sequence>
+      <xsd:attribute name="type" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="skill">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="specificskill"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="specificskill" type="xsd:string"/>
+  <xsd:element name="qualifications">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="award"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="award">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="name"/>
+        <xsd:element ref="title"/>
+        <xsd:element ref="institution"/>
+        <xsd:element ref="grade"/>
+        <xsd:element ref="iscedcategory"/>
+        <xsd:element ref="start"/>
+        <xsd:element ref="end"/>
+        <xsd:element ref="location"/>
+        <xsd:element ref="dissertation"/>
+      </xsd:sequence>
+      <xsd:attribute name="type" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="dissertation">
+    <xsd:complexType mixed="true">
+      <xsd:attribute name="href" type="xsd:anyURI"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="memberships">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="society"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="society">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="name"/>
+        <xsd:element ref="grade"/>
+        <xsd:element ref="start"/>
+        <xsd:element ref="end"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="recognitions">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="organisation"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="organisation">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="name"/>
+        <xsd:element ref="grade"/>
+        <xsd:element maxOccurs="unbounded" ref="when"/>
+        <xsd:element minOccurs="0" ref="description"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="when" type="xsd:date"/>
+  <xsd:element name="experiences">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="experience"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="experience">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="title"/>
+        <xsd:element minOccurs="0" ref="employer"/>
+        <xsd:element minOccurs="0" ref="location"/>
+        <xsd:element ref="iscocategory"/>
+        <xsd:element ref="start"/>
+        <xsd:element ref="end"/>
+        <xsd:element minOccurs="0" ref="start"/>
+        <xsd:element minOccurs="0" ref="end"/>
+        <xsd:element ref="earnings"/>
+        <xsd:element ref="description"/>
+        <xsd:element minOccurs="0" ref="detail"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:simpleType name="periodicitytype">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="salary"/>
+      <xsd:enumeration value="hourly"/>
+      <xsd:enumeration value="daily"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="unpaidtype">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Open Source"/>
+      <xsd:enumeration value="Unpaid"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="earningstype">
+    <xsd:union memberTypes="xsd:positiveInteger unpaidtype"/>
+  </xsd:simpleType>
+  <xsd:element name="earnings">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="earningstype">
+          <xsd:attribute name="periodicity" use="optional" type="periodicitytype"/>
+          <xsd:attribute name="currency" use="optional" type="xsd:NCName"/>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="description" type="xhtmltype"/>
+  <xsd:element name="detail" type="xhtmltype"/>
+  <xsd:element name="name" type="xsd:string"/>
+  <xsd:element name="title">
+    <xsd:complexType mixed="true">
+      <xsd:attribute name="href" type="xsd:anyURI"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="employer" type="xsd:string"/>
+  <xsd:element name="institution" type="xsd:string"/>
+  <xsd:element name="grade" type="xsd:string"/>
+  <xsd:element name="iscedcategory">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="iscedlevel"/>
+        <xsd:element ref="iscedfield1"/>
+        <xsd:element ref="iscedfield2"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="iscedlevel" type="isced97:level"/>
+  <xsd:element name="iscedfield1" type="isced97:field-level1"/>
+  <xsd:element name="iscedfield2" type="isced97:field-level2"/>
+  <xsd:element name="start" type="xsd:date"/>
+  <xsd:simpleType name="unboundeddate">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="unbounded"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="end">
+    <xsd:simpleType>
+      <xsd:union memberTypes="xsd:date unboundeddate"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="location">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="city"/>
+        <xsd:element minOccurs="0" ref="county"/>
+        <xsd:element ref="country"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="city" type="xsd:string"/>
+  <xsd:element name="county" type="xsd:string"/>
+  <xsd:element name="country" type="ISOCountryCodeType"/>
+  <xsd:element name="iscocategory">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="nacecode"/>
+        <xsd:element ref="iscofield1"/>
+        <xsd:element ref="iscofield2"/>
+        <xsd:element ref="iscofield3"/>
+        <xsd:element minOccurs="0" ref="iscofield4"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="nacecode" type="nace:sector"/>
+  <xsd:element name="iscofield1" type="isco88:field-level1"/>
+  <xsd:element name="iscofield2" type="isco88:field-level2"/>
+  <xsd:element name="iscofield3" type="isco88:field-level3"/>
+  <xsd:element name="iscofield4" type="isco88:field-level4"/>
+  <xsd:element name="publications">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" ref="mods:modsCollection"/>
+        </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="academicreferees" type="xsd:string"/>
+  <xsd:element name="workreferees" type="xsd:string"/>
+</xsd:schema>
