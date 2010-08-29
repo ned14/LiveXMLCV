@@ -197,9 +197,18 @@
     </xsl:template>
     <xsl:template name="ganttchart" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:if test="$showgraph_">
-            <xsl:variable name="firstdate"
-                select="substring(experiences/experience[last()]/start, 1, 7)"/>
-            <xsl:variable name="lastdate" select="substring(experiences/experience[1]/end, 1, 7)"/>
+            <xsl:variable name="firstdate" select="substring(experiences/experience[last()]/start, 1, 7)"/>
+            <xsl:variable name="lastdate2">
+                <xsl:choose>
+                    <xsl:when test="experiences/experience[1]/end &gt; qualifications/award[1]/end">
+                        <xsl:value-of select="experiences/experience[1]/end"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="qualifications/award[1]/end"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:variable name="lastdate" select="substring($lastdate2, 1, 7)"/>
             <xsl:variable name="firstyear" select="number(substring($firstdate, 1, 4))"/>
             <xsl:variable name="firstmonth" select="number(substring($firstdate, 6, 2))"/>
             <xsl:variable name="lastyear" select="number(substring($lastdate, 1, 4))"/>
@@ -426,7 +435,7 @@
     </xsl:template>
     <xsl:template name="outputexperiences" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:param name="exclude" select="''"/>
-        <xsl:param name="include" select="'J62,P85,R90'"/>
+        <xsl:param name="include" select="'J62,M72,P85,R90'"/>
         <table class="experiences vcalendar">
             <xsl:for-each select="experience">
                 <xsl:if
