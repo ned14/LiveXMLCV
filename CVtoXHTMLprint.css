@@ -1,6 +1,10 @@
 ﻿body {
-  font-size: 70%;
+  font-size: 85%;
 }
+th.award, th.experience {
+  display: none;
+}
+
 * {
   page-break-before:avoid;
   page-break-after:avoid;

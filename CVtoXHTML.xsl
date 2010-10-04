@@ -216,66 +216,69 @@
             <xsl:variable name="firstmonth" select="number(substring($firstdate, 6, 2))"/>
             <xsl:variable name="lastyear" select="number(substring($lastdate, 1, 4))"/>
             <xsl:variable name="lastmonth" select="number(substring($lastdate, 6, 2))"/>
-            <table class="ganttchart keeptogether">
-                <tr class="timeline">
-                    <td/>
-                    <td>
-                        <div class="timeline">
-                            <xsl:call-template name="insertdate">
-                                <xsl:with-param name="from" select="$firstdate"/>
-                                <xsl:with-param name="to" select="$lastdate"/>
-                                <xsl:with-param name="step" select="6"/>
-                            </xsl:call-template>
-                        </div>
-                    </td>
-                </tr>
-                <xsl:for-each
-                    select="qualifications/award[substring(end, 1, 7)!=substring(start, 1, 7)]|experiences/experience[substring(end, 1, 7)!=substring(start, 1, 7)]">
-                    <xsl:variable name="startyear" select="number(substring(start, 1, 4))"/>
-                    <xsl:variable name="startmonth" select="number(substring(start, 6, 2))"/>
-                    <xsl:variable name="endyear" select="number(substring(end, 1, 4))"/>
-                    <xsl:variable name="endmonth" select="number(substring(end, 6, 2))"/>
-                    <xsl:variable name="startpercent"
-                        select="(100 * (($startyear * 12 + $startmonth) - ($firstyear * 12 + $firstmonth)) ) div (($lastyear * 12 + $lastmonth) - ($firstyear * 12 + $firstmonth))"/>
-                    <xsl:variable name="endpercent"
-                        select="(100 * (($endyear * 12 + $endmonth) - ($firstyear * 12 + $firstmonth)) ) div (($lastyear * 12 + $lastmonth) - ($firstyear * 12 + $firstmonth))"/>
-                    <xsl:if test="$startpercent &gt;= 0">
-                        <tr class="item" title="{normalize-space(concat(grade, ' ', name, ' ', title, ' ', institution, employer, ' ', location, ': ', dissertation, description))}">
-                            <td class="label"><xsl:value-of select="name"/>&#160;<xsl:value-of
-                                    select="title"/>:</td>
-                            <td class="period">
-                                <div style="position:relative;">
-                                    <xsl:choose>
-                                        <xsl:when test="string($endpercent)='NaN'">
-                                            <div
-                                                style="position: absolute; left: {$startpercent}%; width: {101 - $startpercent}%;"
-                                            />
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <div
-                                                style="position: absolute; left: {$startpercent}%; width: {$endpercent - $startpercent}%;"
-                                            />
-                                        </xsl:otherwise>
-                                    </xsl:choose>
+            <div class="keeptogether breakbefore">
+                <table class="ganttchart keeptogether">
+                    <tr class="timeline">
+                        <td/>
+                        <td>
+                            <div class="timeline">
+                                <xsl:call-template name="insertdate">
+                                    <xsl:with-param name="from" select="$firstdate"/>
+                                    <xsl:with-param name="to" select="$lastdate"/>
+                                    <xsl:with-param name="step" select="6"/>
+                                </xsl:call-template>
+                            </div>
+                        </td>
+                    </tr>
+                    <xsl:for-each
+                        select="qualifications/award[substring(end, 1, 7)!=substring(start, 1, 7)]|experiences/experience[substring(end, 1, 7)!=substring(start, 1, 7)]">
+                        <xsl:variable name="startyear" select="number(substring(start, 1, 4))"/>
+                        <xsl:variable name="startmonth" select="number(substring(start, 6, 2))"/>
+                        <xsl:variable name="endyear" select="number(substring(end, 1, 4))"/>
+                        <xsl:variable name="endmonth" select="number(substring(end, 6, 2))"/>
+                        <xsl:variable name="startpercent"
+                            select="(100 * (($startyear * 12 + $startmonth) - ($firstyear * 12 + $firstmonth)) ) div (($lastyear * 12 + $lastmonth) - ($firstyear * 12 + $firstmonth))"/>
+                        <xsl:variable name="endpercent"
+                            select="(100 * (($endyear * 12 + $endmonth) - ($firstyear * 12 + $firstmonth)) ) div (($lastyear * 12 + $lastmonth) - ($firstyear * 12 + $firstmonth))"/>
+                        <xsl:if test="$startpercent &gt;= 0">
+                            <tr class="item"
+                                title="{normalize-space(concat(grade, ' ', name, ' ', title, ' ', institution, employer, ' ', location, ': ', dissertation, description))}">
+                                <td class="label"><xsl:value-of select="name"
+                                        />&#160;<xsl:value-of select="title"/>:</td>
+                                <td class="period">
+                                    <div style="position:relative;">
+                                        <xsl:choose>
+                                            <xsl:when test="string($endpercent)='NaN'">
+                                                <div
+                                                  style="position: absolute; left: {$startpercent}%; width: {101 - $startpercent}%;"
+                                                />
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <div
+                                                  style="position: absolute; left: {$startpercent}%; width: {$endpercent - $startpercent}%;"
+                                                />
+                                            </xsl:otherwise>
+                                        </xsl:choose>
 
-                                </div>
-                            </td>
-                        </tr>
-                    </xsl:if>
-                </xsl:for-each>
-                <tr class="timeline">
-                    <td/>
-                    <td>
-                        <div class="timeline">
-                            <xsl:call-template name="insertdate">
-                                <xsl:with-param name="from" select="$firstdate"/>
-                                <xsl:with-param name="to" select="$lastdate"/>
-                                <xsl:with-param name="step" select="6"/>
-                            </xsl:call-template>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </xsl:if>
+                    </xsl:for-each>
+                    <tr class="timeline">
+                        <td/>
+                        <td>
+                            <div class="timeline">
+                                <xsl:call-template name="insertdate">
+                                    <xsl:with-param name="from" select="$firstdate"/>
+                                    <xsl:with-param name="to" select="$lastdate"/>
+                                    <xsl:with-param name="step" select="6"/>
+                                </xsl:call-template>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </xsl:if>
     </xsl:template>
 
@@ -368,7 +371,7 @@
     </xsl:template>
 
     <xsl:template match="memberships" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="keeptogether">
+        <div class="keeptogether breakbefore">
             <h2 class="memberships">Memberships:</h2>
             <table class="memberships">
                 <xsl:for-each select="society">

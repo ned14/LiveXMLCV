@@ -1,13 +1,14 @@
 ﻿body {
   font-family: Constantia, 'Times New Roman', serif;
   text-align: justify;
-  font-size: 10pt;
+  font-size: 0.9em;
   /*line-height: 125%;*/
   padding: 1em;
 }
 h1 {
   font-family: Constantia, 'Times New Roman', serif;
   text-align: center;
+  font-size: 150%;
 }
 h2 {
   margin-top: 1em;
@@ -54,8 +55,11 @@ th.award, th.experience {
 td.title, td.name, td.address, td.email, td.telephone, td.dateofbirth,
 td.grade, td.period, td.institution, td.employer, td.period, td.when, td.location {
   font-family: Corbel, Helvetica, sans-serif;
-  font-size: larger;
+  font-size: 110%;
   font-weight: bold;
+}
+td.title, td.employer {
+  text-align: left;
 }
 table.ganttchart {
   position: relative;

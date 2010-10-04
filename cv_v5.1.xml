@@ -16,27 +16,30 @@
     <introduction>
         <specialize profile="education">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <p>I am a <b>SCHOLAR AND EDUCATOR</b> with an inter-disciplinary knowledge and
-                    teaching approach spanning multiple numerate and non-numerate subjects, in many
-                    of which I possess a formal academic qualification. My primary academic research
-                    interest is in managing human civilisation under conditions of declining basic
-                    resource inputs with a particular emphasis on the moral, social and economic
-                    consequences therein. My secondary research interests are all those topics which
-                    stem from my primary interest, and would as a minimum include Agriculture,
-                    Anthropology, Business, Computer Science, Divinity, Earth Sciences, Economics,
-                    Education, Engineering, Environmental &amp; Sustainability Studies,
-                    Geography, History, Law, Life Sciences, Linguistics, Mathematics, Philosophy,
-                    Physics, Politics, Psychology, Religion, Sociology, Statistics, Systems Science
-                    and Transportation.</p>
+                <p>I am a <b>SCHOLAR AND EDUCATOR</b> with an inter-disciplinary knowledge spanning
+                    multiple numerate and non-numerate subjects, in many of which I possess a formal
+                    academic qualification. My primary academic research interest is in managing
+                    human civilisation under conditions of declining basic resource inputs with a
+                    particular emphasis on the moral, social and economic consequences therein. My
+                    secondary research interests are all those topics which stem from my primary
+                    interest, and in keeping with a holistic approach would as a minimum include
+                    Agriculture, Business, Computer Science, Economics, Education, Engineering,
+                    Environmental &amp; Sustainability Studies, Mathematics, Philosophy,
+                    Physics, Psychology, Religion, Sociology, Statistics, Systems Science and
+                    Transportation.</p>
                 <p>I have experience in teaching at many diverse levels of academic difficulty,
                     student ability and class size. I have lectured informally at student societies
-                    and gatherings of enthusiasts as well as providing third level grinds for
-                    students with learning difficulties. I have lectured formally at undergraduate
-                    level in Economics and I have tutored a class at Masters level in e-Business. I
-                    have experience in designing curricula and assessment rubrics, and I achieved an
-                    excellent 87.2% class attendance, an 82.8% Interestingness and an 81.2%
-                    Clearness rating in the weekly feedback form evaluations from the undergraduate
-                    class in Economics.</p>
+                    and gatherings of enthusiasts as well as providing higher education private
+                    tuition for students including those with learning difficulties. One of my many
+                    experiences involved teaching Economics at degree level at the National
+                    University of Ireland (NUI), Cork. As part of this employment, I designed the
+                    curriculum and assessment rubrics, and I achieved an excellent average 87.2%
+                    class attendance, an 82.8% Interestingness and an 81.2% Clearness rating in the
+                    weekly feedback. I have also tutored at postgraduate level in e-Business at NUI
+                    Cork, and I have a deep understanding of other cultures through living and
+                    working in the countries of Britain, Spain, Ireland and Canada, and in the
+                    languages of English (native speaker) and Spanish in which I am conversationally
+                    fluent.</p>
             </div>
         </specialize>
         <specialize profile="it">
@@ -44,11 +47,12 @@
                 <p>I am a specialist in <b>SYSTEMS OPTIMISATION</b> with a particular aptitude for
                     eliciting solutions where there are no obvious avenues forward. I have worked in
                     the fields of computer hardware and software, academia, problem solution,
-                    consultancy, design and military procurement. I have worked in the countries of
-                    Britain, Spain, Ireland and Canada, and in the languages of English and Spanish
-                    in which I am fluent. I have worked as a permanent employee, under contract and
-                    as a freelancer and have helped others to steer projects large and small to a
-                    successful and timely completion.</p>
+                    consultancy, design and military procurement. I have lived and worked in the
+                    countries of Britain, Spain, Ireland and Canada, and in the languages of English
+                    (native speaker) and Spanish in which I am conversationally fluent. I have
+                    worked as a permanent employee, under contract and as a freelancer and have
+                    helped others to steer projects large and small to a successful and timely
+                    completion.</p>
                 <p>I have contributed over two and a half man-years of computer programming to open
                     source and my code is present in much of the world's telecommunications
                     infrastructure including the root DNS servers which are central to the internet,
@@ -83,9 +87,9 @@
                 held annually by Enterprise Ireland, the Irish Government organisation for
                 entrepreneurship, for our Web 2.0 FIXatdl Financial Algorithmic Trading Definition
                 Language Editor.</p>
-            <p>In 2011 I hope to graduate with a PGCert in <b>Developing Professional Practice in
+            <p>In 2011 I intend to graduate with a PGCert in <b>Developing Professional Practice in
                     Higher Education</b> from the University of Wales which will enable fellowship
-                of the UK's Higher Education Academy. In 2012 I hope to graduate with a Masters in
+                of the UK's Higher Education Academy. In 2012 I intend to graduate with a Masters in
                     <b>Educational and Social Research</b> from the University of London.</p>
         </div>
     </introduction>
@@ -593,25 +597,6 @@
                 <div xmlns="http://www.w3.org/1999/xhtml">Set up a limited company to provide
                     consultancy services in the field of computer information technology to
                     fee-paying clients.</div>
-            </description>
-        </experience>
-        <experience>
-            <title>Founded The Freeing Growth Foundation</title>
-            <iscocategory>
-                <nacecode>P85.4.2</nacecode>
-                <iscofield1>2</iscofield1>
-                <iscofield2>23</iscofield2>
-                <iscofield3>231</iscofield3>
-                <iscofield4>2310</iscofield4>
-            </iscocategory>
-            <start>2009-07-01</start>
-            <end>2009-07-30</end>
-            <earnings>Unpaid</earnings>
-            <description>
-                <div xmlns="http://www.w3.org/1999/xhtml">Set up a non-profit limited company to act
-                    as a legal vehicle for charitable activities ongoing from the Future Society. It
-                    is intended that it will seek grant awards for furtherance of research and
-                    activities as described by the "Freeing Growth" book.</div>
             </description>
         </experience>
         <experience>
