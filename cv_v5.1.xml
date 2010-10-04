@@ -3,7 +3,7 @@
 <curriculumvitae forwhom="Niall Douglas" lang="en"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cv_v5.xsd">
     <name>Niall Douglas</name>
-    <revision>5.1 (1st July 2010)</revision>
+    <revision>5.2 (4th October 2010)</revision>
     <privatedetails>
         <dateofbirth>1970-01-01</dateofbirth>
         <address><div xmlns="http://www.w3.org/1999/xhtml">1 Nice Street<br/>
@@ -14,40 +14,79 @@
         <email>arse@hotmail.com</email>
     </privatedetails>
     <introduction>
+        <specialize profile="education">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <p>I am a <b>SCHOLAR AND EDUCATOR</b> with an inter-disciplinary knowledge and
+                    teaching approach spanning multiple numerate and non-numerate subjects, in many
+                    of which I possess a formal academic qualification. My primary academic research
+                    interest is in managing human civilisation under conditions of declining basic
+                    resource inputs with a particular emphasis on the moral, social and economic
+                    consequences therein. My secondary research interests are all those topics which
+                    stem from my primary interest, and would as a minimum include Agriculture,
+                    Anthropology, Business, Computer Science, Divinity, Earth Sciences, Economics,
+                    Education, Engineering, Environmental &amp; Sustainability Studies,
+                    Geography, History, Law, Life Sciences, Linguistics, Mathematics, Philosophy,
+                    Physics, Politics, Psychology, Religion, Sociology, Statistics, Systems Science
+                    and Transportation.</p>
+                <p>I have experience in teaching at many diverse levels of academic difficulty,
+                    student ability and class size. I have lectured informally at student societies
+                    and gatherings of enthusiasts as well as providing third level grinds for
+                    students with learning difficulties. I have lectured formally at undergraduate
+                    level in Economics and I have tutored a class at Masters level in e-Business. I
+                    have experience in designing curricula and assessment rubrics, and I achieved an
+                    excellent 87.2% class attendance, an 82.8% Interestingness and an 81.2%
+                    Clearness rating in the weekly feedback form evaluations from the undergraduate
+                    class in Economics.</p>
+            </div>
+        </specialize>
+        <specialize profile="it">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <p>I am a specialist in <b>SYSTEMS OPTIMISATION</b> with a particular aptitude for
+                    eliciting solutions where there are no obvious avenues forward. I have worked in
+                    the fields of computer hardware and software, academia, problem solution,
+                    consultancy, design and military procurement. I have worked in the countries of
+                    Britain, Spain, Ireland and Canada, and in the languages of English and Spanish
+                    in which I am fluent. I have worked as a permanent employee, under contract and
+                    as a freelancer and have helped others to steer projects large and small to a
+                    successful and timely completion.</p>
+                <p>I have contributed over two and a half man-years of computer programming to open
+                    source and my code is present in much of the world's telecommunications
+                    infrastructure including the root DNS servers which are central to the internet,
+                    the world's leading ERP solution used by hundreds of thousands of companies
+                    worldwide, the branch ATM network of one of the world's largest banks, the
+                    EuroFighter defence aircraft, the Micrium car operating system used by many
+                    European and Japanese car manufacturers and one of the data analysis and
+                    planning tools used by the US Department of Defence. I operate my own
+                    geographically distributed information repository cloud based on the Plone
+                    content and knowledge management system which allows interested people to
+                    collaboratively work on a series of next generation repositories of information
+                    useful to society. One of my largest commercial contributions was to the support
+                    and maintenance systems of the EuroFighter defence aircraft in which I designed
+                    a bench-portable control software meeting strict military specifications.</p>
+            </div>
+        </specialize>
+        <!--<specialize profile="allpossibledata">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <p>I am a teapot, short and stout.</p>
+            </div>
+        </specialize>-->
         <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>I am a specialist in <b>INTER-DOMAIN GENERAL SYSTEMS OPTIMISATION</b> with a
-                particular aptitude for eliciting solutions where there are no obvious avenues
-                forward. My career traverses multiple domains and I have experience as an Engineer,
-                an Economist, a Manager, an Entrepreneur, a Businessman, a Teacher, a Researcher and
-                Writer. I have worked in the fields of computer hardware and software, academia,
-                problem solution, consultancy, design, accountancy and military procurement. I have
-                worked in the countries of Britain, Spain, Ireland and Canada, and in the languages
-                of English and Spanish in which I am fluent. I have worked as a permanent employee,
-                under contract and as a freelancer and have helped others to steer projects large
-                and small to a successful and timely completion.</p>
-            <p>I have contributed over two and a half man-years of computer programming to open
-                source and my code is present in much of the world's telecommunications
-                infrastructure including the root DNS servers which are central to the internet, the
-                world's leading ERP solution used by hundreds of thousands of companies worldwide,
-                the branch ATM network of one of the world's largest banks, the EuroFighter defence
-                aircraft, the Micrium car operating system used by many European and Japanese car
-                manufacturers and one of the data analysis and planning tools used by the US Department
-                of Defence. I operate my own geographically distributed information repository cloud
-                based on the Plone content and knowledge management system which allows interested
-                people to collaboratively work on a series of next generation repositories of
-                information useful to society.</p>
             <p>I am a year 2000 graduate of <b>Software Engineering</b> at the University of Hull,
                 England, with extensive experience of working prior to and during my degree, and
                 where my final project was an Object Orientated Hardware Abstraction Layer with a
                 port of the uC/OS II real time operating system. I am also a year 2008 Joint Honours
                 Masters graduate in <b>Economics &amp; Management</b> at the University of St.
-                Andrews, Scotland, where my Masters dissertation topic was on <i>Modelling the Costs of
-                Climate Change and its Costs of Mitigation</i>. In 2009 I graduated with a further
-                Masters in <b>Business Information Systems</b> from NUI University College Cork,
-                Ireland, with my team winning the prestigious 2009 Student Enterprise Awards held
-                annually by Enterprise Ireland, the Irish Government organisation for
+                Andrews, Scotland, where my Masters dissertation topic was on <i>Modelling the Costs
+                    of Climate Change and its Costs of Mitigation</i>. In 2009 I graduated with a
+                further Masters in <b>Business Information Systems</b> from NUI University College
+                Cork, Ireland, with my team winning the prestigious 2009 Student Enterprise Awards
+                held annually by Enterprise Ireland, the Irish Government organisation for
                 entrepreneurship, for our Web 2.0 FIXatdl Financial Algorithmic Trading Definition
                 Language Editor.</p>
+            <p>In 2011 I hope to graduate with a PGCert in <b>Developing Professional Practice in
+                    Higher Education</b> from the University of Wales which will enable fellowship
+                of the UK's Higher Education Academy. In 2012 I hope to graduate with a Masters in
+                    <b>Educational and Social Research</b> from the University of London.</p>
         </div>
     </introduction>
     <skills>
@@ -119,13 +158,49 @@
         </skillsgroup>
     </skills>
     <qualifications>
+        <award type="Master of Research">
+            <name>MRes</name>
+            <title>Educational and Social Research</title>
+            <institution>University of London</institution>
+            <grade>in progress</grade>
+            <iscedcategory>
+                <iscedlevel>6</iscedlevel>
+                <iscedfield1>1</iscedfield1>
+                <iscedfield2>14</iscedfield2>
+            </iscedcategory>
+            <start>2010-10-01</start>
+            <end>2012-06-30</end>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <dissertation>To be decided</dissertation>
+        </award>
+        <award type="PG Certificate">
+            <name>PGCert</name>
+            <title>Developing Professional Practice in Higher Education</title>
+            <institution>University of Wales</institution>
+            <grade>in progress</grade>
+            <iscedcategory>
+                <iscedlevel>5</iscedlevel>
+                <iscedfield1>1</iscedfield1>
+                <iscedfield2>14</iscedfield2>
+            </iscedcategory>
+            <start>2010-10-01</start>
+            <end>2011-06-30</end>
+            <location>
+                <city>Cork</city>
+                <country>IE</country>
+            </location>
+            <dissertation>None</dissertation>
+        </award>
         <award type="Master of Business Systems">
             <name>MBS</name>
             <title>Business Information Systems</title>
             <institution>NUI University College Cork</institution>
             <grade>2H2</grade>
             <iscedcategory>
-                <iscedlevel>6</iscedlevel>
+                <iscedlevel>5</iscedlevel>
                 <iscedfield1>3</iscedfield1>
                 <iscedfield2>34</iscedfield2>
             </iscedcategory>
@@ -144,7 +219,7 @@
             <institution>University of St. Andrews</institution>
             <grade>2H1</grade>
             <iscedcategory>
-                <iscedlevel>6</iscedlevel>
+                <iscedlevel>5</iscedlevel>
                 <iscedfield1>3</iscedfield1>
                 <iscedfield2>31</iscedfield2>
             </iscedcategory>
@@ -273,6 +348,42 @@
         </organisation>
     </recognitions>
     <experiences>
+        <experience>
+            <title>Wrote academic paper on user mode page allocation</title>
+            <iscocategory>
+                <nacecode>M72.1.</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>24</iscofield2>
+                <iscofield3>245</iscofield3>
+                <iscofield4>2451</iscofield4>
+            </iscocategory>
+            <start>2010-07-11</start>
+            <end>2010-08-18</end>
+            <earnings>Unpaid</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Wrote an academic treatise on the topic of
+                    user mode page allocation which stemmed from the work performed in the previous
+                    two experiences. This paper presents a large number of empirical test results
+                    comparing kernel page allocator performance on Microsoft Windows and Linux with
+                    the user mode page allocator as implemented below in a wide variety of synthetic
+                    and real world scenarios using the binary patching process injection feature of
+                    nedmalloc. The paper has been submitted for presentation to the International
+                    Symposium on Memory Management 2011 conference to be held in San Jose, U.S.A. as
+                    part of the 2011 Federated Computing Research Conference week.</div>
+            </description>
+            <detail>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <ul>
+                        <li>Especially given that I had no prior academic experience in this field,
+                            nor even much outside the social sciences, the paper could not have
+                            possibly been written without the most helpful advice, detailed comments
+                            and patience from Doug Lea of the State University of New York at
+                            Oswego, USA; David Dice from Oracle Inc. of California, USA; and Peter
+                            Buhr of the University of Waterloo, Canada.</li>
+                    </ul>
+                </div>
+            </detail>
+        </experience>
         <experience>
             <title href="http://github.com/ned14/nedtries">Portable Bitwise Fredkin Trie Library</title>
             <iscocategory>
@@ -1143,6 +1254,31 @@
         <!-- If you have a lot of publications, it is easiest to automate the conversion from
         BibTex, RIS or whatever to MODS. See http://www.scripps.edu/~cdputnam/software/bibutils/ -->
         <modsCollection xmlns="http://www.loc.gov/mods/v3">
+            <mods>
+                <titleInfo>
+                    <title>User Mode Memory Page Allocation</title>
+                    <subTitle>A Silver Bullet For Memory Allocation?</subTitle>
+                </titleInfo>
+                <name type="personal">
+                    <namePart type="given">Niall</namePart>
+                    <namePart type="given">Edward</namePart>
+                    <namePart type="family">Douglas</namePart>
+                    <role>
+                        <roleTerm authority="marcrelator" type="text">author</roleTerm>
+                    </role>
+                </name>
+                <originInfo>
+                    <dateIssued>2011-Jul</dateIssued>
+                    <publisher>forthcoming</publisher>
+                </originInfo>
+                <typeOfResource>text</typeOfResource>
+                <relatedItem type="host">
+                    <titleInfo>
+                        <title>International Symposium on Memory Management ISMM2011</title>
+                    </titleInfo>
+                    <genre>catalog</genre>
+                </relatedItem>
+            </mods>
             <mods>
                 <titleInfo>
                     <title>Freeing Growth</title>

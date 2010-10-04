@@ -147,6 +147,9 @@
     
     <xsl:template match="introduction" xmlns="http://www.w3.org/1999/xhtml">
         <div class="introduction summary">
+            <xsl:for-each select="specialize[@profile=$profilename]">
+                <xsl:apply-templates select="xhtml:div"/>                
+            </xsl:for-each>
             <xsl:apply-templates select="xhtml:div"/>
         </div>
     </xsl:template>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This is (C) 2009 Niall Douglas (http://www.nedprod.com/). You may use this
+<!-- This is (C) 2009-2010 Niall Douglas (http://www.nedprod.com/). You may use this
   for any purpose you want freely and without restriction.
   
   I have borrowed some external schemas from Europass, plus MODS for the citations. -->
@@ -63,7 +63,23 @@
         processContents="lax"/>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:element name="introduction" type="xhtmltype"/>
+  <xsd:element name="introduction">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="specialize">
+          <xsd:complexType>
+            <xsd:complexContent>
+              <xsd:extension base="xhtmltype">
+                <xsd:attribute name="profile" use="optional" type="xsd:string"/>
+              </xsd:extension>
+            </xsd:complexContent>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"
+          processContents="lax"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
   <xsd:element name="skills">
     <xsd:complexType>
       <xsd:sequence>
