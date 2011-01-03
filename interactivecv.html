@@ -32,10 +32,12 @@ input[@type='text'] {
                 checked="checked"/>Show private details <input id="showgraph" name="showgraph"
                 type="checkbox" checked="checked"/>Show timeline graph <input id="showskills"
                 name="showskills" type="checkbox" checked="checked"/>Show skills <input
-                id="showpaid" name="showpaid" type="checkbox" checked="checked"/>Show paid
-            experiences <input id="showunpaid" name="showunpaid" type="checkbox" checked="checked"
-            />Show unpaid experiences <input id="showopensource" name="showopensource"
-                type="checkbox" checked="checked"/>Show open source experiences <br/>
+                id="showotherexperiences" name="showotherexperiences" type="checkbox"
+                checked="checked"/>Show other experiences <input id="showpaid" name="showpaid"
+                type="checkbox" checked="checked"/>Show paid experiences <input id="showunpaid"
+                name="showunpaid" type="checkbox" checked="checked"/>Show unpaid experiences <input
+                id="showopensource" name="showopensource" type="checkbox" checked="checked"/>Show
+            open source experiences <br/>
             <input id="go" name="go" type="button" value="Go!"/>
             <input id="newpage" name="newpage" type="button"
                 value="Open in a new page for printing or saving"/>
@@ -48,6 +50,7 @@ input[@type='text'] {
                             parameters["showprivatedetails"] = Number($("#showprivatedetails").is(":checked"));
                             parameters["showgraph"] = Number($("#showgraph").is(":checked"));
                             parameters["showskills"] = Number($("#showskills").is(":checked"));
+                            parameters["showotherexperiences"] = Number($("#showotherexperiences").is(":checked"));
                             parameters["showpaid"] = Number($("#showpaid").is(":checked"));
                             parameters["showunpaid"] = Number($("#showunpaid").is(":checked"));
                             parameters["showopensource"] = Number($("#showopensource").is(":checked"));

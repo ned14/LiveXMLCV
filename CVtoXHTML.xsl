@@ -16,6 +16,7 @@
     <xsl:param name="showprivatedetails" select="true()"/>
     <xsl:param name="showgraph" select="true()"/>
     <xsl:param name="showskills" select="true()"/>
+    <xsl:param name="showotherexperiences" select="true()"/>
     <xsl:param name="showpaid" select="true()"/>
     <xsl:param name="showunpaid" select="true()"/>
     <xsl:param name="showopensource" select="true()"/>
@@ -26,6 +27,7 @@
     <xsl:variable name="showprivatedetails_" select="$showprivatedetails='1'"/>
     <xsl:variable name="showgraph_" select="$showgraph='1'"/>
     <xsl:variable name="showskills_" select="$showskills='1'"/>
+    <xsl:variable name="showotherexperiences_" select="$showotherexperiences='1'"/>
     <xsl:variable name="showpaid_" select="$showpaid='1'"/>
     <xsl:variable name="showunpaid_" select="$showunpaid='1'"/>
     <xsl:variable name="showopensource_" select="$showopensource='1'"/>
@@ -554,12 +556,24 @@
             <xsl:call-template name="outputexperiences">
                 <xsl:with-param name="exclude" select="$inhibitdetailfor"/>
             </xsl:call-template>
-        <xsl:if test="$inhibitdetailfor">
-                <h2 class="experiences">Other Experiences:</h2>
-                <xsl:call-template name="outputexperiences">
-                    <xsl:with-param name="include" select="$inhibitdetailfor"/>
-                </xsl:call-template>
-        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="$showotherexperiences_">
+                <xsl:if test="$inhibitdetailfor">
+                    <h2 class="experiences">Other Experiences:</h2>
+                    <xsl:call-template name="outputexperiences">
+                        <xsl:with-param name="include" select="$inhibitdetailfor"/>
+                    </xsl:call-template>
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+                <div class="breakafter">
+                    <h1 style="text-align:center">This is the short format resume listing only
+                        relevant experiences.<br/>A fully detailed version can be found online at <a
+                            href="http://www.nedprod.com/xmlcv/"
+                        >http://www.nedprod.com/xmlcv/</a>.</h1>
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="publications" xmlns="http://www.w3.org/1999/xhtml">
