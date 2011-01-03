@@ -50,6 +50,8 @@ th {
   font-style: italic;
 }
 th.award, th.experience {
+  color: #cccccc;
+  font-size: smaller;
   text-align: right;
 }
 td.title, td.name, td.address, td.email, td.telephone, td.dateofbirth,
@@ -114,6 +116,13 @@ table.skillsgroup td {
 }
 table.recognitions td.when {
   min-width: 5em;
+}
+table.experiences td.title {
+  min-width: 33%;
+}
+table.experiences td.href {
+  font-size: smaller;
+  max-width: 20%;
 }
 table.experiences td.period {
   min-width: 10em;
