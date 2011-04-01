@@ -323,7 +323,7 @@
                                     </xsl:for-each>
                                 </tr>
                             </xsl:if>
-                            <tr><td> </td></tr>
+                            <tr class="spacer"><td> </td></tr>
                         </xsl:for-each>
                     </table>
                 </xsl:for-each>
