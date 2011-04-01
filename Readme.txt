@@ -1,48 +1,15 @@
 An Interactive Live XML based Curriculum Vitae with XHTML output
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-by Niall Douglas (http://www.nedprod.com/)
+by Niall Douglas (http://www.nedprod.com/programs/portable/LiveXMLCV/)
 
-If you're anything like me then managing your CV becomes an ever increasing
-headache over time as each prospective contract or employment requires their
-own peculiarly customised CV format. I suppose I am somewhat different from
-most in that I wear an IT hat, a lecturing/education hat, an Economist hat,
-a Business Process Systems hat and an authoring/writing hat - and I used to
-have to maintain a separate CV for each which becomes painful when you run
-through contracts and employments as fast as I do!
+If you're anything like me then managing your CV becomes an ever increasing headache over time as each prospective contract or employment requires their own peculiarly customised CV format with certain things made prominent and other things not. I suppose I am somewhat different from most in that I wear an IT hat, a lecturing/education hat, an Economist hat, a Business Process Systems hat and an authoring/writing hat - and I used to have to maintain a separate CV for each which becomes painful when you run through contracts and employments as fast as I do!
 
-So to ease the burden I came up with the enclosed XML based solution! What
-you do is to write up ONE version of your CV against the cv_v5.xsd
-specification containing everything but the kitchen sink (I have provided my
-own in cv_v5.1.xml for reference). You then feed this XML into a XSLT
-processor using the CVtoXHTML.xsl stylesheet transformation and it will spit
-out a fully formed and pleasant looking XHTML form which prints easily if your
-web browser supports CSS printing attributes. In fact, most modern web
-browsers will let you simply drag the XML file into them and they will auto-
-magically perform the transformation and show you the results. If you'd like
-to see all this in action, visit:
+So to ease the burden I came up with an XML based solution which you can find at http://github.com/ned14/LiveXMLCV/! What you do is to write up ONE version of your CV against the cv_v5.xsd specification containing everything but the kitchen sink (I have provided my own in cv_v5.1.xml for reference), and I would recommend the Oxygen XML editor (http://www.oxygenxml.com/) for that. You then feed this XML into a XSLT processor using the CVtoXHTML.xsl stylesheet transformation and it will spit out a fully formed and pleasant looking XHTML form which prints easily if your web browser fully supports CSS printing attributes (IE9 is the only browser with full and bug free support at the moment). In fact, most modern web browsers will let you simply drag the XML file into them and they will auto-magically perform the transformation and show you the results. If you'd like to see all this in action, visit http://www.nedprod.com/xmlcv/.
 
-http://www.nedprod.com/xmlcv/interactivecv.html.
+As shown in that online demo, the XSLT file takes a series of parameters so you can turn on or off different bits, or you can prioritise a certain category of work experiences while downplaying or even removing a different category. The interactivecv.html provided is precisely the same one used in the online demo above - it simply uses server side PHP to do the XSLT transformation.
 
-As shown in that online demo, the XSLT file takes a series of parameters so
-you can turn on or off different bits, or you can prioritise a certain category
-of work experiences while downplaying a different category. The interactivecv.html
-enclosed is precisely the same one used in the online demo above.
+There is also an interactivecv_old.html which attempts to perform the parameterised XSL transformation on your web browser using the Sarissa AJAX library. I never got this working well - some browsers would work fine and then magically break themselves in later releases and such, so I gave up and had PHP do the transform on the server (which is the transformCV.php).
 
-I enclose also interactivecv_old.html which attempts to perform the
-parameterised XSL transformation on your web browser using the Sarissa AJAX
-library. I never got this working well - some browsers would work fine and then
-magically break themselves in later releases and such, so I gave up and had PHP
-do the transform on the server (which is the transformCV.php).
-
-BTW, the XHTML output is fully compatible with the hResume microformat
-(http://microformats.org/wiki/hresume) so it can be read by anything which reads
-hResume. Also, the ISCED, ISCO and NACE categorisations are the international
-standards and are the same as used by the Europass
-(http://europass.cedefop.europa.eu/europass/home/hornav/Introduction.csp?loc=en_GB)
-and HR-XML (http://www.hr-xml.org/) international CV format standards, so one could
-write a XSLT to perform a complete conversion into either of those. Lastly, the
-citations format is an embedded copy of the MODS (http://www.loc.gov/mods/v3)
-international standard format for library citations which can be transformed
-easily into any other citation and indeed library reference standard (e.g. BibTEX).
+BTW, the XHTML output is fully compatible with the hResume microformat (http://microformats.org/wiki/hresume) so it can be read by anything which reads hResume. Also, the ISCED, ISCO and NACE categorisations are the international standards and are the same as used by the Europass (http://europass.cedefop.europa.eu/europass/home/hornav/Introduction.csp?loc=en_GB) and HR-XML (http://www.hr-xml.org/) international CV format standards, so one could write a XSLT to perform a complete conversion into either of those. Lastly, the citations format is an embedded copy of the MODS (http://www.loc.gov/mods/v3) international standard format for library citations which can be transformed easily into any other citation and indeed library reference standard (e.g. BibTEX).
 
 If you have any questions, please feel free to email me and ask! Happy CVing!
