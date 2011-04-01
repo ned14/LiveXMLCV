@@ -10,14 +10,28 @@ h1 {
   text-align: center;
   font-size: 150%;
 }
+div.sectionheader {
+  margin-top: 3em;
+  position: relative;
+  color: white;
+  background-color:gray;
+}
+img.sectionheader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 h2 {
-  margin-top: 1em;
+  margin-top: 0;
   margin-bottom: 0;
   text-align: center;
-  background-color: gray;
-  color: white;
   font-weight: bold;
   font-family: Corbel, Helvetica, sans-serif;
+}
+div.introduction {
+  font-size: 110%;
+  line-height: 125%;
 }
 table {
   width: 100%;
@@ -48,6 +62,9 @@ tr > td + td + td {
 th {
   font-weight: normal;
   font-style: italic;
+}
+th._skill {
+  vertical-align: top;
 }
 th.award, th.experience {
   color: #cccccc;
@@ -117,21 +134,25 @@ table.skillsgroup td {
 table.recognitions td.when {
   min-width: 5em;
 }
-table.experiences td.title {
-  min-width: 33%;
-}
-table.experiences td.href {
-  font-size: smaller;
-  max-width: 20%;
-}
-table.experiences td.period {
-  min-width: 10em;
-}
 td._specificskill {
   font-family: Corbel, Helvetica, sans-serif;
   font-size: smaller;
   text-align: center;
   vertical-align: middle;
+}
+/* First column */
+table.experience tbody tr td.title, table.experience tbody tr td.employer {
+  width: auto;
+}
+/* Middle column */
+table.experience tbody tr td.href, table.experience tbody tr td.earnings {
+  width: 12em;
+  font-size: smaller;
+}
+/* Last column */
+table.experience tbody tr td.period, table.experience tbody tr td.location {
+  width: 10em;
+  min-width: 10em;
 }
 tr.spacer {
   height: 2em;

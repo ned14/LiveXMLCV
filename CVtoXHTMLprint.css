@@ -1,18 +1,17 @@
 ﻿body {
   font-size: 85%;
 }
+div.sectionheader * {
+  color: white !important;
+  background-color: gray !important;
+}
 th.award, th.experience {
   display: none;
 }
-
-* {
-  page-break-before:avoid;
-  page-break-after:avoid;
-}
-.keeptogether, tr.spacer, tr.spacer * {
+.keeptogether {
   page-break-before:auto;
-  page-break-after:auto;
   page-break-inside:avoid;
+  page-break-after:auto;
 }
 .breakbefore {
   page-break-before:always;
@@ -20,8 +19,3 @@ th.award, th.experience {
 .breakafter {
   page-break-after:always;
 }
-h2.qualifications,
-h2.experiences:nth-of-type(1) {
-  page-break-before:always;
-}
-

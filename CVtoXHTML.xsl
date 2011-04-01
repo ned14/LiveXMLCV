@@ -218,7 +218,6 @@
             <xsl:variable name="firstmonth" select="number(substring($firstdate, 6, 2))"/>
             <xsl:variable name="lastyear" select="number(substring($lastdate, 1, 4))"/>
             <xsl:variable name="lastmonth" select="number(substring($lastdate, 6, 2))"/>
-            <div class="keeptogether breakbefore">
                 <table class="ganttchart keeptogether">
                     <tr class="timeline">
                         <td/>
@@ -280,14 +279,16 @@
                         </td>
                     </tr>
                 </table>
-            </div>
         </xsl:if>
     </xsl:template>
 
     <xsl:template match="skills" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:if test="$showskills_">
             <div class="keeptogether">
-                <h2 class="skills">Skills:</h2>
+                <div class="sectionheader">
+                    <img class="sectionheader" alt="" src="sectionheader.png"/>
+                    <h2 class="skills">Skills:</h2>
+                </div>
                 <xsl:for-each select="skillsgroup">
                     <h3 class="{name(.)}">
                         <xsl:value-of select="@type"/>
@@ -299,13 +300,30 @@
                                     <xsl:value-of select="@name"/>
                                 </th>
                                 <xsl:for-each select="specificskill">
-                                    <td class="_{name(.)}">
-                                        <span class="skill">
-                                            <xsl:value-of select="."/>
-                                        </span>
-                                    </td>
+                                    <xsl:if test="position() &lt; 9">
+                                        <td class="_{name(.)}">
+                                            <span class="skill">
+                                                <xsl:value-of select="."/>
+                                            </span>
+                                        </td>
+                                    </xsl:if>
                                 </xsl:for-each>
                             </tr>
+                            <xsl:if test="count(specificskill) &gt; 8">
+                                <tr class="_{name(.)}">
+                                    <th class="_{name(.)}" />                                    
+                                    <xsl:for-each select="specificskill">
+                                        <xsl:if test="position() &gt; 8">
+                                            <td class="_{name(.)}">
+                                                <span class="skill">
+                                                    <xsl:value-of select="."/>
+                                                </span>
+                                            </td>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </tr>
+                            </xsl:if>
+                            <tr><td> </td></tr>
                         </xsl:for-each>
                     </table>
                 </xsl:for-each>
@@ -315,7 +333,10 @@
 
     <xsl:template match="qualifications" xmlns="http://www.w3.org/1999/xhtml">
         <div class="keeptogether">
-            <h2 class="qualifications">Qualifications:</h2>
+            <div class="sectionheader">
+                <img class="sectionheader" alt="" src="sectionheader.png"/>
+                <h2 class="qualifications">Qualifications:</h2>
+            </div>
             <table class="qualifications vcalendar">
                 <xsl:for-each select="award">
                     <tr class="{name(.)}">
@@ -373,8 +394,11 @@
     </xsl:template>
 
     <xsl:template match="memberships" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="keeptogether breakbefore">
-            <h2 class="memberships">Memberships:</h2>
+        <div class="keeptogether">
+            <div class="sectionheader">
+                <img class="sectionheader" alt="" src="sectionheader.png"/>
+                <h2 class="memberships">Memberships:</h2>
+            </div>
             <table class="memberships">
                 <xsl:for-each select="society">
                     <tr class="{name(.)}">
@@ -401,7 +425,10 @@
 
     <xsl:template match="recognitions" xmlns="http://www.w3.org/1999/xhtml">
         <div class="keeptogether">
-            <h2 class="recognitions">Awards and Recognitions:</h2>
+            <div class="sectionheader">
+                <img class="sectionheader" alt="" src="sectionheader.png"/>
+                <h2 class="recognitions">Awards and Recognitions:</h2>
+            </div>
             <table class="recognitions">
                 <xsl:for-each select="organisation">
                     <tr class="{name(.)}">
@@ -444,129 +471,170 @@
     <xsl:template name="outputexperiences" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:param name="exclude" select="''"/>
         <xsl:param name="include" select="'J62,M72,P85,R90'"/>
-        <table class="experiences vcalendar">
+        <div class="experiences vcalendar">
             <xsl:for-each select="experience">
                 <xsl:if
                     test="contains($exclude, substring(iscocategory/nacecode/text(), 1, 3))!=true() and contains($include, substring(iscocategory/nacecode/text(), 1, 3))=true()">
                     <xsl:if
                         test="($showopensource_ and earnings='Open Source') or ($showunpaid_ and earnings='Unpaid') or ($showpaid_ and earnings/@currency)">
                         <div class="keeptogether">
-                        <tr class="{name(.)}">
-                            <th class="{name(.)}" colspan="3">[NACE sector code <xsl:value-of
-                                    select="iscocategory/nacecode"/>
-                                <xsl:variable name="nacecode" select="iscocategory/nacecode/text()"
-                                /> (<xsl:value-of
-                                    select="document('schemas/NACE_COM.xsd')//*[@value=$nacecode]/*/*[@xml:lang='en']"
-                                />)]</th>
-                        </tr>
-                        <tr class="{name(.)}">
-                            <th class="{name(.)}" colspan="3">[ISCO code <xsl:value-of
-                                    select="iscocategory/iscofield4"/>
-                                <xsl:variable name="iscofield4"
-                                    select="iscocategory/iscofield4/text()"/> (<xsl:value-of
-                                    select="document('schemas/ISCO_88_COM.xsd')//*[@value=$iscofield4]/*/*[@xml:lang='en']"
-                                />)]</th>
-                        </tr>
-                        <tr class="{name(.)} experience vevent">
-                            <td class="title">
-                                <span class="summary"><xsl:value-of select="title"/></span>
-                                <a href="#privatedetails" class="include" title="Author"> </a>
-                            </td>
-                            <td class="href">
-                                <xsl:if test="title/@href">(ref: <a href="{title/@href}">
-                                        <xsl:value-of select="title/@href"/>
-                                    </a>)</xsl:if>
-                            </td>
-                            <td class="period">
-                                <xsl:for-each select="start">
-                                    <xsl:if test="position()!=1"><br/></xsl:if>
-                                    <xsl:variable name="startdate" select="self::node()/text()"/>
-                                    <xsl:variable name="enddate" select="following-sibling::*[1]/text()"/>
-                                    <xsl:call-template name="daterange">
-                                        <xsl:with-param name="start" select="$startdate"/>
-                                        <xsl:with-param name="end"  select="$enddate"/>
-                                    </xsl:call-template>
-                                </xsl:for-each>
-                            </td>
-                        </tr>
-                        <xsl:if test="employer">
-                            <tr class="{name(.)} vcard">
-                                <td class="employer">
-                                    <span class="org"><xsl:value-of select="employer"/></span>
-                                    <a href="#privatedetails" class="include" title="Author"> </a>
-                                </td>
-                                <td class="earnings">Earnings:
-                                    <xsl:variable name="earningsequiv">
-                                        <xsl:call-template name="currencysymbol">
-                                            <xsl:with-param name="currency" select="earnings/@currency" />
-                                        </xsl:call-template>
-                                        <xsl:choose>
-                                            <xsl:when test="earnings/@periodicity='salary'"><xsl:value-of select="earnings"/></xsl:when>
-                                            <xsl:when test="earnings/@periodicity='hourly'"><xsl:value-of select="earnings*2000"/></xsl:when>
-                                            <xsl:when test="earnings/@periodicity='daily'"><xsl:value-of select="earnings*250"/></xsl:when>
-                                        </xsl:choose>
-                                    </xsl:variable>
-                                        <abbr title="Equivalent to {$earningsequiv} per annum">
-                                            <xsl:call-template name="currencysymbol">
-                                                <xsl:with-param name="currency" select="earnings/@currency" />
-                                            </xsl:call-template>
-                                            <xsl:value-of select="earnings"/>
-                                            <xsl:choose>
-                                                <xsl:when test="earnings/@periodicity='salary'"> per annum.</xsl:when>
-                                                <xsl:when test="earnings/@periodicity='hourly'"> per hour.</xsl:when>
-                                                <xsl:when test="earnings/@periodicity='daily'"> per day.</xsl:when>
-                                            </xsl:choose>
-                                        </abbr></td>
-                                <td class="location">
-                                    <xsl:value-of select="location/city"/>, <xsl:if
-                                        test="location/county">
-                                        <xsl:value-of select="location/county"/>, </xsl:if>
-                                    <xsl:variable name="country" select="location/country/text()"/>
-                                    <xsl:value-of
-                                        select="document('schemas/ISOCountryCodeType-V2006.xsd')//*[@value=$country]/*/*"
-                                    />
-                                </td>
-                            </tr>
-                        </xsl:if>
-                        <tr class="{name(.)}">
-                            <td class="description" colspan="3">
-                                <xsl:apply-templates select="description"/>
-                            </td>
-                        </tr>
-                        <xsl:if
-                            test="contains($inhibitdetailfor, substring(iscocategory/nacecode/text(), 1, 3))!=true()">
-                            <xsl:if test="detail/text()">
-                                <tr class="{name(.)}">
-                                    <td class="detail" colspan="3">
-                                        <xsl:apply-templates select="detail"/>
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                        </xsl:if>
-                        <tr class="{name(.)} spacer"><td colspan="3"> </td></tr>
+                            <table class="experience">
+                                <thead>
+                                    <tr class="{name(.)}">
+                                        <th class="{name(.)}" colspan="3">[NACE sector code
+                                                <xsl:value-of select="iscocategory/nacecode"/>
+                                            <xsl:variable name="nacecode"
+                                                select="iscocategory/nacecode/text()"/>
+                                                (<xsl:value-of
+                                                select="document('schemas/NACE_COM.xsd')//*[@value=$nacecode]/*/*[@xml:lang='en']"
+                                            />)]</th>
+                                    </tr>
+                                    <tr class="{name(.)}">
+                                        <th class="{name(.)}" colspan="3">[ISCO code <xsl:value-of
+                                                select="iscocategory/iscofield4"/>
+                                            <xsl:variable name="iscofield4"
+                                                select="iscocategory/iscofield4/text()"/>
+                                                (<xsl:value-of
+                                                select="document('schemas/ISCO_88_COM.xsd')//*[@value=$iscofield4]/*/*[@xml:lang='en']"
+                                            />)]</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr class="{name(.)} spacer">
+                                        <td colspan="3"> </td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr class="{name(.)} vevent">
+                                        <td class="title">
+                                            <span class="summary">
+                                                <xsl:value-of select="title"/>
+                                            </span>
+                                            <a href="#privatedetails" class="include" title="Author"
+                                            > </a>
+                                        </td>
+                                        <td class="href">
+                                            <xsl:if test="title/@href">(ref: <a href="{title/@href}">
+                                                  <xsl:value-of select="title/@href"/>
+                                                </a>)</xsl:if>
+                                        </td>
+                                        <td class="period">
+                                            <xsl:for-each select="start">
+                                                <xsl:if test="position()!=1">
+                                                  <br/>
+                                                </xsl:if>
+                                                <xsl:variable name="startdate"
+                                                  select="self::node()/text()"/>
+                                                <xsl:variable name="enddate"
+                                                  select="following-sibling::*[1]/text()"/>
+                                                <xsl:call-template name="daterange">
+                                                  <xsl:with-param name="start" select="$startdate"/>
+                                                  <xsl:with-param name="end" select="$enddate"/>
+                                                </xsl:call-template>
+                                            </xsl:for-each>
+                                        </td>
+                                    </tr>
+                                    <xsl:if test="employer">
+                                        <tr class="{name(.)} vcard">
+                                            <td class="employer">
+                                                <span class="org">
+                                                  <xsl:value-of select="employer"/>
+                                                </span>
+                                                <a href="#privatedetails" class="include"
+                                                  title="Author"> </a>
+                                            </td>
+                                            <td class="earnings">Earnings: <xsl:variable
+                                                  name="earningsequiv">
+                                                  <xsl:call-template name="currencysymbol">
+                                                  <xsl:with-param name="currency"
+                                                  select="earnings/@currency"/>
+                                                  </xsl:call-template>
+                                                  <xsl:choose>
+                                                  <xsl:when test="earnings/@periodicity='salary'">
+                                                  <xsl:value-of select="earnings"/>
+                                                  </xsl:when>
+                                                  <xsl:when test="earnings/@periodicity='hourly'">
+                                                  <xsl:value-of select="earnings*2000"/>
+                                                  </xsl:when>
+                                                  <xsl:when test="earnings/@periodicity='daily'">
+                                                  <xsl:value-of select="earnings*250"/>
+                                                  </xsl:when>
+                                                  </xsl:choose>
+                                                </xsl:variable>
+                                                <abbr
+                                                  title="Equivalent to {$earningsequiv} per annum">
+                                                  <xsl:call-template name="currencysymbol">
+                                                  <xsl:with-param name="currency"
+                                                  select="earnings/@currency"/>
+                                                  </xsl:call-template>
+                                                  <xsl:value-of select="earnings"/>
+                                                  <xsl:choose>
+                                                  <xsl:when test="earnings/@periodicity='salary'">
+                                                  per annum.</xsl:when>
+                                                  <xsl:when test="earnings/@periodicity='hourly'">
+                                                  per hour.</xsl:when>
+                                                  <xsl:when test="earnings/@periodicity='daily'">
+                                                  per day.</xsl:when>
+                                                  </xsl:choose>
+                                                </abbr></td>
+                                            <td class="location">
+                                                <xsl:value-of select="location/city"/>, <xsl:if
+                                                  test="location/county">
+                                                  <xsl:value-of select="location/county"/>, </xsl:if>
+                                                <xsl:variable name="country"
+                                                  select="location/country/text()"/>
+                                                <xsl:value-of
+                                                  select="document('schemas/ISOCountryCodeType-V2006.xsd')//*[@value=$country]/*/*"
+                                                />
+                                            </td>
+                                        </tr>
+                                    </xsl:if>
+                                    <tr class="{name(.)}">
+                                        <td class="description" colspan="3">
+                                            <xsl:apply-templates select="description"/>
+                                        </td>
+                                    </tr>
+                                    <xsl:if
+                                        test="contains($inhibitdetailfor, substring(iscocategory/nacecode/text(), 1, 3))!=true()">
+                                        <xsl:if test="detail/text()">
+                                            <tr class="{name(.)}">
+                                                <td class="detail" colspan="3">
+                                                  <xsl:apply-templates select="detail"/>
+                                                </td>
+                                            </tr>
+                                        </xsl:if>
+                                    </xsl:if>
+                                </tbody>
+                            </table>
                         </div>
                     </xsl:if>
                 </xsl:if>
             </xsl:for-each>
-        </table>
+        </div>
     </xsl:template>
 
     <xsl:template match="experiences" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="sectionheader">
+            <img class="sectionheader" alt="" src="sectionheader.png"/>
             <h2 class="experiences">Relevant Experiences:</h2>
+        </div>
             <xsl:call-template name="outputexperiences">
                 <xsl:with-param name="exclude" select="$inhibitdetailfor"/>
             </xsl:call-template>
         <xsl:choose>
             <xsl:when test="$showotherexperiences_">
                 <xsl:if test="$inhibitdetailfor">
-                    <h2 class="experiences">Other Experiences:</h2>
+                    <div class="sectionheader">
+                        <img class="sectionheader" alt="" src="sectionheader.png"/>
+                        <h2 class="experiences">Other Experiences:</h2>
+                    </div>
                     <xsl:call-template name="outputexperiences">
                         <xsl:with-param name="include" select="$inhibitdetailfor"/>
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
             <xsl:otherwise>
-                <div class="breakafter">
+                <div>
                     <h1 style="text-align:center">This is the short format resume listing only
                         relevant experiences.<br/>A fully detailed version can be found online at <a
                             href="http://www.nedprod.com/xmlcv/"
@@ -578,7 +646,10 @@
 
     <xsl:template match="publications" xmlns="http://www.w3.org/1999/xhtml">
         <div class="keeptogether">
-            <h2 class="publications">Publications:</h2>
+            <div class="sectionheader">
+                <img class="sectionheader" alt="" src="sectionheader.png"/>
+                <h2 class="publications">Publications:</h2>
+            </div>
             <table class="publications">
                 <xsl:for-each select="mods:modsCollection">
                     <xsl:for-each select="mods:mods">

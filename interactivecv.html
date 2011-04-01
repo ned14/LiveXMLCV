@@ -15,10 +15,11 @@ input[@type='text'] {
         <p style="font-size:larger; text-align:center;">Quick link: (i) <a id="itcvlink" href="">IT CV</a> (ii) <a
                 id="educationcvlink" href="">Education CV</a> (iii) <a id="genericcvlink" href=""
                 >Generic CV</a></p>
-        <p><i>Note that due to buggy or incomplete CSS3 support output may be slightly messed up on
-            some older browsers (especially Internet Explorer) and printing may produce messy output
-            on all browsers except Opera and Chrome which are the only two which currently support
-            CSS printing attributes.</i></p>
+        <p><i>Note that due to buggy or incomplete CSS3 support output may be fairly messed up on
+            some older browsers (especially Internet Explorer before v9). If you're printing, right
+            now ONLY IE9 produces perfect output thanks to its excellent CSS3 print attributes
+            support - everything else screws something up (try turning on background colours before
+            printing!).</i></p>
         <p>Choose a profile for a preset CV customisation: <select id="profile">
                 <option value="allpossibledata">All Possible Data</option>
                 <option value="it">IT</option>
@@ -96,7 +97,7 @@ input[@type='text'] {
                                 $("#showunpaid").attr("checked", true);
                                 $("#showopensource").attr("checked", true);
                             } else if (profile == "it") {
-                                $("#inhibitdetailfor").attr("value", "P85,R90");
+                                $("#inhibitdetailfor").attr("value", "P85,R90,M72.2");
                                 $("#showskills").attr("checked", true);
                                 $("#showpaid").attr("checked", true);
                                 $("#showunpaid").attr("checked", true);
