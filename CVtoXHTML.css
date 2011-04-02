@@ -123,7 +123,8 @@ table.ganttchart td.period div {
   vertical-align: middle;
 }
 table.ganttchart td.period div div {
-  height: 10px;
+  border: 0;
+  height: 0px;
   margin-top: 1px;
   border-top: 10px solid black; /* Forces printing */
   /*background-color: black;*/
