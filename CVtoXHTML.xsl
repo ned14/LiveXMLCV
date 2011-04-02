@@ -473,8 +473,10 @@
         <xsl:param name="include" select="'J62,M72,P85,R90'"/>
         <div class="experiences vcalendar">
             <xsl:for-each select="experience">
+                <!--<xsl:if
+                    test="contains($exclude, substring(iscocategory/nacecode/text(), 1, 3))!=true() and contains($include, substring(iscocategory/nacecode/text(), 1, 3))=true()"> -->
                 <xsl:if
-                    test="contains($exclude, substring(iscocategory/nacecode/text(), 1, 3))!=true() and contains($include, substring(iscocategory/nacecode/text(), 1, 3))=true()">
+                    test="contains($exclude, substring(iscocategory/nacecode/text(), 1, 3))!=true()">
                     <xsl:if
                         test="($showopensource_ and earnings='Open Source') or ($showunpaid_ and earnings='Unpaid') or ($showpaid_ and earnings/@currency)">
                         <div class="keeptogether">
