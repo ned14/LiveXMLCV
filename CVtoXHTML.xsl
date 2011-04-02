@@ -202,10 +202,12 @@
     </xsl:template>
     <xsl:template name="ganttchart" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:if test="$showgraph_">
-            <xsl:variable name="firstdate" select="substring(experiences/experience[last()]/start, 1, 7)"/>
+            <xsl:variable name="firstdate"
+                select="substring(experiences/experience[last()]/start, 1, 7)"/>
             <xsl:variable name="lastdate2">
                 <xsl:choose>
-                    <xsl:when test="experiences/experience[1]/end &gt; qualifications/award[1]/end">
+                    <xsl:when
+                        test="experiences/experience[1]/end &gt; qualifications/award[1]/end">
                         <xsl:value-of select="experiences/experience[1]/end"/>
                     </xsl:when>
                     <xsl:otherwise>
@@ -218,7 +220,8 @@
             <xsl:variable name="firstmonth" select="number(substring($firstdate, 6, 2))"/>
             <xsl:variable name="lastyear" select="number(substring($lastdate, 1, 4))"/>
             <xsl:variable name="lastmonth" select="number(substring($lastdate, 6, 2))"/>
-                <table class="ganttchart keeptogether">
+            <div class="ganttchart keeptogether">
+                <table class="ganttchart">
                     <tr class="timeline">
                         <td/>
                         <td>
@@ -279,6 +282,7 @@
                         </td>
                     </tr>
                 </table>
+            </div>
         </xsl:if>
     </xsl:template>
 

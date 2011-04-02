@@ -80,7 +80,7 @@ td.grade, td.period, td.institution, td.employer, td.period, td.when, td.locatio
 td.title, td.employer {
   text-align: left;
 }
-table.ganttchart {
+div.ganttchart {
   position: relative;
   width: 90%;
   font-size: 75%;
