@@ -474,13 +474,17 @@
     </xsl:template>
     <xsl:template name="outputexperiences" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:param name="exclude" select="''"/>
-        <xsl:param name="include" select="'J62,M72,P85,R90'"/>
+        <xsl:param name="include" select="'*'"/>
         <div class="experiences vcalendar">
             <xsl:for-each select="experience">
-                <!--<xsl:if
-                    test="contains($exclude, substring(iscocategory/nacecode/text(), 1, 3))!=true() and contains($include, substring(iscocategory/nacecode/text(), 1, 3))=true()"> -->
                 <xsl:if
-                    test="contains($exclude, substring(iscocategory/nacecode/text(), 1, 3))!=true()">
+                    test="($exclude='' or (contains(iscocategory/nacecode/text(), substring-before($exclude, ','))!=true()
+                    and contains(iscocategory/nacecode/text(), substring-before(substring-after($exclude, ','), ','))!=true()
+                    and contains(iscocategory/nacecode/text(), substring-before(substring-after(substring-after($exclude, ','), ','), ','))!=true()))
+                    and ($include='*' or
+                    contains(iscocategory/nacecode/text(), substring-before($include, ','))=true()
+                    or contains(iscocategory/nacecode/text(), substring-before(substring-after($include, ','), ','))=true()
+                    or contains(iscocategory/nacecode/text(), substring-before(substring-after(substring-after($include, ','), ','), ','))=true())">
                     <xsl:if
                         test="($showopensource_ and earnings='Open Source') or ($showunpaid_ and earnings='Unpaid') or ($showpaid_ and earnings/@currency)">
                         <div class="keeptogether">
