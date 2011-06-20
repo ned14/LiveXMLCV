@@ -482,9 +482,9 @@
                     and (substring-before(substring-after($exclude, ';'), ';')='' or contains(iscocategory/nacecode/text(), substring-before(substring-after($exclude, ';'), ';'))!=true())
                     and (substring-before(substring-after(substring-after($exclude, ';'), ';'), ';')='' or contains(iscocategory/nacecode/text(), substring-before(substring-after(substring-after($exclude, ';'), ';'), ';'))!=true())))
                     and ($include='*' or
-                    contains(iscocategory/nacecode/text(), substring-before($include, ';'))=true()
-                    or contains(iscocategory/nacecode/text(), substring-before(substring-after($include, ';'), ';'))=true()
-                    or contains(iscocategory/nacecode/text(), substring-before(substring-after(substring-after($include, ';'), ';'), ';'))=true())">
+                    (substring-before($include, ';')!='' and contains(iscocategory/nacecode/text(), substring-before($include, ';'))=true())
+                    or (substring-before(substring-after($include, ';'), ';')!='' and contains(iscocategory/nacecode/text(), substring-before(substring-after($include, ';'), ';'))=true())
+                    or (substring-before(substring-after(substring-after($include, ';'), ';'), ';')!='' and contains(iscocategory/nacecode/text(), substring-before(substring-after(substring-after($include, ';'), ';'), ';'))=true()))">
                     <xsl:if
                         test="($showopensource_ and earnings='Open Source') or ($showunpaid_ and earnings='Unpaid') or ($showpaid_ and earnings/@currency)">
                         <div class="keeptogether">
