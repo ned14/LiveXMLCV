@@ -1,0 +1,18 @@
+﻿body {
+  font-size: 85%;
+}
+div.sectionheader * {
+  color: white !important;
+  background-color: gray !important;
+}
+.keeptogether {
+  page-break-before:auto;
+  page-break-inside:avoid;
+  page-break-after:auto;
+}
+.breakbefore {
+  page-break-before:always;
+}
+.breakafter {
+  page-break-after:always;
+}

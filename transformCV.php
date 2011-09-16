@@ -1,7 +1,7 @@
 <?php
 // Load the XSLT source
 $xsl = new DOMDocument;
-$xsl->load('CVtoXHTML.xsl');
+$xsl->load('CVtoXHTML_full.xsl');
 
 // Configure the transformer
 $proc = new XSLTProcessor;
@@ -9,7 +9,7 @@ $proc->importStyleSheet($xsl); // attach the xsl rules
 
 // Load the XML source
 $xml = new DOMDocument;
-$xml->load('cv_v5.1.xml');
+$xml->load('cv_v6.xml');
 
 // Set the parameters and output the transformation
 $proc->setParameter('', 'profilename', $_GET['profilename']);

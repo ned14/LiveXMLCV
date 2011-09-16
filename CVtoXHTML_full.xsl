@@ -5,7 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dt="http://xsltsl.org/date-time"
     xmlns:mods="http://www.loc.gov/mods/v3"
-    xs:schemaLocation="cv.xsd" exclude-result-prefixes="xhtml xsl xs xsi dt mods" version="1.0">
+    xs:schemaLocation="cv_v6.xsd" exclude-result-prefixes="xhtml xsl xs xsi dt mods" version="1.0">
     <xsl:output omit-xml-declaration="yes" method="xml" media-type="application/xhtml+xml"
         doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"
         doctype-public="-//W3C//DTD XHTML 1.1//EN" encoding="UTF-8" indent="yes"/>
@@ -36,11 +36,13 @@
         <xsl:param name="start"/>
         <xsl:param name="end"/>
         <abbr class="dtstart" title="{$start}">
+            <time datetime="{$start}" itemprop="startDate">
             <xsl:call-template name="dt:format-date-time">
                 <xsl:with-param name="xsd-date-time" select="$start"/>
                 <xsl:with-param name="format" select="'%b %Y'"/>
             </xsl:call-template>
-        </abbr><xsl:if test="substring($end, 1, 7)!=substring($start, 1, 7)"> &#8212; <abbr class="dtend" title="{$end}"><xsl:choose>
+                </time>
+        </abbr><xsl:if test="substring($end, 1, 7)!=substring($start, 1, 7)"> &#8212; <abbr class="dtend" title="{$end}"><time datetime="{$end}" itemprop="endDate"><xsl:choose>
             <xsl:when test="$end='unbounded'">present</xsl:when>
             <xsl:otherwise>
                 <xsl:call-template name="dt:format-date-time">
@@ -48,7 +50,7 @@
                     <xsl:with-param name="format" select="'%b %Y'"/>
                 </xsl:call-template>
             </xsl:otherwise>
-        </xsl:choose></abbr></xsl:if>
+        </xsl:choose></time></abbr></xsl:if>
     </xsl:template>
 
     <xsl:template match="/curriculumvitae">
@@ -58,13 +60,13 @@
                 <meta http-equiv="Content-Type" content="application/xhtml\+xml; charset=utf-8"/>
                 <meta http-equiv="Content-Language" content="{@lang}"/>
                 <title>Curriculum Vitae For <xsl:value-of select="@forwhom"/></title>
-                <link rel="stylesheet" href="CVtoXHTML.css" type="text/css"/>
-                <link rel="stylesheet" href="CVtoXHTMLprint.css" type="text/css" media="print"/>
+                <link rel="stylesheet" href="CVtoXHTML_full.css" type="text/css"/>
+                <link rel="stylesheet" href="CVtoXHTMLprint_full.css" type="text/css" media="print"/>
                 <xsl:comment><![CDATA[[if IE]>
-                <link rel="stylesheet" href="CVtoXHTMLie.css" type="text/css" />
+                <link rel="stylesheet" href="CVtoXHTMLie_full.css" type="text/css" />
                 <![endif]]]></xsl:comment>
             </head>
-            <body class="hresume">
+            <body class="hresume" itemscope="itemscope" itemtype="http://schema.org/WebPage">
                 <xsl:apply-templates select="privatedetails"/>
                 <xsl:apply-templates select="introduction"/>
                 <xsl:call-template   name=  "ganttchart"/>
@@ -81,28 +83,41 @@
     </xsl:template>
 
     <xsl:template match="privatedetails" xmlns="http://www.w3.org/1999/xhtml">
-        <table class="privatedetails vcard" id="privatedetails">
+        <table class="privatedetails vcard" id="privatedetails" itemprop="alumni" itemscope="itemscope"
+            itemtype="http://schema.org/Person">
+            <!-- Generate the alumniOf itemprops -->
+            <xsl:attribute name="itemref">pi_qualifications pi_experiences<xsl:for-each select="//award"> eo_<xsl:value-of select="generate-id(.)"/></xsl:for-each>
+            </xsl:attribute>
             <tr>
                 <td class="name">
-                    <span class="fn"><xsl:value-of select="../name"/></span>
+                    <span class="fn" itemprop="name">
+                        <xsl:value-of select="../name"/>
+                    </span>
                 </td>
                 <td/>
                 <td class="email">
                     <xsl:choose>
                         <xsl:when test="$showprivatedetails_">
-                            <a href="mailto:{email}">
-                                <xsl:value-of select="email"/>
-                            </a>
+                            <span class="email" itemprop="email">
+                                <a href="mailto:{email}">
+                                    <xsl:value-of select="email"/>
+                                </a>
+                            </span>
                         </xsl:when>
                         <xsl:otherwise>xxxxxx@xxxxxxx.xxx</xsl:otherwise>
                     </xsl:choose>
                 </td>
             </tr>
             <tr>
-                <td class="address adr">
+                <td class="address">
                     <xsl:choose>
                         <xsl:when test="$showprivatedetails_">
-                            <span class="adr"><span class="street-address"><xsl:apply-templates select="address"/></span></span>
+                            <div class="adr" itemprop="address" itemscope="itemscope"
+                                itemtype="http://schema.org/PostalAddress">
+                                <span class="street-address" itemprop="streetAddress">
+                                    <xsl:apply-templates select="address"/>
+                                </span>
+                            </div>
                         </xsl:when>
                         <xsl:otherwise>xxxxxxxxxxxx<br/>xxxxxxxxxx<br/>xxxxxxxxxxx<br/>xxxxxxx</xsl:otherwise>
                     </xsl:choose>
@@ -110,17 +125,21 @@
                 <td class="telephone">
                     <xsl:choose>
                         <xsl:when test="$showprivatedetails_">
-                            <span class="tel"><xsl:value-of select="telephone"/></span>
+                            <span class="tel" itemprop="telephone">
+                                <xsl:value-of select="telephone"/>
+                            </span>
                         </xsl:when>
                         <xsl:otherwise>xxxx xx xxxxxxx</xsl:otherwise>
                     </xsl:choose>
                 </td>
                 <td class="dateofbirth">Date of Birth: <xsl:choose>
                         <xsl:when test="$showprivatedetails_">
-                            <xsl:call-template name="dt:format-date-time">
-                                <xsl:with-param name="xsd-date-time" select="dateofbirth"/>
-                                <xsl:with-param name="format" select="'%d %b %Y'"/>
-                            </xsl:call-template>
+                            <time datetime="{dateofbirth}" itemprop="birthDate">
+                                <xsl:call-template name="dt:format-date-time">
+                                    <xsl:with-param name="xsd-date-time" select="dateofbirth"/>
+                                    <xsl:with-param name="format" select="'%d %b %Y'"/>
+                                </xsl:call-template>
+                            </time>
                         </xsl:when>
                         <xsl:otherwise>xxxx xxx xxxx</xsl:otherwise>
                     </xsl:choose>
@@ -128,8 +147,9 @@
             </tr>
             <tr>
                 <td class="version" colspan="2"/>
-                <td class="profile">rev. <xsl:value-of select="../revision"/> xmlprofile:
-                        '<xsl:value-of select="$profilename"/>'</td>
+                <td class="profile">rev. <xsl:value-of select="../revision/version"/> (<xsl:value-of
+                        select="../revision/lastupdated"/>) xmlprofile: '<xsl:value-of
+                        select="$profilename"/>'</td>
             </tr>
         </table>
     </xsl:template>
@@ -335,11 +355,18 @@
         </xsl:if>
     </xsl:template>
 
+
     <xsl:template match="qualifications" xmlns="http://www.w3.org/1999/xhtml">
         <div class="keeptogether">
             <div class="sectionheader">
                 <img class="sectionheader" alt="" src="sectionheader.png"/>
                 <h2 class="qualifications">Qualifications:</h2>
+                <span id="pi_qualifications" itemprop="performerIn" itemscope="itemscope" itemtype="http://schema.org/EducationEvent">
+                    <xsl:attribute name="itemref">
+                        <xsl:for-each select="award"> ev_<xsl:value-of select="generate-id(.)"/></xsl:for-each>
+                    </xsl:attribute>
+                    <meta itemprop="name" content="Qualifications"/>
+                </span>
             </div>
             <table class="qualifications vcalendar">
                 <xsl:for-each select="award">
@@ -353,10 +380,10 @@
                                 select="document('schemas/ISCED97.xsd')//*[@value=$iscedfield2]/*/*[@xml:lang='en']"
                             />)]</th>
                     </tr>
-                    <tr class="{name(.)} education vevent">
+                    <tr class="{name(.)} education vevent" id="ev_{generate-id(.)}" itemprop="subEvents" itemscope="itemscope" itemtype="http://schema.org/EducationEvent" itemref="eo_{generate-id(.)}">
                         <td class="title">
-                            <span class="summary"><xsl:value-of select="@type"/> (<xsl:value-of
-                                    select="name"/>) <xsl:value-of select="title"/></span>
+                            <span class="summary" itemprop="name"><xsl:value-of select="@type"/> (<xsl:value-of
+                            select="name"/>) <xsl:value-of select="title"/></span>
                         </td>
                         <td class="grade">
                             <xsl:value-of select="grade"/>
@@ -368,18 +395,18 @@
                             </xsl:call-template>
                         </td>
                     </tr>
-                    <tr class="{name(.)}">
-                        <td class="institution">
+                    <tr class="{name(.)}" id="eo_{generate-id(.)}" itemprop="alumniOf location" itemscope="itemscope" itemtype="http://schema.org/EducationalOrganization" itemref="privatedetails">
+                        <td class="institution" itemprop="name">
                             <xsl:value-of select="institution"/>
                         </td>
-                        <td/>
-                        <td class="location">
-                            <xsl:value-of select="location/city"/>, <xsl:if test="location/county">
-                                <xsl:value-of select="location/county"/>, </xsl:if>
+                        <td/>                        
+                        <td class="location" itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
+                            <span itemprop="addressLocality"><xsl:value-of select="location/city"/></span>, <xsl:if test="location/county">
+                                <span itemprop="addressRegion"><xsl:value-of select="location/county"/></span>, </xsl:if>
                             <xsl:variable name="country" select="location/country/text()"/>
-                            <xsl:value-of
+                            <span itemprop="addressCountry"><xsl:value-of
                                 select="document('schemas/ISOCountryCodeType-V2006.xsd')//*[@value=$country]/*/*"
-                            />
+                            /></span>
                         </td>
                     </tr>
                     <xsl:if test="dissertation/text()">
@@ -515,16 +542,19 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr class="{name(.)} vevent">
+                                    <tr class="{name(.)} vevent" id="ev_{generate-id(.)}" itemprop="subEvents" itemscope="itemscope" itemtype="http://schema.org/Event">
+                                        <xsl:if test="employer">
+                                            <xsl:attribute name="itemref">og_<xsl:value-of select="generate-id(.)"/></xsl:attribute>
+                                        </xsl:if>
                                         <td class="title">
-                                            <span class="summary">
+                                            <span class="summary" itemprop="name">
                                                 <xsl:value-of select="title"/>
                                             </span>
                                             <a href="#privatedetails" class="include" title="Author"
                                             > </a>
                                         </td>
                                         <td class="href">
-                                            <xsl:if test="title/@href">(ref: <a href="{title/@href}">
+                                            <xsl:if test="title/@href">(ref: <a itemprop="url" href="{title/@href}">
                                                   <xsl:value-of select="title/@href"/>
                                                 </a>)</xsl:if>
                                         </td>
@@ -545,9 +575,9 @@
                                         </td>
                                     </tr>
                                     <xsl:if test="employer">
-                                        <tr class="{name(.)} vcard">
+                                        <tr class="{name(.)} vcard" id="og_{generate-id(.)}" itemprop="location" itemscope="itemscope" itemtype="http://schema.org/Organization">
                                             <td class="employer">
-                                                <span class="org">
+                                                <span class="org" itemprop="name">
                                                   <xsl:value-of select="employer"/>
                                                 </span>
                                                 <a href="#privatedetails" class="include"
@@ -587,15 +617,15 @@
                                                   per day.</xsl:when>
                                                   </xsl:choose>
                                                 </abbr></td>
-                                            <td class="location">
-                                                <xsl:value-of select="location/city"/>, <xsl:if
+                                            <td class="location" itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
+                                                <span itemprop="addressLocality"><xsl:value-of select="location/city"/></span>, <xsl:if
                                                   test="location/county">
-                                                  <xsl:value-of select="location/county"/>, </xsl:if>
+                                                    <span itemprop="addressRegion"><xsl:value-of select="location/county"/></span>, </xsl:if>
                                                 <xsl:variable name="country"
                                                   select="location/country/text()"/>
-                                                <xsl:value-of
+                                                <span itemprop="addressCountry"><xsl:value-of
                                                   select="document('schemas/ISOCountryCodeType-V2006.xsd')//*[@value=$country]/*/*"
-                                                />
+                                                /></span>
                                             </td>
                                         </tr>
                                     </xsl:if>
@@ -627,6 +657,12 @@
         <div class="sectionheader">
             <img class="sectionheader" alt="" src="sectionheader.png"/>
             <h2 class="experiences">Relevant Experiences:</h2>
+            <span id="pi_experiences" itemprop="performerIn" itemscope="itemscope" itemtype="http://schema.org/Event">
+                <xsl:attribute name="itemref">
+                    <xsl:for-each select="experience"> ev_<xsl:value-of select="generate-id(.)"/></xsl:for-each>
+                </xsl:attribute>
+                <meta itemprop="name" content="Experiences"/>
+            </span>
         </div>
             <xsl:call-template name="outputexperiences">
                 <xsl:with-param name="exclude" select="$inhibitdetailfor"/>

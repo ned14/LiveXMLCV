@@ -3,7 +3,7 @@
 
 <head>
 <title>An Interactive Live XML Curriculum Vitae for Niall Douglas</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <style type="text/css">
 input[@type='text'] {
 	vertical-align: middle;
@@ -145,10 +145,18 @@ input[@type='text'] {
                             $("#profile").val("allpossibledata").change();
                             return false;
                         });
+                        var winresizefunction=function() {
+                            var cvoutput=$("#cvoutput");
+                            var newheight=$(window).height()-cvoutput.offset().top-10;
+                            if(newheight<256) newheight=256;
+                            cvoutput.height(newheight);
+                        };
+                        $(window).resize(winresizefunction);
+                        winresizefunction();
                     });
             --></script>
         </div>
-        <iframe id="cvoutput" name="cvoutput" style="width:99%;height:400px;"/>
+        <div><iframe id="cvoutput" name="cvoutput" style="width:99%;height:400px;"/></div>
 
     </body>
 

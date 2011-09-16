@@ -1,0 +1,72 @@
+﻿body {
+  font-family: Constantia, 'Times New Roman', serif;
+  text-align: justify;
+  font-size: 0.9em;
+  /*line-height: 125%;*/
+  padding: 1em;
+}
+h1 {
+  font-family: Constantia, 'Times New Roman', serif;
+  text-align: center;
+  font-size: 150%;
+}
+div.sectionheader {
+  margin-top: 1em;
+  position: relative;
+  color: white;
+  background-color:gray;
+}
+img.sectionheader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: bold;
+  font-family: Corbel, Helvetica, sans-serif;
+  font-size: 1.2em;
+}
+div.introduction {
+  font-size: 110%;
+  line-height: 125%;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table.privatedetails {
+  font-size: larger;
+  font-weight: bold;
+}
+td.version, td.profile {
+  font-size: small;
+  font-weight: normal;
+  text-align: right;
+}
+td {
+  border-style: solid;
+  border-width: thin;
+  border-color: #eeeeee;
+  vertical-align: bottom;
+  padding: 0.2em;
+}
+tr > td + td {
+  text-align: center;
+}
+tr > td + td + td {
+  text-align: right;
+}
+td.title, td.name, td.address, td.email, td.telephone, td.dateofbirth,
+td.grade, td.period, td.institution, td.employer, td.period, td.when, td.location {
+  font-family: Corbel, Helvetica, sans-serif;
+  font-size: 110%;
+  font-weight: bold;
+}
+.skillability, .awardlevel {
+  font-weight: bold;
+  text-decoration: underline;
+}

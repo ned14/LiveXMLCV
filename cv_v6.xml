@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="CVtoXHTML.xsl"?>
+<?xml-stylesheet type="text/xsl" href="CVtoXHTML_full.xsl" title="Full, detailed output of all CV data to XHTML"?>
+<?xml-stylesheet type="text/xsl" href="CVtoXHTML_short.xsl" title="Short, single page output of CV data to XHTML"?>
 <curriculumvitae forwhom="Niall Douglas" lang="en"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cv_v5.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cv_v6.xsd">
     <name>Niall Douglas</name>
-    <revision>5.4 (1st April 2011)</revision>
+    <revision>
+        <version>6.0</version>
+        <lastupdated>2011-09-14</lastupdated>
+    </revision>
     <privatedetails>
-        <dateofbirth>1970-01-01</dateofbirth>
-        <address><div xmlns="http://www.w3.org/1999/xhtml">1 Nice Street<br/>
-            Niceville<br/>
-            Nicestate<br/>
-            Nicecountry</div></address>
-        <telephone>+353 21 1234567</telephone>
-        <email>arse@hotmail.com</email>
     </privatedetails>
     <introduction>
         <specialize profile="education">
@@ -38,11 +35,12 @@
                     class attendance, an 82.8% Interestingness and an 81.2% Clearness rating in the
                     weekly feedback. Another experience involved teaching Business to French
                     undergraduates where I deployed an experimental critical thinking skills
-                    curriculum based on Springer and Borthick's 2004 paper, with great success. I have
-                    approximately sixty hours of postgraduate tutoring employment in e-Business at NUI Cork, and I have a deep
-                    understanding of other cultures through living and working in the countries of
-                    Britain, Spain, Ireland and Canada, and in the languages of English (native
-                    speaker) and Spanish in which I am conversationally fluent.</p>
+                    curriculum based on Springer and Borthick's 2004 paper, with great success. I
+                    have approximately sixty hours of postgraduate tutoring employment in e-Business
+                    at NUI Cork, and I have a deep understanding of other cultures through living
+                    and working in the countries of Britain, Spain, Ireland and Canada, and in the
+                    languages of English (native speaker) and Spanish in which I am conversationally
+                    fluent.</p>
             </div>
         </specialize>
         <specialize profile="it">
@@ -72,12 +70,12 @@
                     EuroFighter defence aircraft in which I was the chief software architect who
                     designed its bench-portable control software meeting strict military
                     specifications.</p>
-                <p>In more recent years I have spent an increasing amount of time mentoring others,
-                    developing cutting edge algorithmic and holistic system theory, and contributing
-                    towards international engineering standards via the ISO process. The evidence of
-                    my many years and tens of thousands of contributions of advice to open source
-                    project mailing lists and fora is obvious from any search of Google for my
-                    name.</p>
+                <p>In more recent years, and especially since 2008, I have spent an increasing
+                    amount of time mentoring others, developing cutting edge algorithmic and
+                    holistic system theory, and contributing towards international engineering
+                    standards via the ISO process. The evidence of my many years and tens of
+                    thousands of contributions of advice to open source project mailing lists and
+                    fora is obvious from any search of Google for my name.</p>
             </div>
         </specialize>
         <!--<specialize profile="allpossibledata">
@@ -100,81 +98,81 @@
                 Language Editor.</p>
             <p>In 2010 I began a UK NQF Level 5 Certificate in the <b>Teaching of English to
                     Speakers of Other Languages (TESOL)</b> which should be obtained in 2011. Also
-                in 2010 I began a Masters in <b>Educational and Social Research</b> with the
+                in 2010 I began a PGCert in <b>Educational and Social Research</b> with the
                 University of London in which I ought to graduate in 2012.</p>
         </div>
     </introduction>
     <skills>
         <skillsgroup type="Technical">
             <skill name="Assemblers">
-                <specificskill>6502</specificskill>
-                <specificskill>68000</specificskill>
-                <specificskill>ARM</specificskill>
-                <specificskill>x64</specificskill>
-                <specificskill>x86</specificskill>
+                <specificskill ability="expert">6502</specificskill>
+                <specificskill ability="expert">68000</specificskill>
+                <specificskill ability="expert">ARM</specificskill>
+                <specificskill ability="expert">x64</specificskill>
+                <specificskill ability="expert">x86</specificskill>
             </skill>
             <skill name="Programming Languages">
-                <specificskill>C</specificskill>
-                <specificskill>C++</specificskill>
-                <specificskill>C#</specificskill>
-                <specificskill>GLSL</specificskill>
-                <specificskill>HLSL</specificskill>
-                <specificskill>Java</specificskill>
-                <specificskill>Javascript</specificskill>
-                <specificskill>Logo</specificskill>
-                <specificskill>LISP</specificskill>
-                <specificskill>OpenCL</specificskill>
-                <specificskill>PHP</specificskill>
-                <specificskill>Python</specificskill>
-                <specificskill>SQL</specificskill>
-                <specificskill>VBA</specificskill>
-                <specificskill>XSL</specificskill>
+                <specificskill ability="expert">C</specificskill>
+                <specificskill ability="expert">C++</specificskill>
+                <specificskill ability="proficient">C#</specificskill>
+                <specificskill ability="competent">GLSL</specificskill>
+                <specificskill ability="competent">HLSL</specificskill>
+                <specificskill ability="competent">Java</specificskill>
+                <specificskill ability="expert">Javascript</specificskill>
+                <specificskill ability="competent">Logo</specificskill>
+                <specificskill ability="competent">LISP</specificskill>
+                <specificskill ability="competent">OpenCL</specificskill>
+                <specificskill ability="expert">PHP</specificskill>
+                <specificskill ability="expert">Python</specificskill>
+                <specificskill ability="expert">SQL</specificskill>
+                <specificskill ability="expert">VBA</specificskill>
+                <specificskill ability="expert">XSL</specificskill>
             </skill>
             <skill name="Programming Libraries">
-                <specificskill>Boost</specificskill>
-                <specificskill>DirectX</specificskill>
-                <specificskill>FOX</specificskill>
-                <specificskill>jQuery</specificskill>
-                <specificskill>.NET</specificskill>
-                <specificskill>OpenGL</specificskill>
-                <specificskill>OpenSSL</specificskill>
-                <specificskill>Qt</specificskill>
-                <specificskill>X11</specificskill>
-                <specificskill>Zope</specificskill>
+                <specificskill ability="expert">Boost</specificskill>
+                <specificskill ability="competent">DirectX</specificskill>
+                <specificskill ability="expert">FOX</specificskill>
+                <specificskill ability="expert">jQuery</specificskill>
+                <specificskill ability="proficient">.NET</specificskill>
+                <specificskill ability="proficient">OpenGL</specificskill>
+                <specificskill ability="expert">OpenSSL</specificskill>
+                <specificskill ability="expert">Qt</specificskill>
+                <specificskill ability="expert">X11</specificskill>
             </skill>
             <skill name="Platforms">
-                <specificskill>Apple Mac OS X</specificskill>
-                <specificskill>DEC VMS</specificskill>
-                <specificskill>Plone</specificskill>
-                <specificskill>POSIX Unix (Linux, FreeBSD)</specificskill>
-                <specificskill>RISC-OS</specificskill>
-                <specificskill>Symbian</specificskill>
-                <specificskill>µCOS</specificskill>
-                <specificskill>Windows</specificskill>
-                <specificskill>Zope</specificskill>
+                <specificskill ability="competent">Google Android</specificskill>
+                <specificskill ability="expert">Apple Mac OS X</specificskill>
+                <specificskill ability="proficient">DEC VMS</specificskill>
+                <specificskill ability="proficient">Plone</specificskill>
+                <specificskill ability="expert">POSIX Unix (Linux, FreeBSD)</specificskill>
+                <specificskill ability="expert">RISC-OS</specificskill>
+                <specificskill ability="competent">Symbian</specificskill>
+                <specificskill ability="expert">µCOS</specificskill>
+                <specificskill ability="expert">Windows</specificskill>
+                <specificskill ability="competent">Zope</specificskill>
             </skill>
             <skill name="General">
-                <specificskill>embedded systems (kernel and driver development)</specificskill>
-                <specificskill>multiprocessor &amp; multithreaded systems</specificskill>
-                <specificskill>object orientation</specificskill>
-                <specificskill>stream and GPU high performance computing</specificskill>
-                <specificskill>performance tuning</specificskill>
-                <specificskill>generic programming</specificskill>
-                <specificskill>functional programming</specificskill>
-                <specificskill>distributed programming</specificskill>
-                <specificskill>project management</specificskill>
+                <specificskill ability="expert">embedded systems (kernel and driver development)</specificskill>
+                <specificskill ability="expert">multiprocessor &amp; multithreaded systems</specificskill>
+                <specificskill ability="expert">object orientation</specificskill>
+                <specificskill ability="expert">stream and GPU high performance computing</specificskill>
+                <specificskill ability="expert">performance tuning</specificskill>
+                <specificskill ability="expert">generic programming</specificskill>
+                <specificskill ability="expert">functional programming</specificskill>
+                <specificskill ability="expert">distributed programming</specificskill>
+                <specificskill ability="proficient">project management</specificskill>
             </skill>
         </skillsgroup>
         <skillsgroup type="Language">
             <skill name="Spanish">
-                <specificskill>Good Conversational Spanish</specificskill>
-                <specificskill>Good Reading/Writing Spanish</specificskill>
+                <specificskill ability="competent">Good Conversational Spanish</specificskill>
+                <specificskill ability="competent">Good Reading/Writing Spanish</specificskill>
             </skill>
         </skillsgroup>
     </skills>
     <qualifications>
-        <award type="Master of Research">
-            <name>MRes</name>
+        <award type="Post-graduate Certificate">
+            <name>PGCert</name>
             <title>Educational and Social Research</title>
             <institution>University of London</institution>
             <grade>in progress</grade>
@@ -189,7 +187,6 @@
                 <city>Cork</city>
                 <country>IE</country>
             </location>
-            <dissertation>To be decided</dissertation>
         </award>
         <award type="Certificate">
             <name>UK NQF Level 5</name>
@@ -197,17 +194,16 @@
             <institution>College of Teachers</institution>
             <grade>in progress</grade>
             <iscedcategory>
-                <iscedlevel>5</iscedlevel>
+                <iscedlevel>4</iscedlevel>
                 <iscedfield1>1</iscedfield1>
                 <iscedfield2>14</iscedfield2>
             </iscedcategory>
             <start>2010-11-01</start>
-            <end>2011-06-30</end>
+            <end>2011-12-30</end>
             <location>
                 <city>Cork</city>
                 <country>IE</country>
             </location>
-            <dissertation>None</dissertation>
         </award>
         <award type="Master of Business Systems">
             <name>MBS</name>
@@ -215,7 +211,7 @@
             <institution>NUI University College Cork</institution>
             <grade>2H2</grade>
             <iscedcategory>
-                <iscedlevel>5</iscedlevel>
+                <iscedlevel>6</iscedlevel>
                 <iscedfield1>3</iscedfield1>
                 <iscedfield2>34</iscedfield2>
             </iscedcategory>
@@ -286,7 +282,6 @@
                 <city>Cork</city>
                 <country>IE</country>
             </location>
-            <dissertation/>
         </award>
         <award type="Irish Junior Certificate">
             <name>Ten Honours</name>
@@ -304,7 +299,6 @@
                 <city>Cork</city>
                 <country>IE</country>
             </location>
-            <dissertation/>
         </award>
     </qualifications>
     <memberships>
@@ -315,7 +309,7 @@
             <end>unbounded</end>
         </society>
         <society>
-            <name>Post-Autistic Economics Network</name>
+            <name>World Economics Association (formerly Post-Autistic Economics Network)</name>
             <grade>Member</grade>
             <start>2005-12-01</start>
             <end>unbounded</end>
@@ -369,6 +363,36 @@
         </organisation>
     </recognitions>
     <experiences>
+        <experience>
+            <title href="http://www.worldeconomicsassociation.org/">Appointed to the Conference Committee of the World Economics Association</title>
+            <iscocategory>
+                <nacecode>P85.4.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>23</iscofield2>
+                <iscofield3>231</iscofield3>
+                <iscofield4>2310</iscofield4>
+            </iscocategory>
+            <start>2011-08-22</start>
+            <end>unbounded</end>
+            <earnings>Unpaid</earnings>
+            <description><div xmlns="http://www.w3.org/1999/xhtml">Appointed to the Conference Committee of the World Economics Association, an
+            international association of pluralist Economists.</div></description>
+        </experience>
+        <experience>
+            <title href="http://www.worldeconomicsassociation.org/">Appointed Social Networking Coordinator of the World Economics Association</title>
+            <iscocategory>
+                <nacecode>P85.4.2</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>23</iscofield2>
+                <iscofield3>231</iscofield3>
+                <iscofield4>2310</iscofield4>
+            </iscocategory>
+            <start>2011-06-14</start>
+            <end>unbounded</end>
+            <earnings>Unpaid</earnings>
+            <description><div xmlns="http://www.w3.org/1999/xhtml">Appointed Social Networking Coordinator of the World Economics Association, an
+                international association of pluralist Economists.</div></description>
+        </experience>
         <experience>
             <title href="http://www.lah.ie/">Business Lecturer</title>
             <employer>Cork English College</employer>
@@ -1382,6 +1406,34 @@
         <modsCollection xmlns="http://www.loc.gov/mods/v3">
             <mods>
                 <titleInfo>
+                    <title>Combining reliability and validity in assessment</title>
+                    <subTitle>Can auditing create the Golden Goose in assessment quality?</subTitle>
+                </titleInfo>
+                <name type="personal">
+                    <namePart type="given">Niall</namePart>
+                    <namePart type="given">Edward</namePart>
+                    <namePart type="family">Douglas</namePart>
+                    <role>
+                        <roleTerm authority="marcrelator" type="text">author</roleTerm>
+                    </role>
+                </name>
+                <originInfo>
+                    <dateIssued>2011-June</dateIssued>
+                    <publisher>Institute of Education, University of London</publisher>
+                </originInfo>
+                <typeOfResource>text</typeOfResource>
+                <relatedItem type="host">
+                    <titleInfo>
+                        <title>Proceedings of the Doctoral School Summer Conference 2011</title>
+                    </titleInfo>
+                    <genre>catalog</genre>
+                </relatedItem>
+                <location>
+                    <url>http://doctoralschool.ioe.ac.uk/files/summer_conference_handbook_2011.pdf</url>
+                </location>
+            </mods>
+            <mods>
+                <titleInfo>
                     <title>User Mode Memory Page Management</title>
                     <subTitle>An old idea applied anew to the memory wall problem</subTitle>
                 </titleInfo>
@@ -1394,16 +1446,25 @@
                     </role>
                 </name>
                 <originInfo>
-                    <dateIssued>2011</dateIssued>
-                    <publisher>forthcoming</publisher>
+                    <dateIssued>2011-May</dateIssued>
+                    <publisher>ArXiv e-prints</publisher>
                 </originInfo>
                 <typeOfResource>text</typeOfResource>
                 <relatedItem type="host">
                     <titleInfo>
-                        <title>forthcoming</title>
+                        <title>ArXiv e-prints</title>
                     </titleInfo>
                     <genre>catalog</genre>
                 </relatedItem>
+                <identifier type="citekey">ArXiv:2011arXiv1105.1815D</identifier>
+                <location>
+                    <url>http://arxiv.org/abs/1105.1815</url>
+                </location>
+                <part>
+                    <detail type="number">
+                        <number>1105.1815</number>
+                    </detail>
+                </part>
             </mods>
             <mods>
                 <titleInfo>
@@ -1419,16 +1480,25 @@
                     </role>
                 </name>
                 <originInfo>
-                    <dateIssued>2011</dateIssued>
-                    <publisher>forthcoming</publisher>
+                    <dateIssued>2011-May</dateIssued>
+                    <publisher>ArXiv e-prints</publisher>
                 </originInfo>
                 <typeOfResource>text</typeOfResource>
                 <relatedItem type="host">
                     <titleInfo>
-                        <title>forthcoming</title>
+                        <title>ArXiv e-prints</title>
                     </titleInfo>
                     <genre>catalog</genre>
                 </relatedItem>
+                <identifier type="citekey">ArXiv:2011arXiv1105.1811D</identifier>
+                <location>
+                    <url>http://arxiv.org/abs/1105.1811</url>
+                </location>
+                <part>
+                    <detail type="number">
+                        <number>1105.1811</number>
+                    </detail>
+                </part>
             </mods>
             <mods>
                 <titleInfo>
@@ -1454,6 +1524,43 @@
                     </titleInfo>
                     <genre>catalog</genre>
                 </relatedItem>
+                <location>
+                    <url>http://www.nedprod.com/studystuff/Choosing%20a%20distance%20TESOL-TEFL%20-%20A%20Personal%20Report.pdf</url>
+                </location>
+            </mods>
+            <mods>
+                <titleInfo>
+                    <title>ISO JTC1/SC22/WG14 (The C programming language) - N1527</title>
+                    <subTitle>Latency Reducing Memory Allocation</subTitle>
+                </titleInfo>
+                <name type="personal">
+                    <namePart type="given">Niall</namePart>
+                    <namePart type="given">Edward</namePart>
+                    <namePart type="family">Douglas</namePart>
+                    <role>
+                        <roleTerm authority="marcrelator" type="text">author</roleTerm>
+                    </role>
+                </name>
+                <originInfo>
+                    <dateIssued>2010-Oct</dateIssued>
+                    <publisher>International Standards Organisation</publisher>
+                </originInfo>
+                <typeOfResource>text</typeOfResource>
+                <relatedItem type="host">
+                    <titleInfo>
+                        <title>open-std.org</title>
+                    </titleInfo>
+                    <genre>catalog</genre>
+                </relatedItem>
+                <identifier type="citekey">ISO/IEC JTC1/SC22/WG14/N1527</identifier>
+                <location>
+                    <url>http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1527.pdf</url>
+                </location>
+                <part>
+                    <detail type="number">
+                        <number>N1527</number>
+                    </detail>
+                </part>
             </mods>
             <mods>
                 <titleInfo>
