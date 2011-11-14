@@ -618,7 +618,7 @@
                                                   </xsl:choose>
                                                 </abbr></td>
                                             <td class="location" itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
-                                                <span itemprop="addressLocality"><xsl:value-of select="location/city"/></span>, <xsl:if
+                                                <xsl:if test="location/city"><span itemprop="addressLocality"><xsl:value-of select="location/city"/></span>, </xsl:if><xsl:if
                                                   test="location/county">
                                                     <span itemprop="addressRegion"><xsl:value-of select="location/county"/></span>, </xsl:if>
                                                 <xsl:variable name="country"

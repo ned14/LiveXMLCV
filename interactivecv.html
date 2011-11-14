@@ -30,7 +30,8 @@ input[@type='text'] {
         <div> Profile name: <input id="profilename" name="profilename" type="text"
                 value="allpossibledata"/> Inhibit detail for NACE codes: <input
                 id="inhibitdetailfor" name="inhibitdetailfor" type="text"/><br/>
-            <input id="showprivatedetails" name="showprivatedetails" type="checkbox"
+            <input id="kitchensink" name="kitchensink" type="checkbox"
+                />Kitchen sink detail (lots of pages!) <input id="showprivatedetails" name="showprivatedetails" type="checkbox"
                 checked="checked"/>Show private details <input id="showgraph" name="showgraph"
                 type="checkbox" checked="checked"/>Show timeline graph <input id="showskills"
                 name="showskills" type="checkbox" checked="checked"/>Show skills <input
@@ -49,6 +50,7 @@ input[@type='text'] {
                         $("#showprivatedetails").attr("checked", false);
                         $("#go").click(function () {
                             var parameters = new Array();
+                            parameters["kitchensink"] = Number($("#kitchensink").is(":checked"));
                             parameters["showprivatedetails"] = Number($("#showprivatedetails").is(":checked"));
                             parameters["showgraph"] = Number($("#showgraph").is(":checked"));
                             parameters["showskills"] = Number($("#showskills").is(":checked"));

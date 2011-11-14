@@ -1,7 +1,11 @@
 <?php
 // Load the XSLT source
 $xsl = new DOMDocument;
-$xsl->load('CVtoXHTML_full.xsl');
+if((boolean) $_GET['kitchensink']) {
+  $xsl->load('CVtoXHTML_full.xsl');
+} else {
+  $xsl->load('CVtoXHTML_short.xsl');
+}
 
 // Configure the transformer
 $proc = new XSLTProcessor;
