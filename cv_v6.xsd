@@ -75,11 +75,23 @@
       <xsd:sequence minOccurs="1" maxOccurs="unbounded">
         <xsd:element minOccurs="0" maxOccurs="unbounded" name="specialize">
           <xsd:complexType>
-            <xsd:complexContent>
-              <xsd:extension base="xhtmltype">
-                <xsd:attribute name="profile" use="optional" type="xsd:string"/>
-              </xsd:extension>
-            </xsd:complexContent>
+            <xsd:sequence>
+              <xsd:element name="short">
+                <xsd:complexType>
+                  <xsd:complexContent>
+                    <xsd:extension base="xhtmltype"/>                      
+                  </xsd:complexContent>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="long">
+                <xsd:complexType>
+                  <xsd:complexContent>
+                    <xsd:extension base="xhtmltype"/>                      
+                  </xsd:complexContent>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="profile" use="optional" type="xsd:string"/>
           </xsd:complexType>
         </xsd:element>
         <xsd:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"

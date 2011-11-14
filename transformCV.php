@@ -12,6 +12,7 @@ $xml = new DOMDocument;
 $xml->load('cv_v6.xml');
 
 // Set the parameters and output the transformation
+$proc->setParameter('', 'currentdate', strftime('%Y-%m-%d'));
 $proc->setParameter('', 'profilename', $_GET['profilename']);
 $proc->setParameter('', 'inhibitdetailfor', $_GET['inhibitdetailfor']);
 $proc->setParameter('', 'showprivatedetails', ((boolean) $_GET['showprivatedetails']) ? '1' : '0');

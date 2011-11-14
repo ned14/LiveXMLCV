@@ -83,7 +83,7 @@
     </xsl:template>
 
     <xsl:template match="privatedetails" xmlns="http://www.w3.org/1999/xhtml">
-        <table class="privatedetails vcard" id="privatedetails" itemprop="alumni" itemscope="itemscope"
+        <table class="privatedetails vcard" id="privatedetails" itemid="cvperson" itemprop="alumni" itemscope="itemscope"
             itemtype="http://schema.org/Person">
             <!-- Generate the alumniOf itemprops -->
             <xsl:attribute name="itemref">pi_qualifications pi_experiences<xsl:for-each select="//award"> eo_<xsl:value-of select="generate-id(.)"/></xsl:for-each>
@@ -169,7 +169,7 @@
     
     <xsl:template match="introduction" xmlns="http://www.w3.org/1999/xhtml">
         <div class="introduction summary">
-            <xsl:for-each select="specialize[@profile=$profilename]">
+            <xsl:for-each select="specialize[@profile=$profilename]/long">
                 <xsl:apply-templates select="xhtml:div"/>                
             </xsl:for-each>
             <xsl:apply-templates select="xhtml:div"/>
@@ -700,7 +700,14 @@
                 <xsl:for-each select="mods:modsCollection">
                     <xsl:for-each select="mods:mods">
                         <tr class="{name(.)}">
-                            <td class="citation">
+                            <td class="citation" itemscope="itemscope" itemref="pb_{generate-id(.)}">
+                                <xsl:attribute name="itemtype">
+                                    <xsl:choose>
+                                        <xsl:when test="mods:genre='book'">http://schema.org/Book</xsl:when>
+                                        <xsl:otherwise>http://schema.org/ScholarlyArticle</xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:attribute>
+                                <meta itemprop="author" itemref="cvperson"/>
                                 <xsl:for-each select="mods:name">
                                     <xsl:if test="mods:role/mods:roleTerm='author'">
                                         <xsl:value-of select="mods:namePart[@type='family']"
@@ -711,17 +718,17 @@
                                 </xsl:for-each>(<xsl:value-of
                                     select="mods:originInfo/mods:dateIssued"/>), <xsl:choose>
                                     <xsl:when test="mods:genre='book'">
-                                        <cite>
+                                        <cite itemprop="name">
                                             <xsl:value-of select="mods:titleInfo/mods:title"/>
                                             <xsl:if test="mods:titleInfo/mods:subTitle/text()">:
                                                   <xsl:value-of
                                                   select="mods:titleInfo/mods:subTitle"/></xsl:if>
                                         </cite>, </xsl:when>
-                                    <xsl:otherwise> '<xsl:value-of
+                                    <xsl:otherwise> '<span itemprop="name"><xsl:value-of
                                             select="mods:titleInfo/mods:title"/><xsl:if
                                             test="mods:titleInfo/mods:subTitle/text()">:
                                                 <xsl:value-of select="mods:titleInfo/mods:subTitle"
-                                            /></xsl:if>', <cite>
+                                            /></xsl:if></span>', <cite>
                                             <xsl:value-of
                                                 select="mods:relatedItem[@type='host']/mods:titleInfo/mods:title"/>
                                             <xsl:if test="mods:part/mods:detail/mods:volume"> vol.
@@ -744,8 +751,11 @@
                                 <xsl:value-of select="mods:originInfo/mods:publisher"/>.<xsl:if
                                     test="mods:identifier[@type='citekey']/text()"> Citation key:
                                         <xsl:value-of select="mods:identifier[@type='citekey']"
-                                    />.</xsl:if><xsl:if test="mods:location/mods:url/text()"> URL:
-                                        <a href="{mods:location/mods:url}">
+                                        />.</xsl:if><xsl:if
+                                            test="mods:identifier[@type='isbn']/text()"> ISBN:
+                                            <xsl:value-of select="mods:identifier[@type='isbn']"
+                                            />.</xsl:if><xsl:if test="mods:location/mods:url/text()"> URL:
+                                        <a href="{mods:location/mods:url}" itemprop="url">
                                         <xsl:value-of select="mods:location/mods:url"/>
                                     </a>.</xsl:if>
                             </td>

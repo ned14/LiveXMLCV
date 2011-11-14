@@ -6,84 +6,108 @@
     <name>Niall Douglas</name>
     <revision>
         <version>6.0</version>
-        <lastupdated>2011-09-14</lastupdated>
+        <lastupdated>2011-11-13</lastupdated>
     </revision>
     <privatedetails>
-        <dateofbirth>1970-01-01</dateofbirth>
-        <address><div xmlns="http://www.w3.org/1999/xhtml">1 Nice Street<br/>
-            Niceville<br/>
-            Nicestate<br/>
-            Nicecountry</div></address>
-        <telephone>+353 21 1234567</telephone>
-        <email>arse@hotmail.com</email>
+        <dateofbirth>1978-01-15</dateofbirth>
+        <address><div xmlns="http://www.w3.org/1999/xhtml">12 Woodlands<br/>
+            Kerry Pike<br/>
+            County Cork<br/>
+            Ireland</div></address>
+        <telephone>+353 21 4872739</telephone>
+        <email>s_jobs0001@nedprod.com</email>
     </privatedetails>
     <introduction>
         <specialize profile="education">
-            <div xmlns="http://www.w3.org/1999/xhtml">
-                <p>I am a <b>SCHOLAR AND EDUCATOR</b> with an inter-disciplinary knowledge spanning
-                    multiple numerate and non-numerate subjects, in many of which I possess a formal
-                    academic qualification. My primary academic research interest is in managing
-                    human civilisation under conditions of declining basic resource inputs with a
-                    particular emphasis on the moral, social and economic consequences therein. My
-                    secondary research interests are all those topics which stem from my primary
-                    interest, and in keeping with a holistic approach would as a minimum include
-                    Agriculture, Business, Computer Science, Economics, Education, Engineering,
-                    Environmental &amp; Sustainability Studies, Mathematics, Philosophy,
-                    Physics, Psychology, Religion, Sociology, Statistics, Systems Science and
-                    Transportation.</p>
-                <p>I have experience in teaching at many diverse levels of academic difficulty,
-                    student ability and class size, having approximately two hundred hours of paid
-                    higher education teaching experience. I have lectured informally at student
-                    societies and gatherings of enthusiasts as well as providing higher education
-                    private tuition for students including those with learning difficulties. One of
-                    my many experiences involved teaching Economics at degree level at the National
-                    University of Ireland (NUI), Cork. As part of this employment, I designed the
-                    curriculum and assessment rubrics, and I achieved an excellent average 87.2%
-                    class attendance, an 82.8% Interestingness and an 81.2% Clearness rating in the
-                    weekly feedback. Another experience involved teaching Business to French
-                    undergraduates where I deployed an experimental critical thinking skills
-                    curriculum based on Springer and Borthick's 2004 paper, with great success. I
-                    have approximately sixty hours of postgraduate tutoring employment in e-Business
-                    at NUI Cork, and I have a deep understanding of other cultures through living
-                    and working in the countries of Britain, Spain, Ireland and Canada, and in the
-                    languages of English (native speaker) and Spanish in which I am conversationally
-                    fluent.</p>
-            </div>
+            <short>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Primary research interest: managing human civilisation under conditions of declining
+                        basic resource inputs with a particular emphasis on the moral, social and
+                        economic consequences therein.</p>
+                    <p>Teaching experience: approximately two hundred hours of paid higher education
+                        teaching experience. Consistently score in top quintile in anonymous student
+                        feedback.</p>
+                </div>
+            </short>
+            <long>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>I am a <b>SCHOLAR AND EDUCATOR</b> with an inter-disciplinary knowledge
+                        spanning multiple numerate and non-numerate subjects, in many of which I
+                        possess a formal academic qualification. My primary academic research
+                        interest is in managing human civilisation under conditions of declining
+                        basic resource inputs with a particular emphasis on the moral, social and
+                        economic consequences therein.</p>
+                    <p>I have experience in teaching at many diverse levels of academic difficulty,
+                        student ability and class size, having approximately two hundred hours of
+                        paid higher education teaching experience. I have lectured informally at
+                        student societies and gatherings of enthusiasts as well as providing higher
+                        education private tuition for students including those with learning
+                        difficulties. One of my many experiences involved teaching Economics at
+                        degree level at the National University of Ireland (NUI), Cork. As part of
+                        this employment, I designed the curriculum and assessment rubrics, and I
+                        achieved an excellent average 87.2% class attendance, an 82.8%
+                        Interestingness and an 81.2% Clearness rating in the weekly feedback.
+                        Another experience involved teaching Business to French undergraduates where
+                        I deployed an experimental critical thinking skills curriculum based on
+                        Springer and Borthick's 2004 paper, with great success. I have approximately
+                        sixty hours of postgraduate tutoring employment in e-Business at NUI Cork,
+                        and I have a deep understanding of other cultures through living and working
+                        in the countries of Britain, Spain, Ireland and Canada, and in the languages
+                        of English (native speaker) and Spanish in which I am conversationally
+                        fluent.</p>
+                </div>
+            </long>
         </specialize>
         <specialize profile="it">
-            <div xmlns="http://www.w3.org/1999/xhtml">
-                <p>I am a specialist in <b>SYSTEMS OPTIMISATION</b> with a particular aptitude for
-                    eliciting solutions where there are no obvious avenues forward. I have worked in
-                    the fields of computer hardware and software, academia, problem solution,
-                    consultancy, design and military procurement. I have lived and worked in the
-                    countries of Britain, Spain, Ireland and Canada, and in the languages of English
-                    (native speaker) and Spanish in which I am conversationally fluent. I have
-                    worked as a permanent employee, under contract and as a freelancer and have
-                    helped others to steer projects large and small to a successful and timely
-                    completion.</p>
-                <p>I have contributed over two and a half man-years of computer programming to open
-                    source and my code is present in much of the world's telecommunications
-                    infrastructure including the root DNS servers which are central to the internet,
-                    the world's leading ERP solution used by hundreds of thousands of companies
-                    worldwide, the branch ATM network of one of the world's largest banks, the
-                    EuroFighter defence aircraft, the Micrium car operating system used by many
-                    European and Japanese car manufacturers, the GNU Compiler Collection, the Boost
-                    C++ libraries and one of the data analysis and planning tools used by the US
-                    Department of Defence. I operate my own geographically distributed information
-                    repository cloud based on the Plone content and knowledge management system
-                    which allows interested people to collaboratively work on a series of next
-                    generation repositories of information useful to society. One of my largest
-                    commercial contributions was to the support and maintenance systems of the
-                    EuroFighter defence aircraft in which I was the chief software architect who
-                    designed its bench-portable control software meeting strict military
-                    specifications.</p>
-                <p>In more recent years, and especially since 2008, I have spent an increasing
-                    amount of time mentoring others, developing cutting edge algorithmic and
-                    holistic system theory, and contributing towards international engineering
-                    standards via the ISO process. The evidence of my many years and tens of
-                    thousands of contributions of advice to open source project mailing lists and
-                    fora is obvious from any search of Google for my name.</p>
-            </div>
+            <short>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>I have over fifteen years of computer software engineering experience across
+                        multiple projects, from large to small, from defence to health care. I have
+                        acted as Chief Software Architect and Expert Consultant as well as Team
+                        Member. Unusually for a Software Engineer, I hold an additional
+                        undergraduate degree in Economics and Management, giving me a uniquely deep
+                        perspective on generating Business Value.</p>
+                    <p>I serve on various international engineering standardisation committees,
+                        including ISO/IEC JTC1/SC22 (Programming languages, their environments and
+                        system software interfaces) and JTC1/SC38 (Distributed application platforms
+                        and services). I am currently the JTC1/SC22 convenor for the Republic of Ireland.</p>
+                </div>
+            </short>
+            <long>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>I am a specialist in <b>SYSTEMS OPTIMISATION</b> with a particular aptitude
+                        for eliciting solutions where there are no obvious avenues forward. I have
+                        worked in the fields of computer hardware and software, academia, problem
+                        solution, consultancy, design and military procurement. I have lived and
+                        worked in the countries of Britain, Spain, Ireland and Canada, and in the
+                        languages of English (native speaker) and Spanish in which I am
+                        conversationally fluent. I have worked as a permanent employee, under
+                        contract and as a freelancer and have helped others to steer projects large
+                        and small to a successful and timely completion.</p>
+                    <p>I have contributed over two and a half man-years of computer programming to
+                        open source and my code is present in much of the world's telecommunications
+                        infrastructure including the root DNS servers which are central to the
+                        internet, the world's leading ERP solution used by hundreds of thousands of
+                        companies worldwide, the branch ATM network of one of the world's largest
+                        banks, the EuroFighter defence aircraft, the Micrium car operating system
+                        used by many European and Japanese car manufacturers, the GNU Compiler
+                        Collection, the Boost C++ libraries and one of the data analysis and
+                        planning tools used by the US Department of Defence. I operate my own
+                        geographically distributed information repository cloud based on the Plone
+                        content and knowledge management system which allows interested people to
+                        collaboratively work on a series of next generation repositories of
+                        information useful to society. One of my largest commercial contributions
+                        was to the support and maintenance systems of the EuroFighter defence
+                        aircraft in which I was the chief software architect who designed its
+                        bench-portable control software meeting strict military specifications.</p>
+                    <p>In more recent years, and especially since 2008, I have spent an increasing
+                        amount of time mentoring others, developing cutting edge algorithmic and
+                        holistic system theory, and contributing towards international engineering
+                        standards via the ISO process. The evidence of my many years and tens of
+                        thousands of contributions of advice to open source project mailing lists
+                        and fora is obvious from any search of Google for my name.</p>
+                </div>
+            </long>
         </specialize>
         <!--<specialize profile="allpossibledata">
             <div xmlns="http://www.w3.org/1999/xhtml">
@@ -371,7 +395,29 @@
     </recognitions>
     <experiences>
         <experience>
-            <title href="http://www.worldeconomicsassociation.org/">Appointed to the Conference Committee of the World Economics Association</title>
+            <title href="http://www.worldeconomicsassociation.org/">Appointed to International Standards Committees</title>
+            <employer>National Standards Authority of Ireland ISO/IEC mirror committees</employer>
+            <iscocategory>
+                <nacecode>M71.1.</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2139</iscofield4>
+            </iscocategory>
+            <start>2011-10-24</start>
+            <end>unbounded</end>
+            <earnings>Unpaid</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Appointed to the National Standards
+                    Authority of Ireland (NSAI) ISO/IEC JTC1/SC22 (Programming languages, their
+                    environments and system software interfaces) and JTC1/SC38 (Distributed
+                    application platforms and services) mirror committees. Appointed Irish convenor
+                    of JTC1/SC22. Joined Austin Common Standards Revision Group responsible for
+                    development of POSIX.</div></description>
+        </experience>
+        <experience>
+            <title href="http://www.worldeconomicsassociation.org/">Appointed to the Conference Committee</title>
+            <employer>World Economics Association Conference Committee</employer>
             <iscocategory>
                 <nacecode>P85.4.2</nacecode>
                 <iscofield1>2</iscofield1>
@@ -386,7 +432,8 @@
             international association of pluralist Economists.</div></description>
         </experience>
         <experience>
-            <title href="http://www.worldeconomicsassociation.org/">Appointed Social Networking Coordinator of the World Economics Association</title>
+            <title href="http://www.worldeconomicsassociation.org/">Appointed Social Networking Coordinator</title>
+            <employer>World Economics Association</employer>
             <iscocategory>
                 <nacecode>P85.4.2</nacecode>
                 <iscofield1>2</iscofield1>
@@ -399,6 +446,27 @@
             <earnings>Unpaid</earnings>
             <description><div xmlns="http://www.w3.org/1999/xhtml">Appointed Social Networking Coordinator of the World Economics Association, an
                 international association of pluralist Economists.</div></description>
+        </experience>
+        <experience>
+            <title href="https://github.com/ned14/BEurtle">BEurtle BE distributed issue tracker GUI plugin for the TortoiseXXX family of SCMs</title>
+            <iscocategory>
+                <nacecode>J62.0.1</nacecode>
+                <iscofield1>2</iscofield1>
+                <iscofield2>21</iscofield2>
+                <iscofield3>213</iscofield3>
+                <iscofield4>2132</iscofield4>
+            </iscocategory>
+            <start>2010-08-01</start>
+            <end>unbounded</end>
+            <earnings>Open Source</earnings>
+            <description>
+                <div xmlns="http://www.w3.org/1999/xhtml">Implemented a user interface plugin in C#
+                    and .NET 3.5/2.0 for the <a href="http://www.bugseverywhere.org/">Bugs
+                        Everywhere</a> distributed issue tracker for the TortoiseXXX family of
+                    source control management user interfaces for Microsoft Windows. This GUI used
+                    WiX, the Windows Installer XML abstraction toolkit, to generate a fully
+                    compliant Windows Installer package.</div>
+            </description>
         </experience>
         <experience>
             <title href="http://www.lah.ie/">Business Lecturer</title>
@@ -447,30 +515,10 @@
                 </div>
             </detail>
         </experience>
+
         <experience>
-            <title href="http://www.nedprod.com/studystuff/Oxford%20Research%20Proposal%202.pdf">Applied for Oxford Junior Research Fellowship and Cambridge Heterodox Economics Research Fellowship</title>
-            <iscocategory>
-                <nacecode>M72.2.</nacecode>
-                <iscofield1>2</iscofield1>
-                <iscofield2>24</iscofield2>
-                <iscofield3>245</iscofield3>
-                <iscofield4>2451</iscofield4>
-            </iscocategory>
-            <start>2010-11-30</start>
-            <end>2010-11-30</end>
-            <earnings>Unpaid</earnings>
-            <description>
-                <div xmlns="http://www.w3.org/1999/xhtml">Wrote and submitted a research proposal
-                    which develops unconventional financial instruments which are fiat valuations of
-                    productive capital: (i) “Educares” which monetise human capital (ii) “Ecostors”
-                    which monetise natural capital and (iii) “Infrabonds” which finance physical
-                    capital. Each currency system has its own accounting standards, runs under a
-                    separate monetary policy with its own rates of interest and inflation and a
-                    floating exchange rate operates between them.</div>
-            </description>
-        </experience>
-        <experience>
-            <title href="http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1527.pdf">Participated in International Standards Organisation (ISO) process</title>
+            <title href="http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1527.pdf">Made presentation and submitted N-notes</title>
+            <employer>International Standards Organisation (ISO) Working Group 14 committee</employer>
             <iscocategory>
                 <nacecode>M71.1.</nacecode>
                 <iscofield1>2</iscofield1>
@@ -541,7 +589,7 @@
             </detail>
         </experience>
         <experience>
-            <title href="http://github.com/ned14/nedtries">Portable Bitwise Fredkin Trie Library</title>
+            <title href="http://github.com/ned14/nedtries">nedtries Portable Bitwise Fredkin Trie Library</title>
             <iscocategory>
                 <nacecode>J62.0.1</nacecode>
                 <iscofield1>2</iscofield1>
@@ -569,27 +617,7 @@
             </description>
         </experience>
         <experience>
-            <title href="http://www.templeton.org/">Applied for research funding from the Templeton Foundation</title>
-            <iscocategory>
-                <nacecode>M72.1.</nacecode>
-                <iscofield1>2</iscofield1>
-                <iscofield2>24</iscofield2>
-                <iscofield3>245</iscofield3>
-                <iscofield4>2451</iscofield4>
-            </iscocategory>
-            <start>2010-05-31</start>
-            <end>2010-05-31</end>
-            <earnings>Unpaid</earnings>
-            <description>
-                <div xmlns="http://www.w3.org/1999/xhtml">Working with Prof. Arto Annila of the
-                    University of Helsinki, Finland, wrote and submitted a research funding proposal
-                    which studied the strategic and policy implications of modelling organisations
-                    using the Maximum Entropy Production Principle (MEPP). Funding was not
-                    granted.</div>
-            </description>
-        </experience>
-        <experience>
-            <title href="http://www.ara.com/">Further optimisation of US DoD Planning Project</title>
+            <title href="http://www.ara.com/">Further optimisation of US DoD Planning Project gaining a further 10% performance improvement</title>
             <employer>Applied Research Associates</employer>
             <location>
                 <city>Cork</city>
@@ -667,7 +695,7 @@
             </description>
         </experience>
         <experience>
-            <title href="http://www.ara.com/">Optimisation of US DoD Planning Project</title>
+            <title href="http://www.ara.com/">Debugging and 13% performance improvement of US DoD Planning Project</title>
             <employer>Applied Research Associates</employer>
             <location>
                 <city>Cork</city>
@@ -714,8 +742,8 @@
             </detail>
         </experience>
         <experience>
-            <title href="http://www.kestrelcomms.com/">Radio Over IP Project</title>
-            <employer>Kestrel Communications Ltd.</employer>
+            <title href="http://www.kestrelcomms.com/">Implemented Radio Over IP via Voice Over IP (Asterisk)</title>
+            <employer>Kestrel Communications</employer>
             <location>
                 <city>Cork</city>
                 <country>IE</country>
@@ -858,7 +886,7 @@
             </description>
         </experience>
         <experience>
-            <title href="http://sourceforge.net/projects/brook/">Brook GPU</title>
+            <title href="http://sourceforge.net/projects/brook/">Substantially improved the Brook GPU stream computing runtime, increasing performance forty-fold</title>
             <iscocategory>
                 <nacecode>J62.0.1</nacecode>
                 <iscofield1>2</iscofield1>
@@ -893,6 +921,7 @@
         </experience>
         <experience>
             <title href="http://www.futuresociety.org.uk/">The Future Society</title>
+            <employer>University of St. Andrews Student Societies</employer>
             <iscocategory>
                 <nacecode>P85.4.2</nacecode>
                 <iscofield1>2</iscofield1>
@@ -927,8 +956,8 @@
             </detail>
         </experience>
         <experience>
-            <title href="http://sourceforge.net/projects/nedmalloc/">Thread caching memory
-                allocator</title>
+            <title href="http://sourceforge.net/projects/nedmalloc/">nedmalloc Thread Caching Memory
+                Allocator</title>
             <iscocategory>
                 <nacecode>J62.0.1</nacecode>
                 <iscofield1>2</iscofield1>
@@ -970,7 +999,8 @@
             </description>
         </experience>
         <experience>
-            <title>Andrew Melville Hall Residents Committee</title>
+            <title>Secretary of Senior Residents Committee</title>
+            <employer>University of St. Andrews Student Committees</employer>
             <iscocategory>
                 <nacecode>P85.4.2</nacecode>
                 <iscofield1>2</iscofield1>
@@ -991,7 +1021,7 @@
         </experience>
         <experience>
             <title href="http://gcc.gnu.org/ml/gcc-patches/2004-07/msg02620.html">Added symbol
-                visibility support to GCC</title>
+                visibility support to the GNU Compiler Collection</title>
             <iscocategory>
                 <nacecode>J62.0.1</nacecode>
                 <iscofield1>2</iscofield1>
@@ -1013,7 +1043,7 @@
             </description>
         </experience>
         <experience>
-            <title href="http://sourceforge.net/projects/tnfox/">TnFOX library</title>
+            <title href="http://sourceforge.net/projects/tnfox/">TnFOX template metaprogrammed C++ portability layer</title>
             <iscocategory>
                 <nacecode>J62.0.1</nacecode>
                 <iscofield1>2</iscofield1>
@@ -1079,7 +1109,7 @@
             <end>2003-01-31</end>
             <start>2004-03-01</start>
             <end>2006-06-30</end>
-            <earnings>Open Source</earnings>
+            <earnings>Unpaid</earnings>
             <description>
                 <div xmlns="http://www.w3.org/1999/xhtml">My third and fourth attempts at
                     reimplementing computer software structure from the ground-up, with the primary
@@ -1106,7 +1136,7 @@
             </detail>
         </experience>
         <experience>
-            <title>Test Bench Control Software Architect</title>
+            <title>Chief Software Architect for EuroFighter Fuel &amp; Hydraulic Test Benches</title>
             <employer>Setroson S.A.</employer>
             <location>
                 <city>Madrid</city>
@@ -1180,7 +1210,7 @@
             </detail>
         </experience>
         <experience>
-            <title href="http://www.nedprod.com/NedHAL/">Dissertation Project for Degree</title>
+            <title href="http://www.nedprod.com/NedHAL/">Object-orientated Hardware Abstraction Layer for ARM microprocessors</title>
             <iscocategory>
                 <nacecode>J62.0.1</nacecode>
                 <iscofield1>2</iscofield1>
@@ -1202,8 +1232,8 @@
             </description>
         </experience>
         <experience>
-            <title>ARM Consultant</title>
-            <employer>Intelligent Systems Design (ISD) Ltd.</employer>
+            <title>Performance Optimisation of ARM7 GPS firmware for Guidance Systems</title>
+            <employer>Intelligent Systems Design (ISD)</employer>
             <location>
                 <city>London</city>
                 <county>Ontario</county>
@@ -1240,8 +1270,8 @@
             </detail>
         </experience>
         <experience>
-            <title href="http://www.nedprod.com/programs/RISC-OS/Wimp2/">Preemptive
-                Multitasker</title>
+            <title href="http://www.nedprod.com/programs/RISC-OS/Wimp2/">Implemented a Preemptive
+                Multitasker for Acorn RISC-OS</title>
             <iscocategory>
                 <nacecode>J62.0.1</nacecode>
                 <iscofield1>2</iscofield1>
@@ -1259,8 +1289,8 @@
             </description>
         </experience>
         <experience>
-            <title href="http://www.arm.com/">Applications and Systems Engineer</title>
-            <employer>Advanced RISC Machines (ARM) Ltd., Consulting Division</employer>
+            <title href="http://www.arm.com/">Wrote i/o driver, EEPROM programmer and refactored DEC's StrongARM uHAL port</title>
+            <employer>Advanced RISC Machines (ARM)</employer>
             <location>
                 <city>Cambridge</city>
                 <country>GB</country>
@@ -1296,7 +1326,8 @@
             </detail>
         </experience>
         <experience>
-            <title>Year, Student and Science Faculty Representative</title>
+            <title>Year, Student and Science Faculty Student Representative</title>
+            <employer>University of Hull Student Committees</employer>
             <iscocategory>
                 <nacecode>P85.4.2</nacecode>
                 <iscofield1>2</iscofield1>
@@ -1338,8 +1369,8 @@
             </description>
         </experience>
         <experience>
-            <title>Software Engineer</title>
-            <employer>Protechnic Computers Ltd.</employer>
+            <title>Implemented distributed Post Office Address network query service over TCP/IP</title>
+            <employer>Protechnic Computers</employer>
             <location>
                 <city>Cambridge</city>
                 <country>GB</country>
@@ -1372,8 +1403,8 @@
             </detail>
         </experience>
         <experience>
-            <title>Customer Support &amp; Upgrading</title>
-            <employer>Colton Software Ltd.</employer>
+            <title>Customer Support &amp; Upgrading of PipeDream Office Software for Acorn RISC-OS</title>
+            <employer>Colton Software</employer>
             <location>
                 <city>Cambridge</city>
                 <country>GB</country>
@@ -1411,6 +1442,29 @@
         <!-- If you have a lot of publications, it is easiest to automate the conversion from
         BibTex, RIS or whatever to MODS. See http://www.scripps.edu/~cdputnam/software/bibutils/ -->
         <modsCollection xmlns="http://www.loc.gov/mods/v3">
+            <mods>
+                <titleInfo>
+                    <title>Freeing Growth</title>
+                    <subTitle>A Neo-Capitalist Manifesto</subTitle>
+                </titleInfo>
+                <name type="personal">
+                    <namePart type="given">Niall</namePart>
+                    <namePart type="given">Edward</namePart>
+                    <namePart type="family">Douglas</namePart>
+                    <role>
+                        <roleTerm authority="marcrelator" type="text">author</roleTerm>
+                    </role>
+                </name>
+                <originInfo>
+                    <dateIssued>2011-Sept</dateIssued>
+                    <publisher>ned Productions</publisher>
+                </originInfo>
+                <typeOfResource>text</typeOfResource>
+                <genre>book</genre>
+                <identifier type="isbn">978-1-4478-7962-6</identifier>
+                <identifier type="isbn">978-1-4478-8757-7</identifier>
+                <identifier type="isbn">978-1-4664-6357-8</identifier>
+            </mods>
             <mods>
                 <titleInfo>
                     <title>Combining reliability and validity in assessment</title>

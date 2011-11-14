@@ -1,0 +1,18 @@
+creator: '"Niall Douglas" <ned@lyta>'
+
+
+reporter: '"Niall Douglas" <ned@lyta>'
+
+
+severity: minor
+
+
+status: open
+
+
+summary: For microdata, anything with 'unbounded' or 'present' as an enddate or dtend
+  needs to not specify anything rather than an invalid date
+
+
+time: Fri, 16 Sep 2011 12:52:45 +0000
+

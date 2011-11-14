@@ -5,12 +5,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dt="http://xsltsl.org/date-time"
     xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:dyn="http://exslt.org/dynamic"
+    extension-element-prefixes="dyn"
     xs:schemaLocation="cv_v6.xsd" exclude-result-prefixes="xhtml xsl xs xsi dt mods" version="1.0">
     <xsl:output omit-xml-declaration="yes" method="xml" media-type="application/xhtml+xml"
         doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"
         doctype-public="-//W3C//DTD XHTML 1.1//EN" encoding="UTF-8" indent="yes"/>
     <xsl:include href="date-time.xsl"/>
 
+    <xsl:param name="currentdate" select="curriculumvitae/revision/lastupdated"/>
     <xsl:param name="profilename" select="'allpossibledata'"/>
     <xsl:param name="inhibitdetailfor" select="''"/>
     <xsl:param name="showprivatedetails" select="true()"/>
@@ -35,24 +38,74 @@
     <xsl:template name="daterange" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:param name="start"/>
         <xsl:param name="end"/>
-        <abbr class="dtstart" title="{$start}">
-            <time datetime="{$start}" itemprop="startDate">
-            <xsl:call-template name="dt:format-date-time">
+        <abbr class="dtstart" title="{$start}"><time datetime="{$start}" itemprop="startDate"><xsl:call-template name="dt:format-date-time">
                 <xsl:with-param name="xsd-date-time" select="$start"/>
                 <xsl:with-param name="format" select="'%b %Y'"/>
-            </xsl:call-template>
-                </time>
-        </abbr><xsl:if test="substring($end, 1, 7)!=substring($start, 1, 7)"> &#8212; <abbr class="dtend" title="{$end}"><time datetime="{$end}" itemprop="endDate"><xsl:choose>
+            </xsl:call-template></time></abbr><xsl:if test="substring($end, 1, 7)!=substring($start, 1, 7)"> &#8212; <xsl:choose>
             <xsl:when test="$end='unbounded'">present</xsl:when>
             <xsl:otherwise>
+                <abbr class="dtend" title="{$end}"><time datetime="{$end}" itemprop="endDate">
                 <xsl:call-template name="dt:format-date-time">
                     <xsl:with-param name="xsd-date-time" select="$end"/>
                     <xsl:with-param name="format" select="'%b %Y'"/>
-                </xsl:call-template>
+                </xsl:call-template></time></abbr>
             </xsl:otherwise>
-        </xsl:choose></time></abbr></xsl:if>
+        </xsl:choose></xsl:if>
     </xsl:template>
 
+    <xsl:template name="datelength" xmlns="http://www.w3.org/1999/xhtml">
+        <xsl:param name="start"/>
+        <xsl:param name="end"/>
+        <xsl:variable name="end2">
+            <xsl:choose>
+                <xsl:when test="$end='unbounded'">
+                    <xsl:value-of select="$currentdate"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$end"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:variable name="startyear">
+            <xsl:call-template name="dt:get-xsd-datetime-year">
+                <xsl:with-param name="xsd-date-time" select="$start"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="endyear">
+            <xsl:call-template name="dt:get-xsd-datetime-year">
+                <xsl:with-param name="xsd-date-time" select="$end2"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="startmonth">
+            <xsl:call-template name="dt:get-xsd-datetime-month">
+                <xsl:with-param name="xsd-date-time" select="$start"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="endmonth">
+            <xsl:call-template name="dt:get-xsd-datetime-month">
+                <xsl:with-param name="xsd-date-time" select="$end2"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="diff"
+            select="12*(number($endyear)-number($startyear))+number($endmonth)-number($startmonth)"/>
+        <xsl:variable name="months" select="$diff mod 12"/>
+        <xsl:variable name="years" select="($diff - $months) div 12"/>
+        <xsl:if test="$years!=0">
+        <xsl:value-of select="$years"/>&#160;<xsl:choose>
+            <xsl:when test="$years=1">year</xsl:when>
+            <xsl:otherwise>years</xsl:otherwise>
+        </xsl:choose>
+        </xsl:if>
+        <xsl:if test="$months!=0"><xsl:if test="$years!=0">&#160;</xsl:if><xsl:value-of select="$months"/>&#160;<xsl:choose>
+                <xsl:when test="$months=1">month</xsl:when>
+                <xsl:otherwise>months</xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:key name="allemployers" match="experience[employer/text() and earnings/text()]/employer" use="."/>
+    
     <xsl:template match="/curriculumvitae">
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
             <head>
@@ -68,6 +121,7 @@
             </head>
             <body class="hresume" itemscope="itemscope" itemtype="http://schema.org/WebPage">
                 <xsl:apply-templates select="privatedetails"/>
+                <xsl:apply-templates select="introduction"/>
                 <xsl:apply-templates select="skills"/>
                 <xsl:apply-templates select="qualifications"/>
                 <xsl:apply-templates select="experiences"/>
@@ -167,7 +221,15 @@
         </xsl:element>
     </xsl:template>
     
-
+    <xsl:template match="introduction" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="introduction summary">
+            <xsl:for-each select="specialize[@profile=$profilename]/short">
+                <xsl:apply-templates select="xhtml:div"/>                
+            </xsl:for-each>
+        </div>
+    </xsl:template>
+    
+    
     <xsl:template match="skills" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:if test="$showskills_">
             <div class="keeptogether">
@@ -282,7 +344,7 @@
                 </p>
             </xsl:if>
             <xsl:if test="count(award[iscedcategory/iscedlevel='4'])">
-                <p><span class="awardlevel">Further Education:</span>&#160; <xsl:for-each
+                <p><span class="awardlevel">Further Education:</span>&#160;<xsl:for-each
                     select="award[iscedcategory/iscedlevel='4']">
                     <span class="award" id="ev_{generate-id(.)}" itemprop="subEvents"
                         itemscope="itemscope" itemtype="http://schema.org/EducationEvent"
@@ -306,25 +368,76 @@
         </div>
     </xsl:template>
 
+    <xsl:template name="outputemployer" xmlns="http://www.w3.org/1999/xhtml">
+        <xsl:param name="experiences"/>
+        <xsl:param name="datelength" select="1"/>
+        <xsl:for-each select="$experiences"><xsl:sort select="employer"/>
+                <xsl:value-of select="employer"/><xsl:if test="$datelength">&#160;(<xsl:call-template name="datelength">
+                    <xsl:with-param name="start" select="start"/>
+                    <xsl:with-param name="end" select="end"/>
+                </xsl:call-template>)</xsl:if>
+            <xsl:if test="position()!=last()">, </xsl:if>
+            <xsl:if test="position()=last()">.</xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    <xsl:template name="outputtitle" xmlns="http://www.w3.org/1999/xhtml">
+        <xsl:param name="experiences"/>
+        <xsl:param name="datelength" select="1"/>
+        <xsl:for-each select="$experiences"><xsl:sort select="title"/>
+            <xsl:value-of select="title"/><xsl:if test="$datelength">&#160;(<xsl:call-template name="datelength">
+                <xsl:with-param name="start" select="start"/>
+                <xsl:with-param name="end" select="end"/>
+            </xsl:call-template>)</xsl:if>
+            <xsl:if test="position()!=last()">; </xsl:if>
+            <xsl:if test="position()=last()">.</xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
     <xsl:template name="outputexperiences" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:param name="exclude" select="''"/>
         <xsl:param name="include" select="'*'"/>
+        <xsl:variable name="myexperiences" select="experience[(($exclude='' or (contains(iscocategory/nacecode/text(), substring-before($exclude, ';'))!=true()
+            and (substring-before(substring-after($exclude, ';'), ';')='' or contains(iscocategory/nacecode/text(), substring-before(substring-after($exclude, ';'), ';'))!=true())
+            and (substring-before(substring-after(substring-after($exclude, ';'), ';'), ';')='' or contains(iscocategory/nacecode/text(), substring-before(substring-after(substring-after($exclude, ';'), ';'), ';'))!=true())))
+            and ($include='*' or
+            (substring-before($include, ';')!='' and contains(iscocategory/nacecode/text(), substring-before($include, ';'))=true())
+            or (substring-before(substring-after($include, ';'), ';')!='' and contains(iscocategory/nacecode/text(), substring-before(substring-after($include, ';'), ';'))=true())
+            or (substring-before(substring-after(substring-after($include, ';'), ';'), ';')!='' and contains(iscocategory/nacecode/text(), substring-before(substring-after(substring-after($include, ';'), ';'), ';'))=true())))]"/>
         <div class="experiences vcalendar">
-            <xsl:for-each select="experience">
-                <xsl:if
-                    test="($exclude='' or (contains(iscocategory/nacecode/text(), substring-before($exclude, ';'))!=true()
-                    and (substring-before(substring-after($exclude, ';'), ';')='' or contains(iscocategory/nacecode/text(), substring-before(substring-after($exclude, ';'), ';'))!=true())
-                    and (substring-before(substring-after(substring-after($exclude, ';'), ';'), ';')='' or contains(iscocategory/nacecode/text(), substring-before(substring-after(substring-after($exclude, ';'), ';'), ';'))!=true())))
-                    and ($include='*' or
-                    (substring-before($include, ';')!='' and contains(iscocategory/nacecode/text(), substring-before($include, ';'))=true())
-                    or (substring-before(substring-after($include, ';'), ';')!='' and contains(iscocategory/nacecode/text(), substring-before(substring-after($include, ';'), ';'))=true())
-                    or (substring-before(substring-after(substring-after($include, ';'), ';'), ';')!='' and contains(iscocategory/nacecode/text(), substring-before(substring-after(substring-after($include, ';'), ';'), ';'))=true()))">
-                    <xsl:if
-                        test="($showopensource_ and earnings='Open Source') or ($showunpaid_ and earnings='Unpaid') or ($showpaid_ and earnings/@currency)">
-                        <div class="keeptogether"> </div>
-                    </xsl:if>
-                </xsl:if>
-            </xsl:for-each>
+            <xsl:variable name="myemployers" select="$myexperiences[employer/text() and earnings[@currency]]"/>
+            <xsl:if test="$myemployers">
+                <p><span class="pastemployers">Past Employers (permanent and
+                        contract):</span>&#160;<xsl:call-template name="outputemployer">
+                        <xsl:with-param name="experiences"
+                            select="$myemployers[generate-id(employer) = generate-id(key('allemployers', employer)[1])]"/>
+                        <xsl:with-param name="datelength" select="0"/>
+                    </xsl:call-template>
+                </p>
+                <p><span class="pastprojects">Employed Roles:</span>&#160;<xsl:call-template name="outputtitle">
+                    <xsl:with-param name="experiences"
+                        select="$myemployers"/>
+                    <xsl:with-param name="datelength" select="0"/>
+                </xsl:call-template>
+                </p>
+            </xsl:if>
+            <xsl:variable name="myopensource" select="$myexperiences[earnings='Open Source']"/>
+            <xsl:if test="$myopensource">
+                <p><span class="pastprojects">Open Source
+                        contributions:</span>&#160;<xsl:call-template name="outputtitle">
+                            <xsl:with-param name="experiences"
+                            select="$myopensource"/>
+                        <xsl:with-param name="datelength" select="0"/>
+                    </xsl:call-template>
+                </p>
+            </xsl:if>
+            <xsl:variable name="mycommittees" select="$myexperiences[employer/text() and earnings='Unpaid']"/>
+            <xsl:if test="$mycommittees">
+                <p><span class="pastprojects">Committees:</span>&#160;<xsl:call-template name="outputemployer">
+                    <xsl:with-param name="experiences"
+                        select="$mycommittees[generate-id(employer) = generate-id(key('allemployers', employer)[1])]"/>
+                    </xsl:call-template>
+                </p>
+            </xsl:if>
         </div>
     </xsl:template>
 
@@ -363,6 +476,52 @@
                 <img class="sectionheader" alt="" src="sectionheader.png"/>
                 <h2 class="publications">Publications:</h2>
             </div>
+            <xsl:if test="count(mods:modsCollection/mods:mods[mods:genre='book'])">
+                <p>
+                    <span class="publicationlevel">Books:</span>&#160; <xsl:for-each
+                        select="mods:modsCollection/mods:mods[mods:genre='book']">
+                        <span class="book" id="bk_{generate-id(.)}" itemscope="itemscope"
+                            itemtype="http://schema.org/Book">
+                            <cite itemprop="name">
+                                <xsl:value-of select="mods:titleInfo/mods:title"/>
+                                <xsl:if test="mods:titleInfo/mods:subTitle">: <xsl:value-of
+                                        select="mods:titleInfo/mods:subTitle"/></xsl:if>
+                            </cite> (<time itemprop="datePublished"><xsl:value-of select="mods:originInfo/mods:dateIssued"/></time>),
+                                <xsl:value-of select="mods:originInfo/mods:publisher"/><xsl:if
+                                test="mods:identifier[@type='citekey']/text()">, Citation key:
+                                    <xsl:value-of select="mods:identifier[@type='citekey']"
+                                /></xsl:if><xsl:if test="mods:identifier[@type='isbn']/text()">,
+                                ISBN: <xsl:value-of select="mods:identifier[@type='isbn']"
+                                /></xsl:if>
+                        </span>
+                        <xsl:if test="position()!=last()">; </xsl:if>
+                        <xsl:if test="position()=last()">.</xsl:if>
+                    </xsl:for-each>
+                </p>
+            </xsl:if>
+            <xsl:if test="count(mods:modsCollection/mods:mods[not(mods:genre)])">
+                <p>
+                    <span class="publicationlevel">Papers:</span>&#160; <xsl:for-each
+                        select="mods:modsCollection/mods:mods[not(mods:genre)]">
+                        <span class="paper" id="pr_{generate-id(.)}" itemscope="itemscope"
+                            itemtype="http://schema.org/ScholaryArticle">
+                            <cite itemprop="name">
+                                <xsl:value-of select="mods:titleInfo/mods:title"/>
+                                <xsl:if test="mods:titleInfo/mods:subTitle">: <xsl:value-of
+                                    select="mods:titleInfo/mods:subTitle"/></xsl:if>
+                            </cite> (<time itemprop="datePublished"><xsl:value-of select="mods:originInfo/mods:dateIssued"/></time>),
+                            <xsl:value-of select="mods:originInfo/mods:publisher"/><xsl:if
+                                test="mods:identifier[@type='citekey']/text()">, Citation key:
+                                <xsl:value-of select="mods:identifier[@type='citekey']"
+                                /></xsl:if><xsl:if test="mods:identifier[@type='isbn']/text()">,
+                                    ISBN: <xsl:value-of select="mods:identifier[@type='isbn']"
+                                    /></xsl:if>
+                        </span>
+                        <xsl:if test="position()!=last()">; </xsl:if>
+                        <xsl:if test="position()=last()">.</xsl:if>
+                    </xsl:for-each>
+                </p>
+            </xsl:if>
         </div>
     </xsl:template>
     

@@ -1,0 +1,17 @@
+creator: '"Niall Douglas" <ned@lyta>'
+
+
+reporter: '"Niall Douglas" <ned@lyta>'
+
+
+severity: minor
+
+
+status: open
+
+
+summary: hcard org is missing fn which is required
+
+
+time: Fri, 16 Sep 2011 12:54:10 +0000
+
