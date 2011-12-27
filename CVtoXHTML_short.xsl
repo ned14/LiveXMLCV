@@ -246,7 +246,8 @@
                         </xsl:for-each>
                     </p>
                 </xsl:if>
-                <xsl:if test="count(skillsgroup/skill/specificskill[@ability='proficient'])">
+            </div>
+            <xsl:if test="count(skillsgroup/skill/specificskill[@ability='proficient'])">
                     <p><span class="skillability">Proficient:</span>&#160;
                         <xsl:for-each select="skillsgroup/skill/specificskill[@ability='proficient']">
                             <span class="skill"><xsl:value-of select="."/></span>
@@ -282,7 +283,6 @@
                         </xsl:for-each>
                     </p>
                 </xsl:if>
-            </div>
         </xsl:if>
     </xsl:template>
 
@@ -321,6 +321,7 @@
                     </xsl:for-each>
                 </p>
             </xsl:if>
+            </div>
             <xsl:if test="count(award[iscedcategory/iscedlevel='5'])">
                 <p><span class="awardlevel">Undergraduate:</span>&#160; <xsl:for-each
                     select="award[iscedcategory/iscedlevel='5']">
@@ -365,32 +366,41 @@
                 </xsl:for-each>
                 </p>
             </xsl:if>
-        </div>
     </xsl:template>
 
     <xsl:template name="outputemployer" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:param name="experiences"/>
         <xsl:param name="datelength" select="1"/>
-        <xsl:for-each select="$experiences"><xsl:sort select="employer"/>
-                <xsl:value-of select="employer"/><xsl:if test="$datelength">&#160;(<xsl:call-template name="datelength">
-                    <xsl:with-param name="start" select="start"/>
-                    <xsl:with-param name="end" select="end"/>
-                </xsl:call-template>)</xsl:if>
-            <xsl:if test="position()!=last()">, </xsl:if>
-            <xsl:if test="position()=last()">.</xsl:if>
-        </xsl:for-each>
+        <div class="employers"><ul>
+            <xsl:for-each select="$experiences">
+                <xsl:sort select="employer"/>
+                <li>
+                    <xsl:value-of select="employer"/>
+                    <xsl:if test="$datelength">&#160;(<xsl:call-template name="datelength">
+                            <xsl:with-param name="start" select="start"/>
+                            <xsl:with-param name="end" select="end"/>
+                        </xsl:call-template>)</xsl:if>
+                </li>
+            </xsl:for-each>
+        </ul></div>
     </xsl:template>
     <xsl:template name="outputtitle" xmlns="http://www.w3.org/1999/xhtml">
         <xsl:param name="experiences"/>
         <xsl:param name="datelength" select="1"/>
-        <xsl:for-each select="$experiences"><xsl:sort select="title"/>
-            <xsl:value-of select="title"/><xsl:if test="$datelength">&#160;(<xsl:call-template name="datelength">
-                <xsl:with-param name="start" select="start"/>
-                <xsl:with-param name="end" select="end"/>
-            </xsl:call-template>)</xsl:if>
-            <xsl:if test="position()!=last()">; </xsl:if>
-            <xsl:if test="position()=last()">.</xsl:if>
-        </xsl:for-each>
+        <xsl:param name="withemployer" select="1"/>
+        <div class="roles"><ul>
+            <xsl:for-each select="$experiences">
+                <xsl:sort select="title"/>
+                <li>
+                    <xsl:value-of select="title"/>
+                    <xsl:if test="$datelength">&#160;(<xsl:call-template name="datelength">
+                            <xsl:with-param name="start" select="start"/>
+                            <xsl:with-param name="end" select="end"/>
+                    </xsl:call-template>)</xsl:if>
+                    <xsl:if test="$withemployer and employer">&#160;[<xsl:value-of select="employer"/>]</xsl:if>
+                </li>
+            </xsl:for-each>
+        </ul></div>
     </xsl:template>
     
     <xsl:template name="outputexperiences" xmlns="http://www.w3.org/1999/xhtml">
@@ -406,37 +416,38 @@
         <div class="experiences vcalendar">
             <xsl:variable name="myemployers" select="$myexperiences[employer/text() and earnings[@currency]]"/>
             <xsl:if test="$myemployers">
-                <p><span class="pastemployers">Past Employers (permanent and
+                <div class="keeptogether section"><span class="pastemployers">Past Employers (permanent and
                         contract):</span>&#160;<xsl:call-template name="outputemployer">
                         <xsl:with-param name="experiences"
                             select="$myemployers[generate-id(employer) = generate-id(key('allemployers', employer)[1])]"/>
                         <xsl:with-param name="datelength" select="0"/>
                     </xsl:call-template>
-                </p>
-                <p><span class="pastprojects">Past Employment Roles:</span>&#160;<xsl:call-template name="outputtitle">
+                </div>
+                <div class="keeptogether section"><span class="pastprojects">Past Employment Roles:</span>&#160;<xsl:call-template name="outputtitle">
                     <xsl:with-param name="experiences"
                         select="$myemployers"/>
                     <xsl:with-param name="datelength" select="0"/>
                 </xsl:call-template>
-                </p>
+               </div>
             </xsl:if>
             <xsl:variable name="myopensource" select="$myexperiences[earnings='Open Source']"/>
             <xsl:if test="$myopensource">
-                <p><span class="pastprojects">Open Source
+                <div class="keeptogether section"><span class="pastprojects">Open Source
                         contributions:</span>&#160;<xsl:call-template name="outputtitle">
                             <xsl:with-param name="experiences"
                             select="$myopensource"/>
                         <xsl:with-param name="datelength" select="0"/>
                     </xsl:call-template>
-                </p>
+                </div>
             </xsl:if>
             <xsl:variable name="mycommittees" select="$myexperiences[employer/text() and earnings='Unpaid']"/>
             <xsl:if test="$mycommittees">
-                <p><span class="pastprojects">Committees:</span>&#160;<xsl:call-template name="outputemployer">
+                <div class="keeptogether section"><span class="pastprojects">Committees:</span>&#160;<xsl:call-template name="outputemployer">
                     <xsl:with-param name="experiences"
                         select="$mycommittees[generate-id(employer) = generate-id(key('allemployers', employer)[1])]"/>
-                    </xsl:call-template>
-                </p>
+                    <xsl:with-param name="datelength" select="0"/>
+                </xsl:call-template>
+                </div>
             </xsl:if>
         </div>
     </xsl:template>
@@ -444,7 +455,7 @@
     <xsl:template match="experiences" xmlns="http://www.w3.org/1999/xhtml">
         <div class="sectionheader">
             <img class="sectionheader" alt="" src="sectionheader.png"/>
-            <h2 class="experiences">Relevant Experiences:</h2>
+            <h2 class="experiences">Experiences Relevant To <xsl:value-of select="$profilename"/>:</h2>
             <span id="pi_experiences" itemprop="performerIn" itemscope="itemscope" itemtype="http://schema.org/Event">
                 <xsl:attribute name="itemref">
                     <xsl:for-each select="experience"> ev_<xsl:value-of select="generate-id(.)"/></xsl:for-each>
@@ -477,52 +488,70 @@
                 <h2 class="publications">Publications:</h2>
             </div>
             <xsl:if test="count(mods:modsCollection/mods:mods[mods:genre='book'])">
-                <p>
-                    <span class="publicationlevel">Books:</span>&#160; <xsl:for-each
-                        select="mods:modsCollection/mods:mods[mods:genre='book']">
-                        <span class="book" id="bk_{generate-id(.)}" itemscope="itemscope"
-                            itemtype="http://schema.org/Book">
-                            <cite itemprop="name">
-                                <xsl:value-of select="mods:titleInfo/mods:title"/>
-                                <xsl:if test="mods:titleInfo/mods:subTitle">: <xsl:value-of
-                                        select="mods:titleInfo/mods:subTitle"/></xsl:if>
-                            </cite> (<time itemprop="datePublished"><xsl:value-of select="mods:originInfo/mods:dateIssued"/></time>),
-                                <xsl:value-of select="mods:originInfo/mods:publisher"/><xsl:if
-                                test="mods:identifier[@type='citekey']/text()">, Citation key:
-                                    <xsl:value-of select="mods:identifier[@type='citekey']"
-                                /></xsl:if><xsl:if test="mods:identifier[@type='isbn']/text()">,
-                                ISBN: <xsl:value-of select="mods:identifier[@type='isbn']"
-                                /></xsl:if>
-                        </span>
-                        <xsl:if test="position()!=last()">; </xsl:if>
-                        <xsl:if test="position()=last()">.</xsl:if>
-                    </xsl:for-each>
-                </p>
+                <div class="keeptogether section">
+                    <span class="publicationlevel">Books:</span>&#160; <div class="books">
+                        <ul>
+                            <xsl:for-each select="mods:modsCollection/mods:mods[mods:genre='book']">
+                                <li>
+                                    <span class="book" id="bk_{generate-id(.)}"
+                                        itemscope="itemscope" itemtype="http://schema.org/Book">
+                                        <cite itemprop="name">
+                                            <xsl:value-of select="mods:titleInfo/mods:title"/>
+                                            <xsl:if test="mods:titleInfo/mods:subTitle">:
+                                                  <xsl:value-of
+                                                  select="mods:titleInfo/mods:subTitle"/></xsl:if>
+                                        </cite> (<time itemprop="datePublished">
+                                            <xsl:value-of select="mods:originInfo/mods:dateIssued"/>
+                                        </time>), <xsl:value-of
+                                            select="mods:originInfo/mods:publisher"/><xsl:if
+                                            test="mods:identifier[@type='citekey']/text()">,
+                                            Citation key: <xsl:value-of
+                                                select="mods:identifier[@type='citekey']"
+                                            /></xsl:if><xsl:if
+                                            test="mods:identifier[@type='isbn']/text()">, ISBN:
+                                                <xsl:value-of select="mods:identifier[@type='isbn']"
+                                            /></xsl:if>
+                                    </span>
+                                </li>
+                            </xsl:for-each>
+                        </ul>
+                    </div>
+                </div>
             </xsl:if>
+            </div>
             <xsl:if test="count(mods:modsCollection/mods:mods[not(mods:genre)])">
-                <p>
-                    <span class="publicationlevel">Papers:</span>&#160; <xsl:for-each
-                        select="mods:modsCollection/mods:mods[not(mods:genre)]">
-                        <span class="paper" id="pr_{generate-id(.)}" itemscope="itemscope"
-                            itemtype="http://schema.org/ScholaryArticle">
-                            <cite itemprop="name">
-                                <xsl:value-of select="mods:titleInfo/mods:title"/>
-                                <xsl:if test="mods:titleInfo/mods:subTitle">: <xsl:value-of
-                                    select="mods:titleInfo/mods:subTitle"/></xsl:if>
-                            </cite> (<time itemprop="datePublished"><xsl:value-of select="mods:originInfo/mods:dateIssued"/></time>),
-                            <xsl:value-of select="mods:originInfo/mods:publisher"/><xsl:if
-                                test="mods:identifier[@type='citekey']/text()">, Citation key:
-                                <xsl:value-of select="mods:identifier[@type='citekey']"
-                                /></xsl:if><xsl:if test="mods:identifier[@type='isbn']/text()">,
-                                    ISBN: <xsl:value-of select="mods:identifier[@type='isbn']"
-                                    /></xsl:if>
-                        </span>
-                        <xsl:if test="position()!=last()">; </xsl:if>
-                        <xsl:if test="position()=last()">.</xsl:if>
-                    </xsl:for-each>
-                </p>
+                <div class="keeptogether section">
+                    <span class="publicationlevel">Papers/Conference Presentations:</span>&#160; <div
+                        class="publications">
+                        <ul>
+                            <xsl:for-each select="mods:modsCollection/mods:mods[not(mods:genre)]">
+                                <li>
+                                    <span class="paper" id="pr_{generate-id(.)}"
+                                        itemscope="itemscope"
+                                        itemtype="http://schema.org/ScholaryArticle">
+                                        <cite itemprop="name">
+                                            <xsl:value-of select="mods:titleInfo/mods:title"/>
+                                            <xsl:if test="mods:titleInfo/mods:subTitle">:
+                                                  <xsl:value-of
+                                                  select="mods:titleInfo/mods:subTitle"/></xsl:if>
+                                        </cite> (<time itemprop="datePublished">
+                                            <xsl:value-of select="mods:originInfo/mods:dateIssued"/>
+                                        </time>), <xsl:value-of
+                                            select="mods:originInfo/mods:publisher"/><xsl:if
+                                            test="mods:identifier[@type='citekey']/text()">,
+                                            Citation key: <xsl:value-of
+                                                select="mods:identifier[@type='citekey']"
+                                            /></xsl:if><xsl:if
+                                            test="mods:identifier[@type='isbn']/text()">, ISBN:
+                                                <xsl:value-of select="mods:identifier[@type='isbn']"
+                                            /></xsl:if>
+                                    </span>
+                                </li>
+                            </xsl:for-each>
+                        </ul>
+                    </div>
+                </div>
             </xsl:if>
-        </div>
     </xsl:template>
     
 </xsl:stylesheet>

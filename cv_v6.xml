@@ -18,15 +18,15 @@
         <email>arse@hotmail.com</email>
     </privatedetails>
     <introduction>
-        <specialize profile="education">
+        <specialize profile="Education">
             <short>
                 <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Primary research interest: managing human civilisation under conditions of declining
+                    <p><span class="underlined">Primary research interest:</span> managing human civilisation under conditions of declining
                         basic resource inputs with a particular emphasis on the moral, social and
-                        economic consequences therein.</p>
-                    <p>Teaching experience: approximately two hundred hours of paid higher education
-                        teaching experience. Consistently score in top quintile in anonymous student
-                        feedback.</p>
+                        economic consequences therein (see publications list overleaf).</p>
+                    <p><span class="underlined">Teaching experience:</span> significant hours of paid higher education
+                        teaching experience (consistently scoring in top quintile in anonymous student
+                        feedback).</p>
                 </div>
             </short>
             <long>
@@ -58,7 +58,7 @@
                 </div>
             </long>
         </specialize>
-        <specialize profile="it">
+        <specialize profile="IT">
             <short>
                 <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>I have over fifteen years of computer software engineering experience across
@@ -239,7 +239,7 @@
         <award type="Master of Business Systems">
             <name>MBS</name>
             <title>Business Information Systems</title>
-            <institution>NUI University College Cork</institution>
+            <institution>National University of Ireland Cork</institution>
             <grade>2H2</grade>
             <iscedcategory>
                 <iscedlevel>6</iscedlevel>
@@ -456,7 +456,7 @@
                 <iscofield3>213</iscofield3>
                 <iscofield4>2132</iscofield4>
             </iscocategory>
-            <start>2010-08-01</start>
+            <start>2011-08-01</start>
             <end>unbounded</end>
             <earnings>Open Source</earnings>
             <description>
@@ -673,7 +673,7 @@
             </detail>
         </experience>
         <experience>
-            <title href="http://plone.org/products/easyshop/">Contributed EU VAT support to Plone's Easyshop Product</title>
+            <title href="http://plone.org/products/easyshop/">Contributed EU VAT support to Plone's Easyshop eCommerce Product</title>
             <iscocategory>
                 <nacecode>J62.0.1</nacecode>
                 <iscofield1>2</iscofield1>
@@ -801,7 +801,7 @@
         </experience>
         <experience>
             <title>Tutor in Economics, Business, Stats, Management and Web Programming</title>
-            <employer>NUI University College Cork</employer>
+            <employer>National University of Ireland Cork</employer>
             <location>
                 <city>Cork</city>
                 <country>IE</country>
@@ -825,7 +825,7 @@
         </experience>
         <experience>
             <title href="http://www.nedprod.com/studystuff/">Economics Lecturer</title>
-            <employer>NUI University College Cork</employer>
+            <employer>National University of Ireland Cork</employer>
             <location>
                 <city>Cork</city>
                 <country>IE</country>
@@ -1210,7 +1210,7 @@
             </detail>
         </experience>
         <experience>
-            <title href="http://www.nedprod.com/NedHAL/">Object-orientated Hardware Abstraction Layer for ARM microprocessors</title>
+            <title href="http://www.nedprod.com/NedHAL/">nedHAL object-orientated Hardware Abstraction Layer for ARM microprocessors</title>
             <iscocategory>
                 <nacecode>J62.0.1</nacecode>
                 <iscofield1>2</iscofield1>
@@ -1490,7 +1490,7 @@
                     <genre>catalog</genre>
                 </relatedItem>
                 <location>
-                    <url>http://doctoralschool.ioe.ac.uk/files/summer_conference_handbook_2011.pdf</url>
+                    <url>http://www.educatejournal.org/online/ds/2011/</url>
                 </location>
             </mods>
             <mods>

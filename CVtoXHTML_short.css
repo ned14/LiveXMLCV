@@ -5,6 +5,9 @@
   /*line-height: 125%;*/
   padding: 1em;
 }
+.underlined {
+  text-decoration: underline;
+}
 h1 {
   font-family: Constantia, 'Times New Roman', serif;
   text-align: center;
@@ -66,7 +69,28 @@ td.grade, td.period, td.institution, td.employer, td.period, td.when, td.locatio
   font-size: 110%;
   font-weight: bold;
 }
+div.section {
+  margin-top: 0.5em;
+}
 .skillability, .awardlevel, .pastemployers, .pastprojects, .publicationlevel {
   font-weight: bold;
   text-decoration: underline;
+}
+div.employers, div.roles, div.books, div.publications {
+  column-width: 20em;
+  -moz-column-width: 20em;
+  -webkit-column-width: 20em;
+}
+div.books, div.publications {
+  font-size: 90%;
+}
+div.employers ul, div.roles ul, div.books ul, div.publications ul {
+  margin: 0;
+}
+div.employers ul li, div.roles ul li, div.books ul li, div.publications ul li {
+  break-inside: avoid;
+  -moz-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }

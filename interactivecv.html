@@ -12,26 +12,31 @@ input[@type='text'] {
 </head>
 
     <body>
-        <p style="font-size:larger; text-align:center;">Quick link: (i) <a id="itcvlink" href="">IT CV</a> (ii) <a
-                id="educationcvlink" href="">Education CV</a> (iii) <a id="genericcvlink" href=""
-                >Generic CV</a></p>
-        <p><i>Note that due to buggy or incomplete CSS3 support output may be fairly messed up on
-            some older browsers (especially Internet Explorer before v9). If you're printing, right
-            now ONLY IE9 produces perfect output thanks to its excellent CSS3 print attributes
-            support - everything else screws something up (try turning on background colours before
-            printing!).</i> <a href="https://github.com/ned14/LiveXMLCV">Want one of these live XML
-                CVs for yourself? Here's how.</a></p>
+        <p style="font-size:larger; text-align:center;">Quick link: (i) <a id="itcvlink" href="?profile=IT">IT
+                CV</a> (ii) <a id="educationcvlink" href="?profile=Education">Education CV</a> (iii) <a
+                id="genericcvlink" href="?profile=Everything">Generic CV</a></p>
+        <p>
+            <i>Note that due to buggy or incomplete CSS3 support output may be fairly messed up on
+                some older browsers (especially Internet Explorer before v9). Columns only appear
+                and look correct with a <i>very</i> new browser (IE10, Opera 11.10). If you're
+                printing, right now ONLY IE9 produces perfect output thanks to its excellent CSS3
+                print attributes support - everything else screws something up (try turning on
+                background colours before printing!).</i>
+            <a href="https://github.com/ned14/LiveXMLCV">Want one of these live XML CVs for
+                yourself? Here's how.</a>
+        </p>
         <p>Choose a profile for a preset CV customisation: <select id="profile">
-                <option value="allpossibledata">All Possible Data</option>
-                <option value="it">IT</option>
-                <option value="education">Education</option>
+                <option value="Everything">Everything</option>
+                <option value="IT">IT</option>
+                <option value="Education">Education</option>
+                <option value="Authoring">Authoring</option>
             </select>
         </p>
         <div> Profile name: <input id="profilename" name="profilename" type="text"
-                value="allpossibledata"/> Inhibit detail for NACE codes: <input
+                value="Everything"/> Inhibit detail for NACE codes: <input
                 id="inhibitdetailfor" name="inhibitdetailfor" type="text"/><br/>
-            <input id="kitchensink" name="kitchensink" type="checkbox"
-                />Kitchen sink detail (lots of pages!) <input id="showprivatedetails" name="showprivatedetails" type="checkbox"
+            <input id="kitchensink" name="kitchensink" type="checkbox"/>Kitchen sink detail (lots of
+            pages!) <input id="showprivatedetails" name="showprivatedetails" type="checkbox"
                 checked="checked"/>Show private details <input id="showgraph" name="showgraph"
                 type="checkbox" checked="checked"/>Show timeline graph <input id="showskills"
                 name="showskills" type="checkbox" checked="checked"/>Show skills <input
@@ -45,120 +50,137 @@ input[@type='text'] {
             <input id="newpage" name="newpage" type="button"
                 value="Open in a new page for printing or saving"/>
             <script type="text/javascript"><!--
-                    var outputwindow = null;
-                    $(document).ready(function () {
-                        $("#showprivatedetails").attr("checked", false);
-                        $("#go").click(function () {
-                            var parameters = new Array();
-                            parameters["kitchensink"] = Number($("#kitchensink").is(":checked"));
-                            parameters["showprivatedetails"] = Number($("#showprivatedetails").is(":checked"));
-                            parameters["showgraph"] = Number($("#showgraph").is(":checked"));
-                            parameters["showskills"] = Number($("#showskills").is(":checked"));
-                            parameters["showotherexperiences"] = Number($("#showotherexperiences").is(":checked"));
-                            parameters["showpaid"] = Number($("#showpaid").is(":checked"));
-                            parameters["showunpaid"] = Number($("#showunpaid").is(":checked"));
-                            parameters["showopensource"] = Number($("#showopensource").is(":checked"));
-                            parameters["profilename"] = encodeURI($("#profilename").attr("value"));
-                            parameters["inhibitdetailfor"] = encodeURI($("#inhibitdetailfor").attr("value"));
-                            var getstr="";
-                            for (var par in parameters)
-                                getstr+='&'+par+'='+parameters[par];                            
-                            $("#cvoutput").attr("src", "transformCV.php?"+getstr.slice(1, getstr.length));
-                            if (outputwindow && !outputwindow.closed) {
-                                outputwindow.location="transformCV.php?"+getstr.slice(1, getstr.length);
-                            }
-
-                            /*$.ajax({
+                function getParameterByName(name)
+                {
+                name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                var regexS = "[\\?&]" + name + "=([^&#]*)";
+                var regex = new RegExp(regexS);
+                var results = regex.exec(window.location.href);
+                if(results == null)
+                return "";
+                else
+                return decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
+                var outputwindow = null;
+                        $(document).ready(function () {
+                            $("#showprivatedetails").attr("checked", false);
+                            $("#go").click(function () {
+                                var parameters = new Array();
+                                parameters[ "kitchensink"] = Number($("#kitchensink").is(":checked"));
+                                parameters[ "showprivatedetails"] = Number($("#showprivatedetails").is(":checked"));
+                                parameters[ "showgraph"] = Number($("#showgraph").is(":checked"));
+                                parameters[ "showskills"] = Number($("#showskills").is(":checked"));
+                                parameters[ "showotherexperiences"] = Number($("#showotherexperiences").is(":checked"));
+                                parameters[ "showpaid"] = Number($("#showpaid").is(":checked"));
+                                parameters[ "showunpaid"] = Number($("#showunpaid").is(":checked"));
+                                parameters[ "showopensource"] = Number($("#showopensource").is(":checked"));
+                                parameters[ "profilename"] = encodeURI($("#profilename").attr("value"));
+                                parameters[ "inhibitdetailfor"] = encodeURI($("#inhibitdetailfor").attr("value"));
+                                var getstr = "";
+                                for (var par in parameters)
+                                getstr += '&' + par + '=' + parameters[par];
+                                $("#cvoutput").attr("src", "transformCV.php?" + getstr.slice(1, getstr.length));
+                                if (outputwindow && ! outputwindow.closed) {
+                                    outputwindow.location = "transformCV.php?" + getstr.slice(1, getstr.length);
+                                }
+                                
+                                /*$.ajax({
                                 url: 'transformCV.php',
                                 type: 'POST',
                                 data: parameters,
                                 success: function(data) {
-                                    window.frames[ "cvoutput"].document.open();
-                                    window.frames[ "cvoutput"].document.write(data);
-                                    window.frames[ "cvoutput"].document.close();
-                                    //var xsltoutput2 = jQuery(data);
-                                    //cvoutput.find("head").replaceWith(xsltoutput2.find("head").clone());
-                                    //cvoutput.find("body").replaceWith(xsltoutput2.find("body").clone());
-                                    if (outputwindow && !outputwindow.closed) {
-                                        var cvoutput2 = $(outputwindow.document).find("html");
-                                        cvoutput2.find("head").replaceWith(xsltoutput2.find("head").clone());
-                                        cvoutput2.find("body").replaceWith(xsltoutput2.find("body").clone());
-                                    }
+                                window.frames[ "cvoutput"].document.open();
+                                window.frames[ "cvoutput"].document.write(data);
+                                window.frames[ "cvoutput"].document.close();
+                                //var xsltoutput2 = jQuery(data);
+                                //cvoutput.find("head").replaceWith(xsltoutput2.find("head").clone());
+                                //cvoutput.find("body").replaceWith(xsltoutput2.find("body").clone());
+                                if (outputwindow && !outputwindow.closed) {
+                                var cvoutput2 = $(outputwindow.document).find("html");
+                                cvoutput2.find("head").replaceWith(xsltoutput2.find("head").clone());
+                                cvoutput2.find("body").replaceWith(xsltoutput2.find("body").clone());
+                                }
                                 },
                                 error: function(req, status) {
-                                    cvoutput.text("Error during data fetch: "+status);
+                                cvoutput.text("Error during data fetch: "+status);
                                 }
-                            });*/
-                        });
-                        $("#profile").change(function () {
-                            var profile = $(this).children(":selected").attr("value");
-                            $("#profilename").attr("value", profile);
-                            if (profile == "allpossibledata") {
-                                $("#inhibitdetailfor").attr("value", "");
-                                $("#showskills").attr("checked", true);
-                                $("#showpaid").attr("checked", true);
-                                $("#showunpaid").attr("checked", true);
-                                $("#showopensource").attr("checked", true);
-                            } else if (profile == "it") {
-                                $("#inhibitdetailfor").attr("value", "P85;R90;M72.2;");
-                                $("#showskills").attr("checked", true);
-                                $("#showpaid").attr("checked", true);
-                                $("#showunpaid").attr("checked", true);
-                                $("#showopensource").attr("checked", true);
-                            } else if (profile == "education") {
-                                $("#inhibitdetailfor").attr("value", "J62;");
-                                $("#showskills").attr("checked", false);
-                                $("#showpaid").attr("checked", true);
-                                $("#showunpaid").attr("checked", true);
-                                $("#showopensource").attr("checked", true);
-                            } else if (profile == "authoring") {
-                                $("#inhibitdetailfor").attr("value", "J62;P85;");
-                                $("#showskills").attr("checked", false);
-                                $("#showpaid").attr("checked", true);
-                                $("#showunpaid").attr("checked", true);
-                                $("#showopensource").attr("checked", true);
-                            }
+                                });*/
+                            });
+                            $("#profile").change(function () {
+                                var profile = $(this).children(":selected").attr("value");
+                                $("#profilename").attr("value", profile);
+                                if (profile == "Everything") {
+                                    $("#inhibitdetailfor").attr("value", "");
+                                    $("#showskills").attr("checked", true);
+                                    $("#showpaid").attr("checked", true);
+                                    $("#showunpaid").attr("checked", true);
+                                    $("#showopensource").attr("checked", true);
+                                } else if (profile == "IT") {
+                                    $("#inhibitdetailfor").attr("value", "P85;R90;M72.2;");
+                                    $("#showskills").attr("checked", true);
+                                    $("#showpaid").attr("checked", true);
+                                    $("#showunpaid").attr("checked", true);
+                                    $("#showopensource").attr("checked", true);
+                                } else if (profile == "Education") {
+                                    $("#inhibitdetailfor").attr("value", "J62;");
+                                    $("#showskills").attr("checked", false);
+                                    $("#showpaid").attr("checked", true);
+                                    $("#showunpaid").attr("checked", true);
+                                    $("#showopensource").attr("checked", true);
+                                } else if (profile == "Authoring") {
+                                    $("#inhibitdetailfor").attr("value", "J62;P85;");
+                                    $("#showskills").attr("checked", false);
+                                    $("#showpaid").attr("checked", true);
+                                    $("#showunpaid").attr("checked", true);
+                                    $("#showopensource").attr("checked", true);
+                                }
+                                $("#go").click();
+                            });
+                            $("#newpage").click(function () {
+                                outputwindow = window.open("", "");
+                                if (outputwindow) {
+                                    outputwindow.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head/><body><i>Working ...</i></body></html>');
+                                    outputwindow.document.close();
+                                }
+                                $("#go").click();
+                            });
+                            //$("input").click(function() { $("#go").click(); });
+                            // Force the iframe to use XHTML strict
+                            window.frames[ "cvoutput"].document.close();
+                            window.frames[ "cvoutput"].document.open();
+                            window.frames[ "cvoutput"].document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head/><body><i>Working ...</i></body></html>');
+                            window.frames[ "cvoutput"].document.close();
                             $("#go").click();
+                            $("#itcvlink").click(function () {
+                                $("#profile").val("IT").change();
+                                return false;
+                            });
+                            $("#educationcvlink").click(function () {
+                                $("#profile").val("Education").change();
+                                return false;
+                            });
+                            $("#genericcvlink").click(function () {
+                                $("#profile").val("Everything").change();
+                                return false;
+                            });
+                            var winresizefunction = function () {
+                                var cvoutput = $("#cvoutput");
+                                var newheight = $(window).height() - cvoutput.offset().top - 10;
+                                if (newheight < 256) newheight = 256;
+                                cvoutput.height(newheight);
+                            };
+                            $(window).resize(winresizefunction);
+                            winresizefunction();
+                            // Process startup params
+                            var initial_profile=getParameterByName("profile");
+                            if(initial_profile!="")
+                              $("#profile").val(initial_profile).change();
                         });
-                        $("#newpage").click(function () {
-                            outputwindow = window.open("", "");
-                            if (outputwindow) {
-                                outputwindow.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head/><body><i>Working ...</i></body></html>');
-                                outputwindow.document.close();
-                            }
-                            $("#go").click();
-                        });
-                        //$("input").click(function() { $("#go").click(); });
-                        // Force the iframe to use XHTML strict
-                        window.frames[ "cvoutput"].document.close();
-                        window.frames[ "cvoutput"].document.open();
-                        window.frames[ "cvoutput"].document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head/><body><i>Working ...</i></body></html>');
-                        window.frames[ "cvoutput"].document.close();
-                        $("#go").click();
-                        $("#itcvlink").click(function () {
-                            $("#profile").val("it").change();
-                            return false;
-                        });
-                        $("#educationcvlink").click(function () {
-                            $("#profile").val("education").change();
-                            return false;
-                        });
-                        $("#genericcvlink").click(function () {
-                            $("#profile").val("allpossibledata").change();
-                            return false;
-                        });
-                        var winresizefunction=function() {
-                            var cvoutput=$("#cvoutput");
-                            var newheight=$(window).height()-cvoutput.offset().top-10;
-                            if(newheight<256) newheight=256;
-                            cvoutput.height(newheight);
-                        };
-                        $(window).resize(winresizefunction);
-                        winresizefunction();
-                    });
             --></script>
         </div>
-        <div><iframe id="cvoutput" name="cvoutput" style="width:99%;height:400px;"/></div>
+        <div>
+            <iframe id="cvoutput" name="cvoutput" style="width:99%;height:400px;"/>
+        </div>
 
     </body>
 

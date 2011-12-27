@@ -656,7 +656,7 @@
     <xsl:template match="experiences" xmlns="http://www.w3.org/1999/xhtml">
         <div class="sectionheader">
             <img class="sectionheader" alt="" src="sectionheader.png"/>
-            <h2 class="experiences">Relevant Experiences:</h2>
+            <h2 class="experiences">Experiences Relevant To <xsl:value-of select="$profilename"/>:</h2>
             <span id="pi_experiences" itemprop="performerIn" itemscope="itemscope" itemtype="http://schema.org/Event">
                 <xsl:attribute name="itemref">
                     <xsl:for-each select="experience"> ev_<xsl:value-of select="generate-id(.)"/></xsl:for-each>
